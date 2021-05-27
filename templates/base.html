@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <!-- fontawesome css stylesheet link from cdnjs.com -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -19,6 +22,35 @@
 </head>
 
 <body>
+    <header>
+        <!-- Top Navbar -->
+        <nav>
+            <div class="nav-wrapper navbar-font text-shadow light-green accent-2">
+                <a href="#!" class="brand-logo green-text text-darken-3">SS & J Community</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars green-text text-darken-3 outline"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
+					<li><a href="#" class="green-text text-darken-3">Profile</a></li>
+					<li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
+                    <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
+                    <li><a href="#" class="green-text text-darken-3">Log In</a></li>
+					<li><a href="#" class="green-text text-darken-3">Log Out</a></li>
+					<li><a href="#" class="green-text text-darken-3">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Mobile Side Navbar -->
+        <ul class="sidenav navbar-font text-shadow background-color" id="mobile-demo">
+            <li><h4 class="center-align green-text text-darken-3">SS & J Community</h4></li>
+            <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
+			<li><a href="#" class="green-text text-darken-3">Profile</a></li>
+			<li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
+            <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
+            <li><a href="#" class="green-text text-darken-3">Log In</a></li>
+			<li><a href="#" class="green-text text-darken-3">Log Out</a></li>
+			<li><a href="#" class="green-text text-darken-3">Register</a></li>
+        </ul>
+    </header>
 
     {% block content %}
     {% endblock %}
