@@ -27,30 +27,36 @@
         <nav>
             <div class="nav-wrapper navbar-font text-shadow light-green accent-2">
                 <a href="#!" class="brand-logo green-text text-darken-3">SS & J Community</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars green-text text-darken-3 outline"></i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+                        class="fas fa-bars green-text text-darken-3 outline"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
-					<li><a href="#" class="green-text text-darken-3">Profile</a></li>
-					<li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
+                    <li><a href="#" class="green-text text-darken-3">Profile</a></li>
+                    <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
                     <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
                     <li><a href="#" class="green-text text-darken-3">Log In</a></li>
-					<li><a href="#" class="green-text text-darken-3">Log Out</a></li>
-					<li><a href="#" class="green-text text-darken-3">Register</a></li>
+                    <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
+                    <li><a href="#" class="green-text text-darken-3">Register</a></li>
                 </ul>
             </div>
         </nav>
         <!-- Mobile Side Navbar -->
         <ul class="sidenav navbar-font text-shadow background-color" id="mobile-demo">
-            <li><h4 class="center-align green-text text-darken-3">SS & J Community</h4></li>
+            <li>
+                <h4 class="center-align green-text text-darken-3">SS & J Community</h4>
+            </li>
             <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
-			<li><a href="#" class="green-text text-darken-3">Profile</a></li>
-			<li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
+            <li><a href="#" class="green-text text-darken-3">Profile</a></li>
+            <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
             <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
             <li><a href="#" class="green-text text-darken-3">Log In</a></li>
-			<li><a href="#" class="green-text text-darken-3">Log Out</a></li>
-			<li><a href="#" class="green-text text-darken-3">Register</a></li>
+            <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
+            <li><a href="#" class="green-text text-darken-3">Register</a></li>
         </ul>
     </header>
+    <div>
+        <img class="responsive-img" src="{{ url_for('static', filename='images/hero-image-2.jpg') }}" alt="smoothie">
+    </div>
 
     {% block content %}
     {% endblock %}
