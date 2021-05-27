@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I am an extension of the base template</h2>
-
     {% for task in recipes %}
         {{ task.main_component_type }}<br>
         {{ task.drink_name }}<br>
