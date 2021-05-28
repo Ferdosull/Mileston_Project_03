@@ -30,3 +30,9 @@ h4 {
     font-size: 1.3rem;
     font-weight: bold;
 }
+
+.responsive-img {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+}
