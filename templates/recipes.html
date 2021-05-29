@@ -2,14 +2,14 @@
 {% block content %}
     
     {% for task in recipes %}
-        {{ task.main_component_type }}<br>
-        {{ task.drink_name }}<br>
-        {{ task.ingredients }}<br>
-        {{ task.allergen_warning }}<br>
-        {{ task.image_url }}<br>
-        {{ task.recommends }}<br>
-        {{ task.preparation_time }}<br>
-        {{ task.difficulty_level }}<br>
+        <H4 class="center">Drink Name: <span>{{ task.drink_name }}</span></H4><br>
+        <img class="responsive-img recipe" src="{{ task.image_url }}" alt="smoothie shake or juice">
+        <H4 class="center">Category: <span>{{ task.main_component_type }}</span></H4><br>
+        <H4 class="center">Raw Ingredients: <span>{{ task.ingredients }}</span></H4><br>
+        <H4 class="center">Allergen Warning!: <span>{{ task.allergen_warning }}</span></H4><br>
+        <H4 class="center">Times Reccomended: <span>{{ task.recommends }}</span></H4><br>
+        <H4 class="center">Preparation Time: <span>{{ task.preparation_time }}<span> minutes</span></span></H4><br>
+        <H4 class="center">Skill Level (1-10): <span>{{ task.difficulty_level }}</span></H4><br>
     {% endfor %}
 
 {% endblock %}

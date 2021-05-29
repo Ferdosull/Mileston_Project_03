@@ -37,7 +37,7 @@
                     <li><a href="#" class="green-text text-darken-3">Profile</a></li>
                     <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
                     <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
-                    <li><a href="#" class="green-text text-darken-3">Log In</a></li>
+                    <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
                     <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
                     <li><a href="#" class="green-text text-darken-3">Register</a></li>
                 </ul>
@@ -56,7 +56,7 @@
                         class="green-text dropdowntextpad navbar-font text-darken-3">New Recipe</a></i></li>
             <li><i class="fas fa-folder-open icon-size-color"><a href="#"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Manage Categories</a></i></li>
-            <li><i class="fas fa-sign-in-alt icon-size-color"><a href="#"
+            <li><i class="fas fa-sign-in-alt icon-size-color"><a href="{{ url_for('login') }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Log In</a></i></li>
             <li><i class="fas fa-sign-out-alt icon-size-color"><a href="#"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Log Out</a></i></li>
@@ -65,7 +65,7 @@
         </ul>
     </header>
     <div>
-        <img class="responsive-img" src="{{ url_for('static', filename='images/hero-image.png') }}" alt="smoothie">
+        <img class="responsive-img hero" src="{{ url_for('static', filename='images/hero-image.png') }}" alt="smoothie">
     </div>
 
     {% block content %}
