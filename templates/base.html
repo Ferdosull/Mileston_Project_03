@@ -25,25 +25,28 @@
 <body>
     <header>
         <!-- Top Navbar -->
-        <nav>
-            <div class="nav-wrapper navbar-font text-shadow light-green accent-2">
-                <a href="#!" class="brand-logo green-text text-darken-3"><i
-                        class="fas fa-blender hide-on-med-and-down"></i>
-                    SS & J<span class="hide-on-small-only"> Community</span><i class="fas fa-apple-alt hide-on-med-and-down"><i
-                            class="fas fa-carrot hide-on-med-and-down"></i></i></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-                        class="fas fa-bars green-text text-darken-3 outline"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
-                    <li><a href="#" class="green-text text-darken-3">Profile</a></li>
-                    <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
-                    <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
-                    <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
-                    <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
-                    <li><a href="#" class="green-text text-darken-3">Register</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper navbar-font text-shadow background-color">
+                    <a href="#!" class="brand-logo green-text text-darken-3"><i
+                            class="fas fa-blender hide-on-med-and-down"></i>
+                        SS & J<span class="hide-on-small-only"> Community</span><i
+                            class="fas fa-apple-alt hide-on-med-and-down"><i
+                                class="fas fa-carrot hide-on-med-and-down"></i></i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+                            class="fas fa-bars green-text text-darken-3 outline"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
+                        <li><a href="#" class="green-text text-darken-3">Profile</a></li>
+                        <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
+                        <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
+                        <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
+                        <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
+                        <li><a href="#" class="green-text text-darken-3">Sign-Up</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <!-- Mobile Side Navbar -->
         <ul class="sidenav navbar-font text-shadow background-color" id="mobile-demo">
             <li>
@@ -62,16 +65,52 @@
             <li><i class="fas fa-sign-out-alt icon-size-color"><a href="#"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Log Out</a></i></li>
             <li><i class="fas fa-user-plus icon-size-color"><a href="#"
-                        class="green-text dropdowntextpad navbar-font text-darken-3">Register</a></i></li>
+                        class="green-text dropdowntextpad navbar-font text-darken-3">Sign-Up</a></i></li>
         </ul>
     </header>
     <div>
         <img class="responsive-img hero" src="{{ url_for('static', filename='images/hero-image.png') }}" alt="smoothie">
     </div>
 
+
     {% block content %}
     {% endblock %}
 
+    <footer class="page-footer footer-text">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Smoothies, Shakes and Juice Community</h5>
+                    <p class="grey-text text-lighten-4">SS & J Community is a place where like minded people can find
+                        recipes for deliciously healthy drinks.
+                        The platform provides the user the means to upload your own recipes and reccomend other users
+                        recipes.
+                        Please feel free to <a href="{{ url_for('get_recipes') }}" class="login-text"><span class="sign-up-hover">Sign-Up</span></a>
+                        and enjoy being part of the expanding community.
+                    </p>
+                    <p class="grey-text text-lighten-4">
+                        For further details about the community or any of SS & J's advertised products, please click on the email link provided to get in touch: 
+                        <a href="{{ url_for('get_recipes') }}" class="login-text"><span class="sign-up-hover">info@ss&j.com</span></a>
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Visit Our Social Media Pages</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3 footer-icon-size" href="#!"><i class="fab fa-facebook-square icon-hover"></i></a></li>
+                        <li><a class="grey-text text-lighten-3 footer-icon-size" href="#!"><i class="fab fa-twitter-square icon-hover"></i></a></li>
+                        <li><a class="grey-text text-lighten-3 footer-icon-size" href="#!"><i class="fab fa-instagram-square icon-hover"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © SS & J <span id="copyright"></span>
+                <a class="grey-text text-lighten-4 right" id="toTop" href="#"><span class="back-to-top-text">Back To Top<i
+                        class="fas fa-arrow-circle-up back-to-top"></i></span></a>
+            </div>
+        </div>
+    </footer>
     <!-- Compiled and minified Jquery script from code.jquery.com -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

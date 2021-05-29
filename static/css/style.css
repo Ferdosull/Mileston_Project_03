@@ -37,7 +37,6 @@ h4 {
 .hero {
     padding-left: 10%;
     padding-right: 10%;
-    margin-top: 20px;
     margin-bottom: 20px;
     background-color: #b9f6ca;
     opacity: 0.9;
@@ -108,4 +107,32 @@ h4 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.back-to-top {
+    padding-left: 5px;
+}
+
+.page-footer {
+    background-color: #616161;
+}
+
+.footer-text {
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-icon-size {
+    font-size: 2.2rem; 
+}
+
+.icon-hover:hover {
+    color: #ff974d; 
+}
+
+.back-to-top-text:hover {
+    color: #ff974d; 
+}
+
+.sign-up-hover:hover {
+    color: #f24a7a; 
 }
