@@ -1,3 +1,7 @@
+body {
+    background-color: #faeedc;
+}
+
 .text-shadow {
     text-shadow: 0.1px 0.1px 0.1px rgba(0, 0, 0, 0.4);
 }
@@ -75,4 +79,33 @@ h4 {
 
 .center {
     flex: justify;
+}
+
+.card-panel {
+    border-radius: 20px;
+}
+
+.login-text {
+    color: #ff974d;
+}
+
+.login-btn {
+    background-color: #e13767;
+    border-radius: 8px;
+}
+
+.login-btn:hover {
+   background-color: #f24a7a;
+}
+
+.login-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.login-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
