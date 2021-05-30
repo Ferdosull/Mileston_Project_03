@@ -1,18 +1,85 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    {% for task in recipes %}
-        <H4 class="center">Drink Name: <span>{{ task.drink_name }}</span></H4><br>
-        <img class="responsive-img recipe" src="{{ task.image_url }}" alt="smoothie shake or juice">
-        <H4 class="center">Category: <span>{{ task.main_component_type }}</span></H4><br>
-        <H4 class="center">Raw Ingredients: <span>{{ task.ingredients }}</span></H4><br>
-        <H4 class="center">Allergen Warning!: <span>{{ task.allergen_warning }}</span></H4><br>
-        <H4 class="center">Times Reccomended: <span>{{ task.recommends }}</span></H4><br>
-        <H4 class="center">Preparation Time: <span>{{ task.preparation_time }}<span> minutes</span></span></H4><br>
-        <H4 class="center">Skill Level (1-10): <span>{{ task.difficulty_level }}</span></H4><br>
-        <div class="center btn-bottom-padding">
-            <a class="waves-effect waves-light btn-large" href="{{ url_for('get_recipes') }}">Back To Recipes</a>
+
+
+<div class="row">
+    <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <div class="card-panel">
+            {% for task in recipes %}
+            <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
+            <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            <div class="center"><span class="allergen-status-text">Allergen Status!</span><span>
+                {% if task.allergen_warning == "on" %}
+                    <div><span class="allergen-text">This recipe contains ingredients which are known to cause allergic reactions in large doses</span>
+                    <i class="fas fa-exclamation-circle red-text text-accent-2 tooltipped" data-position="right"
+                        data-tooltip="Allergy Alert Warning"></i></div>
+                {% else %}
+                    <div><span class="allergen-text"></span>This recipe does not contain ingredients known to cause allergic reactions</span>
+                    <i class="fas fa-check-circle green-text text-accent-3 tooltipped" data-position="right"
+                        data-tooltip="Safe Ingredients"></i></div>
+                {% endif %}
+            </span></div><br>
+            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
+                    Recipe</span><i class="far fa-thumbs-up icon-padding-left"></i><span class="like-btn-div">
+                    <a
+                        class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn"><b>Like</b></a></span>
+            </div><br>
+            <ul class="collection with-header table-radius-edges z-depth-1">
+                <li class="collection-header display-recipe-header-color">
+                    <span class="display-recipe-header-font">Category</span>
+                </li>
+                <li class="collection-item"><span class="display-recipe-task-font">{{ task.main_component_type }}</span>
+                </li>
+            </ul>
+            <ul class="collection with-header table-radius-edges z-depth-1">
+                <li class="collection-header display-recipe-header-color">
+                    <span class="display-recipe-header-font">Skill Level (1-10)</span>
+                </li>
+                <li class="collection-item"><span class="display-recipe-task-font">{{ task.difficulty_level }}</span>
+                </li>
+            </ul>
+            <ul class="collection with-header table-radius-edges z-depth-1">
+                <li class="collection-header display-recipe-header-color">
+                    <span class="display-recipe-header-font">Preparation Time</span>
+                </li>
+                <li class="collection-item"><span
+                        class="display-recipe-task-font">{{ task.preparation_time }}</span><span> minutes</span></li>
+            </ul>
+            <ul class="collection with-header table-radius-edges z-depth-1">
+                <li class="collection-header display-recipe-header-color">
+                    <span class="display-recipe-header-font">Ingredients</span>
+                </li>
+                <li class="collection-item"><span class="display-recipe-task-font">{{ task.ingredients }}</span></li>
+            </ul>
+            {% endfor %}
+            {% for task in prep_steps %}
+            <ul class="collection with-header table-radius-edges z-depth-1">
+                <li class="collection-header display-recipe-header-color">
+                    <span class="display-recipe-header-font">Preparation Steps</span>
+                </li>
+                <li class="collection-item"><span class="bold-step">Step 1: </span><span
+                        class="display-recipe-task-font">{{ task.step1 }}</span></li>
+                <li class="collection-item"><span class="bold-step">Step 1: </span><span
+                        class="display-recipe-task-font">{{ task.step2 }}</span></li>
+                <li class="collection-item"><span class="bold-step">Step 3: </span><span
+                        class="display-recipe-task-font">{{ task.step3 }}</span></li>
+                <li class="collection-item"><span class="bold-step">Step 4: </span><span
+                        class="display-recipe-task-font">{{ task.step4 }}</span></li>
+                <li class="collection-item"><span class="bold-step">Step 5: </span><span
+                        class="display-recipe-task-font">{{ task.step5 }}</span></li>
+            </ul>
+            {% endfor %}
+            <div class="center like-text-space">
+                <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button
+                    above!</span>
+            </div>
+            <div class="center btn-bottom-padding">
+                <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
+                    href="{{ url_for('get_recipes') }}"><b>Back To Recipes</b></a>
+            </div>
         </div>
-    {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}

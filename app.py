@@ -40,7 +40,8 @@ def signup():
 @app.route("/display_recipe")
 def display_recipe():
     recipes = mongo.db.recipes.find()
-    return render_template("display_recipe.html", recipes=recipes)
+    prep_steps= mongo.db.prep_steps.find()
+    return render_template("display_recipe.html", recipes=recipes, prep_steps=prep_steps)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
