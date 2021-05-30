@@ -37,7 +37,7 @@
                             class="fas fa-bars green-text text-darken-3 outline"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
-                        <li><a href="#" class="green-text text-darken-3">Profile</a></li>
+                        <li><a href="{{ url_for('profile') }}" class="green-text text-darken-3">Profile</a></li>
                         <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
                         <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
                         <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
@@ -54,7 +54,7 @@
             </li>
             <li><i class="fas fa-home icon-size-color"><a href="{{ url_for('get_recipes') }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Home</a></i></li>
-            <li><i class="fas fa-user icon-size-color"><a href="#"
+            <li><i class="fas fa-user icon-size-color"><a href="{{ url_for('profile') }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Profile</a></i></li>
             <li><i class="fas fa-folder-plus icon-size-color"><a href="#"
                         class="green-text dropdowntextpad navbar-font text-darken-3">New Recipe</a></i></li>

@@ -29,6 +29,10 @@ def get_recipes():
 def login():
     return render_template("login.html")
 
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
