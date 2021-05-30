@@ -1,8 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-    
-<div>
-    <h4 class="center">This is the Sign-Up Page<h4>
+
+<div class="row card-panel-space">
+    <form class="col s12 m8 l6 offset-m2 offset-l3">
+        <!-- method="POST" action="{{ url_for('login') }}" -->
+        <div class="card-panel">
+            <h3 class="center login-header">SIGN UP</h3>
+            <!-- username -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user prefix login-text"></i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                    <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <!-- password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-lock prefix login-text"></i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                    <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <!-- confirm password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-lock prefix login-text"></i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                    <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                    <label for="password">Confirm Password</label>
+                </div>
+            </div>
+            <!-- login -->
+            <div class="row">
+                <button type="submit" class="col s12 btn-large login-btn text-shadow login-button">
+                    Log In <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">
+                        Already Have An Account?
+                        <a href="{{ url_for('login') }}" class="login-text">Sign In Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 {% endblock %}
