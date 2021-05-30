@@ -228,3 +228,11 @@ h4 {
     font-size: 1.4rem;
     padding-right: 0.8rem;
 }
+
+.fa-user-plus {
+    padding-right: 10px;
+}
+
+.fa-sign-in-alt {
+    padding-right: 10px;
+}
