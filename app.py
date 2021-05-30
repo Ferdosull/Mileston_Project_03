@@ -37,6 +37,11 @@ def profile():
 def signup():
     return render_template("signup.html")
 
+@app.route("/display_recipe")
+def display_recipe():
+    recipes = mongo.db.recipes.find()
+    return render_template("display_recipe.html", recipes=recipes)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

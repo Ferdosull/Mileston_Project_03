@@ -4,15 +4,15 @@
     {% for task in recipes %}
         <H4 class="center">Drink Name: <span>{{ task.drink_name }}</span></H4><br>
         <img class="responsive-img recipe" src="{{ task.image_url }}" alt="smoothie shake or juice">
-        <div class="center btn-bottom-padding">
-            <a class="waves-effect waves-light btn-large" href="{{ url_for('display_recipe') }}">Open Recipe</a>
-        </div>
-        <!-- H4 class="center">Category: <span>{{ task.main_component_type }}</span></H4><br>
+        <H4 class="center">Category: <span>{{ task.main_component_type }}</span></H4><br>
         <H4 class="center">Raw Ingredients: <span>{{ task.ingredients }}</span></H4><br>
         <H4 class="center">Allergen Warning!: <span>{{ task.allergen_warning }}</span></H4><br>
         <H4 class="center">Times Reccomended: <span>{{ task.recommends }}</span></H4><br>
         <H4 class="center">Preparation Time: <span>{{ task.preparation_time }}<span> minutes</span></span></H4><br>
-        <H4 class="center">Skill Level (1-10): <span>{{ task.difficulty_level }}</span></H4><br -->
+        <H4 class="center">Skill Level (1-10): <span>{{ task.difficulty_level }}</span></H4><br>
+        <div class="center btn-bottom-padding">
+            <a class="waves-effect waves-light btn-large" href="{{ url_for('get_recipes') }}">Back To Recipes</a>
+        </div>
     {% endfor %}
 
 {% endblock %}

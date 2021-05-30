@@ -136,3 +136,7 @@ h4 {
 .sign-up-hover:hover {
     color: #f24a7a; 
 }
+
+.btn-bottom-padding {
+    padding-bottom: 1.2rem;
+}
