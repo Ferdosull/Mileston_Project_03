@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<div class="row">
+<div class="row card-panel-space ">
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
             {% for task in recipes %}
@@ -26,28 +26,28 @@
             </div><br>
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
-                    <span class="display-recipe-header-font">Category</span>
+                    <i class="fas fa-layer-group icon-size-padding"></i><span class="display-recipe-header-font">Category</span>
                 </li>
                 <li class="collection-item"><span class="display-recipe-task-font">{{ task.main_component_type }}</span>
                 </li>
             </ul>
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
-                    <span class="display-recipe-header-font">Skill Level (1-10)</span>
+                    <i class="fas fa-tools icon-size-padding"></i><span class="display-recipe-header-font">Skill Level (1-10)</span>
                 </li>
                 <li class="collection-item"><span class="display-recipe-task-font">{{ task.difficulty_level }}</span>
                 </li>
             </ul>
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
-                    <span class="display-recipe-header-font">Preparation Time</span>
+                    <i class="fas fa-clock icon-size-padding"></i><span class="display-recipe-header-font">Preparation Time</span>
                 </li>
                 <li class="collection-item"><span
                         class="display-recipe-task-font">{{ task.preparation_time }}</span><span> minutes</span></li>
             </ul>
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
-                    <span class="display-recipe-header-font">Ingredients</span>
+                    <i class="fas fa-sitemap fa-flip-vertical icon-size-padding"></i><span class="display-recipe-header-font">Ingredients</span>
                 </li>
                 <li class="collection-item"><span class="display-recipe-task-font">{{ task.ingredients }}</span></li>
             </ul>
@@ -55,7 +55,7 @@
             {% for task in prep_steps %}
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
-                    <span class="display-recipe-header-font">Preparation Steps</span>
+                    <i class="fas fa-book icon-size-padding"></i><span class="display-recipe-header-font">Preparation Steps</span>
                 </li>
                 <li class="collection-item"><span class="bold-step">Step 1: </span><span
                         class="display-recipe-task-font">{{ task.step1 }}</span></li>
