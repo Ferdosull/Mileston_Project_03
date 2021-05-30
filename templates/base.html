@@ -42,7 +42,7 @@
                         <li><a href="#" class="green-text text-darken-3">Manage Categories</a></li>
                         <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
                         <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
-                        <li><a href="#" class="green-text text-darken-3">Sign-Up</a></li>
+                        <li><a href="{{ url_for('signup') }}" class="green-text text-darken-3">Sign-Up</a></li>
                     </ul>
                 </div>
             </nav>
@@ -64,7 +64,7 @@
                         class="green-text dropdowntextpad navbar-font text-darken-3">Log In</a></i></li>
             <li><i class="fas fa-sign-out-alt icon-size-color"><a href="#"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Log Out</a></i></li>
-            <li><i class="fas fa-user-plus icon-size-color"><a href="#"
+            <li><i class="fas fa-user-plus icon-size-color"><a href="{{ url_for('signup') }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Sign-Up</a></i></li>
         </ul>
     </header>
