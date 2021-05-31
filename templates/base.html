@@ -37,7 +37,7 @@
                             class="fas fa-bars green-text text-darken-3 outline"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
-                        <li><a href="{{ url_for('profile') }}" class="green-text text-darken-3">Profile</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}" class="green-text text-darken-3">Profile</a></li>
                         <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
                         <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
                         <li><a href="#" class="green-text text-darken-3">Log Out</a></li>
@@ -53,7 +53,7 @@
             </li>
             <li><i class="fas fa-home icon-size-color"><a href="{{ url_for('get_recipes') }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Home</a></i></li>
-            <li><i class="fas fa-user icon-size-color"><a href="{{ url_for('profile') }}"
+            <li><i class="fas fa-user icon-size-color"><a href="{{ url_for('profile', username=session['user']) }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Profile</a></i></li>
             <li><i class="fas fa-folder-plus icon-size-color"><a href="#"
                         class="green-text dropdowntextpad navbar-font text-darken-3">New Recipe</a></i></li>
@@ -66,8 +66,23 @@
         </ul>
     </header>
 
-    {% block content %}
-    {% endblock %}
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </section>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <footer class="page-footer footer-text">
         <div class="container">
@@ -78,20 +93,28 @@
                         recipes for deliciously healthy drinks.
                         The platform provides the user the means to upload your own recipes and reccomend other users
                         recipes.
-                        Please feel free to <a href="{{ url_for('signup') }}" class="login-text"><span class="sign-up-hover">Sign-Up</span></a>
+                        Please feel free to <a href="{{ url_for('signup') }}" class="login-text"><span
+                                class="sign-up-hover">Sign-Up</span></a>
                         and enjoy being part of the expanding community.
                     </p>
                     <p class="grey-text text-lighten-4">
-                        For further details about the community or any of SS & J's advertised products, please click on the email link provided to get in touch: 
-                        <a href="mailto:info@ss&j.com?subject=General Information About SS and J's Products & Services" class="login-text"><span class="sign-up-hover">info@ss&j.com</span></a>
+                        For further details about the community or any of SS & J's advertised products, please click on
+                        the email link provided to get in touch:
+                        <a href="mailto:info@ss&j.com?subject=General Information About SS and J's Products & Services"
+                            class="login-text"><span class="sign-up-hover">info@ss&j.com</span></a>
                     </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Visit Our Social Media Pages</h5>
                     <ul>
-                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size" href="https://www.facebook.com/"><i class="fab fa-facebook-square icon-hover"></i></a></li>
-                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size" href="https://twitter.com/"><i class="fab fa-twitter-square icon-hover"></i></a></li>
-                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size" href="https://www.instagram.com/"><i class="fab fa-instagram-square icon-hover"></i></a></li>
+                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
+                                href="https://www.facebook.com/"><i class="fab fa-facebook-square icon-hover"></i></a>
+                        </li>
+                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
+                                href="https://twitter.com/"><i class="fab fa-twitter-square icon-hover"></i></a></li>
+                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram-square icon-hover"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -99,8 +122,8 @@
         <div class="footer-copyright">
             <div class="container">
                 © SS & J <span id="copyright"></span>
-                <a class="grey-text text-lighten-4 right" id="toTop" href="#"><span class="back-to-top-text">Back To Top<i
-                        class="fas fa-arrow-circle-up back-to-top"></i></span></a>
+                <a class="grey-text text-lighten-4 right" id="toTop" href="#"><span class="back-to-top-text">Back To
+                        Top<i class="fas fa-arrow-circle-up back-to-top"></i></span></a>
             </div>
         </div>
     </footer>
