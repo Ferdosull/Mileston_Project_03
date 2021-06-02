@@ -51,22 +51,50 @@
                 </li>
                 <li class="collection-item"><span class="display-recipe-task-font">{{ task.ingredients }}</span></li>
             </ul>
-            {% endfor %}
-            {% for task in prep_steps %}
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
                     <i class="fas fa-book icon-size-padding"></i><span class="display-recipe-header-font">Preparation Steps</span>
                 </li>
-                <li class="collection-item"><span class="bold-step">Step 1: </span><span
-                        class="display-recipe-task-font">{{ task.step1 }}</span></li>
-                <li class="collection-item"><span class="bold-step">Step 1: </span><span
-                        class="display-recipe-task-font">{{ task.step2 }}</span></li>
-                <li class="collection-item"><span class="bold-step">Step 3: </span><span
-                        class="display-recipe-task-font">{{ task.step3 }}</span></li>
-                <li class="collection-item"><span class="bold-step">Step 4: </span><span
-                        class="display-recipe-task-font">{{ task.step4 }}</span></li>
-                <li class="collection-item"><span class="bold-step">Step 5: </span><span
-                        class="display-recipe-task-font">{{ task.step5 }}</span></li>
+                {% if task.step1 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 1: </span><span
+                            class="display-recipe-task-font">{{ task.step1 }}</span></li>
+                {% endif %}
+                {% if task.step2 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 2: </span><span
+                            class="display-recipe-task-font">{{ task.step2 }}</span></li>
+                {% endif %}
+                {% if task.step3 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 3: </span><span
+                            class="display-recipe-task-font">{{ task.step3 }}</span></li>
+                {% endif %}
+                {% if task.step4 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 4: </span><span
+                            class="display-recipe-task-font">{{ task.step4 }}</span></li>
+                {% endif %}
+                {% if task.step5 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 5: </span><span
+                            class="display-recipe-task-font">{{ task.step5 }}</span></li>
+                {% endif %}
+                {% if task.step6 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 6: </span><span
+                            class="display-recipe-task-font">{{ task.step6 }}</span></li>
+                {% endif %}
+                {% if task.step7 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 7: </span><span
+                            class="display-recipe-task-font">{{ task.step7 }}</span></li>
+                {% endif %}
+                {% if task.step8 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 8: </span><span
+                            class="display-recipe-task-font">{{ task.step8 }}</span></li>
+                {% endif %}
+                {% if task.step9 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 9: </span><span
+                            class="display-recipe-task-font">{{ task.step9 }}</span></li>
+                {% endif %}
+                {% if task.step10 != "" %}
+                    <li class="collection-item"><span class="bold-step">Step 10: </span><span
+                            class="display-recipe-task-font">{{ task.step10 }}</span></li>
+                {% endif %}
             </ul>
             {% endfor %}
             <div class="center like-text-space">

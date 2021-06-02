@@ -65,7 +65,7 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
-    
+
 
 @app.route("/logout")
 def logout():
@@ -103,8 +103,9 @@ def signup():
 @app.route("/display_recipe")
 def display_recipe():
     recipes = mongo.db.recipes.find()
-    prep_steps= mongo.db.prep_steps.find()
-    return render_template("display_recipe.html", recipes=recipes, prep_steps=prep_steps)
+    prep_steps = mongo.db.prep_steps.find()
+    return render_template(
+        "display_recipe.html", recipes=recipes, prep_steps=prep_steps)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
