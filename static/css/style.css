@@ -52,6 +52,7 @@ h4 {
 .recipe-2 {
     margin-top: 10px;
     margin-bottom: 10px;
+    max-height: 33rem;
 }
 
 .icon-size-color {
@@ -235,4 +236,8 @@ h4 {
 
 .fa-sign-in-alt {
     padding-right: 10px;
+}
+
+.line-padding {
+    padding-bottom: 30px;
 }

@@ -7,7 +7,9 @@
         <div class="card-panel">
             {% for task in recipes %}
             <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
-            <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            <div class="center">
+                <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            </div>
             <div class="center"><span class="allergen-status-text">Allergen Status!</span><span>
                 {% if task.allergen_warning == "on" %}
                     <div><span class="allergen-text">This recipe contains ingredients which are known to cause allergic reactions in large doses</span>
@@ -20,9 +22,7 @@
                 {% endif %}
             </span></div><br>
             <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
-                    Recipe</span><i class="far fa-thumbs-up icon-padding-left"></i><span class="like-btn-div">
-                    <a
-                        class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn"><b>Like</b></a></span>
+                    Recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
             </div><br>
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
@@ -96,11 +96,16 @@
                             class="display-recipe-task-font">{{ task.step10 }}</span></li>
                 {% endif %}
             </ul>
-            {% endfor %}
+            
             <div class="center like-text-space">
-                <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button
-                    above!</span>
+                <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
+                    <a
+                        class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn"><b>Like</b></a></span>
             </div>
+            <div class="line-padding">
+                <hr>
+            </div>
+            {% endfor %}
             <div class="center btn-bottom-padding">
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
                     href="{{ url_for('get_recipes') }}"><b>Back To Recipes</b></a>
