@@ -241,3 +241,16 @@ h4 {
 .line-padding {
     padding-bottom: 30px;
 }
+
+.flash-font-style {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+    letter-spacing: 0.1rem;
+    border-radius: 40px;
+}
+
+.flashes {
+    opacity: 0.8;
+}
