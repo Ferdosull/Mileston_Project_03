@@ -39,7 +39,7 @@
                         <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}" class="green-text text-darken-3">Profile</a></li>
-                            <li><a href="#" class="green-text text-darken-3">New Recipe</a></li>
+                            <li><a href="{{ url_for('new_recipe') }}" class="green-text text-darken-3">New Recipe</a></li>
                             <li><a href="{{ url_for('logout') }}" class="green-text text-darken-3">Log Out</a></li>
                         {% else %}
                             <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
@@ -59,7 +59,7 @@
             {% if session.user %}
                 <li><i class="fas fa-user icon-size-color"><a href="{{ url_for('profile', username=session['user']) }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">Profile</a></i></li>
-                <li><i class="fas fa-folder-plus icon-size-color"><a href="#"
+                <li><i class="fas fa-folder-plus icon-size-color"><a href="{{ url_for('new_recipe') }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">New Recipe</a></i></li>
                 <li><i class="fas fa-sign-out-alt icon-size-color"><a href="{{ url_for('logout') }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">Log Out</a></i></li>

@@ -106,6 +106,12 @@ def display_recipe():
     prep_steps = mongo.db.prep_steps.find()
     return render_template(
         "display_recipe.html", recipes=recipes, prep_steps=prep_steps)
+        
+
+@app.route("/new_recipe")
+def new_recipe():
+    return render_template("new_recipe.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
