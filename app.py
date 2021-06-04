@@ -105,12 +105,14 @@ def display_recipe():
     recipes = mongo.db.recipes.find()
     prep_steps = mongo.db.prep_steps.find()
     return render_template(
-        "display_recipe.html", recipes=recipes, prep_steps=prep_steps)
+        "display_recipe.html", recipes=recipes)
         
 
 @app.route("/new_recipe")
 def new_recipe():
-    return render_template("new_recipe.html")
+    recipes = mongo.db.recipes.find()
+    return render_template(
+        "new_recipe.html", recipes=recipes)
 
 
 if __name__ == "__main__":

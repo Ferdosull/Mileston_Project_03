@@ -5,114 +5,94 @@
 <div class="row card-panel-space ">
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
-            {% for task in recipes %}
-            <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
-            <div class="center">
-                <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
-            </div>
+            <div class="center display-recipe-top-header"><span>Input Drink Name Here</span></div>
+            <div class="center display-recipe-top-header"><span>Enter URL Here</span></div>
             <div class="center"><span class="allergen-status-text">Allergen Status!</span><span>
-                {% if task.allergen_warning == "on" %}
-                    <div><span class="allergen-text">This recipe contains ingredients which are known to cause allergic reactions in large doses</span>
-                    <i class="fas fa-exclamation-circle red-text text-accent-2 tooltipped" data-position="right"
-                        data-tooltip="Allergy Alert Warning"></i></div>
-                {% else %}
-                    <div><span class="allergen-text"></span>This recipe does not contain ingredients known to cause allergic reactions</span>
-                    <i class="fas fa-check-circle green-text text-accent-3 tooltipped" data-position="right"
-                        data-tooltip="Safe Ingredients"></i></div>
-                {% endif %}
-            </span></div><br>
-            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
-                    Recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
-            </div><br>
-            <ul class="collection with-header table-radius-edges z-depth-1">
-                <li class="collection-header display-recipe-header-color">
-                    <i class="fas fa-layer-group icon-size-padding"></i><span class="display-recipe-header-font">Category</span>
-                </li>
-                <li class="collection-item"><span class="display-recipe-task-font">{{ task.main_component_type }}</span>
-                </li>
-            </ul>
-            <ul class="collection with-header table-radius-edges z-depth-1">
-                <li class="collection-header display-recipe-header-color">
-                    <i class="fas fa-tools icon-size-padding"></i><span class="display-recipe-header-font">Skill Level (1-10)</span>
-                </li>
-                <li class="collection-item"><span class="display-recipe-task-font">{{ task.difficulty_level }}</span>
-                </li>
-            </ul>
-            <ul class="collection with-header table-radius-edges z-depth-1">
-                <li class="collection-header display-recipe-header-color">
-                    <i class="fas fa-clock icon-size-padding"></i><span class="display-recipe-header-font">Preparation Time</span>
-                </li>
-                <li class="collection-item"><span
-                        class="display-recipe-task-font">{{ task.preparation_time }}</span><span> minutes</span></li>
-            </ul>
-            <ul class="collection with-header table-radius-edges z-depth-1">
-                <li class="collection-header display-recipe-header-color">
-                    <i class="fas fa-sitemap fa-flip-vertical icon-size-padding"></i><span class="display-recipe-header-font">Ingredients</span>
-                </li>
-                <li class="collection-item"><span class="display-recipe-task-font">{{ task.ingredients }}</span></li>
-            </ul>
-            <ul class="collection with-header table-radius-edges z-depth-1">
-                <li class="collection-header display-recipe-header-color">
-                    <i class="fas fa-book icon-size-padding"></i><span class="display-recipe-header-font">Preparation Steps</span>
-                </li>
-                {% if task.step1 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 1: </span><span
-                            class="display-recipe-task-font">{{ task.step1 }}</span></li>
-                {% endif %}
-                {% if task.step2 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 2: </span><span
-                            class="display-recipe-task-font">{{ task.step2 }}</span></li>
-                {% endif %}
-                {% if task.step3 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 3: </span><span
-                            class="display-recipe-task-font">{{ task.step3 }}</span></li>
-                {% endif %}
-                {% if task.step4 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 4: </span><span
-                            class="display-recipe-task-font">{{ task.step4 }}</span></li>
-                {% endif %}
-                {% if task.step5 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 5: </span><span
-                            class="display-recipe-task-font">{{ task.step5 }}</span></li>
-                {% endif %}
-                {% if task.step6 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 6: </span><span
-                            class="display-recipe-task-font">{{ task.step6 }}</span></li>
-                {% endif %}
-                {% if task.step7 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 7: </span><span
-                            class="display-recipe-task-font">{{ task.step7 }}</span></li>
-                {% endif %}
-                {% if task.step8 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 8: </span><span
-                            class="display-recipe-task-font">{{ task.step8 }}</span></li>
-                {% endif %}
-                {% if task.step9 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 9: </span><span
-                            class="display-recipe-task-font">{{ task.step9 }}</span></li>
-                {% endif %}
-                {% if task.step10 != "" %}
-                    <li class="collection-item"><span class="bold-step">Step 10: </span><span
-                            class="display-recipe-task-font">{{ task.step10 }}</span></li>
-                {% endif %}
-            </ul>
-            
-            <div class="center like-text-space">
-                <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
-                    <a
-                        class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn"><b>Like</b></a></span>
-            </div>
-            <div class="line-padding">
-                <hr>
-            </div>
-            {% endfor %}
-            <div class="center btn-bottom-padding">
-                <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
-                    href="{{ url_for('get_recipes') }}"><b>Back To Recipes</b></a>
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>Category</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Please select a category from the dropdown menu.</label>
+                    </div>
+                    </ul>
+                    <ul class="collection with-header table-radius-edges z-depth-1">
+                        <li class="collection-header display-recipe-header-color">
+                            <i class="fas fa-tools icon-size-padding"></i><span class="display-recipe-header-font">Skill
+                                Level (1-10)</span>
+                        </li>
+                        <li class="collection-item"><span class="display-recipe-task-font">Select Skill Level from
+                                Dropdown</span>
+                        </li>
+                    </ul>
+                    <ul class="collection with-header table-radius-edges z-depth-1">
+                        <li class="collection-header display-recipe-header-color">
+                            <i class="fas fa-clock icon-size-padding"></i><span
+                                class="display-recipe-header-font">Preparation Time</span>
+                        </li>
+                        <li class="collection-item"><span class="display-recipe-task-font">Select Time in Minutes from
+                                Dropdown</span><span> minutes</span></li>
+                    </ul>
+                    <ul class="collection with-header table-radius-edges z-depth-1">
+                        <li class="collection-header display-recipe-header-color">
+                            <i class="fas fa-sitemap fa-flip-vertical icon-size-padding"></i><span
+                                class="display-recipe-header-font">Ingredients</span>
+                        </li>
+                        <li class="collection-item"><span class="display-recipe-task-font">
+                                <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                                <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                                <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                                <label for="username">Ingredients</label></span>
+                        </li>
+                    </ul>
+                    <ul class="collection with-header table-radius-edges z-depth-1">
+                        <li class="collection-header display-recipe-header-color">
+                            <i class="fas fa-book icon-size-padding"></i><span
+                                class="display-recipe-header-font">Preparation Steps</span>
+                        </li>
+                        <li class="collection-item"><span class="bold-step">Step 1: </span>
+                            <span class="display-recipe-task-font">
+                                <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                                <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                                <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                                <label for="username">Step 1</label>
+                            </span>
+                        </li>
+                        <li class="collection-item"><span class="bold-step">Step 2: </span><span
+                                class="display-recipe-task-font"><input id="username" name="username" type="text"
+                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate"
+                                    required>
+                                <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                                <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                                <label for="username">Ingredients</label></span></li>
+                        <li class="collection-item"><span class="bold-step">Step 3: </span><span
+                                class="display-recipe-task-font">Step 3</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 4: </span><span
+                                class="display-recipe-task-font">Step 4</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 5: </span><span
+                                class="display-recipe-task-font">Step 5</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 6: </span><span
+                                class="display-recipe-task-font">Step 6</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 7: </span><span
+                                class="display-recipe-task-font">Step 7</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 8: </span><span
+                                class="display-recipe-task-font">Step 8</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 9: </span><span
+                                class="display-recipe-task-font">Step 9</span></li>
+                        <li class="collection-item"><span class="bold-step">Step 10: </span><span
+                                class="display-recipe-task-font">Step 10</span></li>
+                    </ul>
+                    <div class="center btn-bottom-padding">
+                        <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
+                            href="{{ url_for('get_recipes') }}"><b>Insert Recipe</b></a>
+                    </div>
             </div>
         </div>
     </div>
-</div>
 
 
-{% endblock %}
+    {% endblock %}
