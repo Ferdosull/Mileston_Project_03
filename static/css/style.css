@@ -303,3 +303,7 @@ h4 {
     font-size: 0.9rem !important;
     padding-right: 0.2rem !important;
 }
+
+.hide-at-pg-load {
+    display: none;
+}
