@@ -100,13 +100,12 @@ def signup():
 
     return render_template("signup.html")
 
-@app.route("/display_recipe")
-def display_recipe():
-    recipes = mongo.db.recipes.find()
-    prep_steps = mongo.db.prep_steps.find()
-    return render_template(
-        "display_recipe.html", recipes=recipes)
-        
+
+@app.route("/display_recipe/<task_id>", methods=["GET", "POST"])
+def display_recipe(task_id):
+    task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+    return render_template("display_recipe.html", task=task)
+
 
 @app.route("/new_recipe", methods=["GET", "POST"])
 def new_recipe():
@@ -141,13 +140,6 @@ def new_recipe():
 
 @app.route("/edit_recipe/<task_id>", methods=["GET", "POST"])
 def edit_recipe(task_id):
-    recipes = mongo.db.recipes.find()
-    prep_steps = mongo.db.prep_steps.find()
-    return render_template(
-        "edit_recipe.html", recipes=recipes)
-
-
-def edit_task(task_id):
     if request.method == "POST":
         submit = {
             "main_component_type": request.form.get("select1"),

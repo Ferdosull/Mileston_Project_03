@@ -3,9 +3,8 @@
 
 
 <div class="row card-panel-space ">
-    <div class="col s12 m8 l6 offset-m2 offset-l3">
+    <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('display_recipe', task_id=task._id) }}">
         <div class="card-panel">
-            {% for task in recipes %}
             <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
             <div class="center">
                 <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
@@ -23,6 +22,8 @@
             </span></div><br>
             <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
                     Recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+            </div><br>
+            <div class="center display-recipe-task-font"><span>Submitted By User: </span><span>{{ task.created_by }}</span>
             </div><br>
             <ul class="collection with-header table-radius-edges z-depth-1">
                 <li class="collection-header display-recipe-header-color">
@@ -105,13 +106,12 @@
             <div class="line-padding">
                 <hr>
             </div>
-            {% endfor %}
             <div class="center btn-bottom-padding">
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
                     href="{{ url_for('get_recipes') }}"><b>Back To Recipes</b></a>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 
