@@ -139,6 +139,43 @@ def new_recipe():
     return render_template("new_recipe.html")
 
 
+@app.route("/edit_recipe/<task_id>", methods=["GET", "POST"])
+def edit_recipe(task_id):
+    recipes = mongo.db.recipes.find()
+    prep_steps = mongo.db.prep_steps.find()
+    return render_template(
+        "edit_recipe.html", recipes=recipes)
+
+
+def edit_task(task_id):
+    if request.method == "POST":
+        submit = {
+            "main_component_type": request.form.get("select1"),
+            "drink_name": request.form.get("drink_name"),
+            "ingredients": request.form.get("ingredients-input"),
+            "allergen_warning": request.form.get("select"),
+            "image_url": request.form.get("image-url"),
+            "preparation_time": request.form.get("select3"),
+            "difficulty_level": request.form.get("select2"),
+            "step1": request.form.get("step1"),
+            "step2": request.form.get("step2"),
+            "step3": request.form.get("step3"),
+            "step4": request.form.get("step4"),
+            "step5": request.form.get("step5"),
+            "step6": request.form.get("step6"),
+            "step7": request.form.get("step7"),
+            "step8": request.form.get("step8"),
+            "step9": request.form.get("step9"),
+            "step10": request.form.get("step10"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
+        flash("Recipe Successfully Updated")
+
+    task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+    return render_template("edit_recipe.html", task=task)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
