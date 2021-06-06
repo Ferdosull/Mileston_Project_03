@@ -5,90 +5,227 @@
 <div class="row card-panel-space ">
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
-            <div class="center display-recipe-top-header"><span>Input Drink Name Here</span></div>
-            <div class="center display-recipe-top-header"><span>Enter URL Here</span></div>
-            <div class="center"><span class="allergen-status-text">Allergen Status!</span><span>
-                    <div class="input-field col s12">
-                        <select>
-                            <option value="" disabled selected>Category</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                        <label>Please select a category from the dropdown menu.</label>
+            <div class="center display-recipe-top-header"><span>New Recipe Input Form</span></div>
+                    <div class="recipe-input-form">
+                        <div class="left-align">
+                            <i class="fas fa-glass-whiskey icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Drink Name</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="username" name="username" type="text" minlength="1" maxlength="30"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                            <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                            <label for="username" class="description-text">Enter the name you have chosen for your drink</label>
+                        </div>
                     </div>
-                    </ul>
-                    <ul class="collection with-header table-radius-edges z-depth-1">
-                        <li class="collection-header display-recipe-header-color">
-                            <i class="fas fa-tools icon-size-padding"></i><span class="display-recipe-header-font">Skill
-                                Level (1-10)</span>
-                        </li>
-                        <li class="collection-item"><span class="display-recipe-task-font">Select Skill Level from
-                                Dropdown</span>
-                        </li>
-                    </ul>
-                    <ul class="collection with-header table-radius-edges z-depth-1">
-                        <li class="collection-header display-recipe-header-color">
-                            <i class="fas fa-clock icon-size-padding"></i><span
-                                class="display-recipe-header-font">Preparation Time</span>
-                        </li>
-                        <li class="collection-item"><span class="display-recipe-task-font">Select Time in Minutes from
-                                Dropdown</span><span> minutes</span></li>
-                    </ul>
-                    <ul class="collection with-header table-radius-edges z-depth-1">
-                        <li class="collection-header display-recipe-header-color">
-                            <i class="fas fa-sitemap fa-flip-vertical icon-size-padding"></i><span
-                                class="display-recipe-header-font">Ingredients</span>
-                        </li>
-                        <li class="collection-item"><span class="display-recipe-task-font">
-                                <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                                <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                                <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
-                                <label for="username">Ingredients</label></span>
-                        </li>
-                    </ul>
-                    <ul class="collection with-header table-radius-edges z-depth-1">
-                        <li class="collection-header display-recipe-header-color">
-                            <i class="fas fa-book icon-size-padding"></i><span
-                                class="display-recipe-header-font">Preparation Steps</span>
-                        </li>
-                        <li class="collection-item"><span class="bold-step">Step 1: </span>
-                            <span class="display-recipe-task-font">
-                                <input id="username" name="username" type="text" minlength="5" maxlength="15"
-                                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                                <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                                <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
-                                <label for="username">Step 1</label>
-                            </span>
-                        </li>
-                        <li class="collection-item"><span class="bold-step">Step 2: </span><span
-                                class="display-recipe-task-font"><input id="username" name="username" type="text"
-                                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate"
-                                    required>
-                                <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                                <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
-                                <label for="username">Ingredients</label></span></li>
-                        <li class="collection-item"><span class="bold-step">Step 3: </span><span
-                                class="display-recipe-task-font">Step 3</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 4: </span><span
-                                class="display-recipe-task-font">Step 4</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 5: </span><span
-                                class="display-recipe-task-font">Step 5</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 6: </span><span
-                                class="display-recipe-task-font">Step 6</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 7: </span><span
-                                class="display-recipe-task-font">Step 7</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 8: </span><span
-                                class="display-recipe-task-font">Step 8</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 9: </span><span
-                                class="display-recipe-task-font">Step 9</span></li>
-                        <li class="collection-item"><span class="bold-step">Step 10: </span><span
-                                class="display-recipe-task-font">Step 10</span></li>
-                    </ul>
+                    <div class="recipe-input-form">
+                        <div class="left-align">
+                            <i class="fas fa-copy icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Image URL</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="image-url" name="image-url" type="text" minlength="5" maxlength="300"
+                                pattern="^[a-zA-Z0-9]{5,300}$" class="validate" required>
+                            <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                            <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                            <label for="image-url" class="description-text">Copy and Paste the URL for your drinks image here</label>
+                        </div>
+                    </div>
+                    <div class="recipe-input-form">
+                        <div class="left-align heading-space">
+                            <i class="fas fa-exclamation-circle icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Allergen Status!</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="none" disabled selected>Select Option</option>
+                                <option value="on">Yes! This recipe contains ingredients which are known to cause allergic reactions in large doses</option>
+                                <option value="off">No. This recipe does not contain ingredients known to cause allergic reactions</option>
+                            </select>
+                            <label>Select skill level to re-create drink</label>
+                        </div>
+                    </div>
+                    <div class="recipe-input-form">
+                        <div class="left-align heading-space">
+                            <i class="fas fa-layer-group icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Category</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="none" disabled selected>Select Option</option>
+                                <option value="Fruit">Fruit</option>
+                                <option value="Vegetables">Vegetables</option>
+                                <option value="Fruit & Vegetables">Fruit & Vegetables</option>
+                                <option value="Ice Cream">Ice Cream</option>
+                                <option value="Yoghurt">Yoghurt</option>
+                                <option value="Coffee">Coffee</option>
+                                <option value="Tea">Tea</option>
+                            </select>
+                            <label>Select food group category from the dropdown</label>
+                        </div>
+                    </div>
+                    <div class="recipe-input-form">
+                        <div class="left-align heading-space">
+                            <i class="fas fa-tools icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Skill Level (1-10)</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="none" disabled selected>Select Option</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <label>Select skill level to re-create drink</label>
+                        </div>
+                    </div>
+                    <div class="recipe-input-form">
+                        <div class="left-align heading-space">
+                            <i class="fas fa-clock icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Preparation Time (mins)</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="none" disabled selected>Select Option</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                            </select>
+                            <label>Select a preparation time for your drink</label>
+                        </div>
+                    </div>
+                    <div class="recipe-input-form">
+                        <div class="left-align">
+                            <i class="fas fa-sitemap fa-flip-vertical icon-size-padding-2 prefix"></i>
+                            <span class="display-recipe-header-font-2">Ingredients</span>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="ingredients-input" name="ingredients-input" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate" required>
+                            <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                            <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                            <label for="ingredients-input" class="description-text">Enter ingredients separated by a comma and space</label>
+                        </div>
+                    </div>
+                    <div class="recipe-input-form">
+                    <div class="left-align">
+                        <i class="fas fa-book icon-size-padding-2 prefix"></i>
+                        <span class="display-recipe-header-font-2">Preparation Steps</span>
+                    </div>
+                        <div class="input-field col s12">
+                            <input id="step1" name="step1" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate" required>
+                            <!-- The above input will allow minimum 5 characters with Max 15 characters -->
+                            <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                            <!-- These settings will remain the same for all possible 10 steps -->
+                            <label for="step1" class="description-text">Step 1: Enter steps here (Maximum of 10)</label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step2" name="step2" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step2" class="description-text">Step 2: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step3" name="step3" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step3" class="description-text">Step 3: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step4" name="step4" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step4" class="description-text">Step 4: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step5" name="step5" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step5" class="description-text">Step 5: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step6" name="step6" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step6" class="description-text">Step 6: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step7" name="step7" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step7" class="description-text">Step 7: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step8" name="step8" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step8" class="description-text">Step 8: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step9" name="step9" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step9" class="description-text">Step 9: </label>
+                        </div>
+                        <div class="center plus-btn-padding">
+                            <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large plus-btn"
+                                href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="step10" name="step10" type="text" minlength="5" maxlength="175"
+                                pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                            <label for="step10" class="description-text">Step 10: Last allowable step</label>
+                        </div>
+                    </div>
                     <div class="center btn-bottom-padding">
                         <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
-                            href="{{ url_for('get_recipes') }}"><b>Insert Recipe</b></a>
+                            href="{{ url_for('get_recipes') }}"><i class="fas fa-plus-circle plus-icon-size-padding-1"></i><b>Insert Recipe</b></a>
+                    </div>
                     </div>
             </div>
         </div>

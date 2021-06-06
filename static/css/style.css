@@ -173,6 +173,12 @@ h4 {
     font-size: 1.5rem;
 }
 
+.display-recipe-header-font-2 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .display-recipe-top-header {
     font-family: 'Handlee', cursive;
     font-weight: bold;
@@ -230,6 +236,12 @@ h4 {
     padding-right: 0.8rem;
 }
 
+.icon-size-padding-2 {
+    font-size: 1.4rem;
+    padding-right: 0.8rem;
+    padding-left: 0.6rem;
+}
+
 .fa-user-plus {
     padding-right: 10px;
 }
@@ -253,4 +265,41 @@ h4 {
 
 .flashes {
     opacity: 0.8;
+}
+
+.left-align {
+    flex: left;
+}
+
+.heading-space {
+    padding-bottom: 1.5rem;
+}
+
+.recipe-input-form {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.plus-btn {
+    font-size: 0.8rem;
+    height: 35px;
+    line-height: 35px;
+}
+
+.plus-btn-padding {
+    padding-top: 7rem;
+}
+
+.description-text {
+    font-size: 0.8rem !important;
+}
+
+.plus-icon-size-padding-1 {
+    font-size: 1.2rem !important;
+    padding-right: 0.3rem !important;
+}
+
+.plus-icon-size-padding-2 {
+    font-size: 0.9rem !important;
+    padding-right: 0.2rem !important;
 }
