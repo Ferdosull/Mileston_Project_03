@@ -44,12 +44,11 @@ confirm_password.onkeyup = validatePassword;
 
 // Password Validation //
 
-function initStep(a, b, c) { // using button clicks and respective key values to update the function from the object //
-    var inputField = document.getElementById(a); // getting the header by id //
-    inputField.classList.remove('hide-at-pg-load'); // removing the show yourself class //
-    var hideButton = document.getElementById(b); // getting the header by id //
-    hideButton.classList.add('hide-at-pg-load'); // removing the show yourself class //
-    var showButton = document.getElementById(c); // getting the header by id //
-    showButton.classList.remove('hide-at-pg-load'); // removing the show yourself class //
-    // transition.classList.add('hide'); // hiding the header element with opacity transition //
+function initStep(a, b, c) { // using button clicks and id variables passed from the HTML //
+    var inputField = document.getElementById(a); // getting the Input Field by id //
+    inputField.classList.remove('hide-at-pg-load'); // removing the hide-at-pg-load class //
+    var hideButton = document.getElementById(b); // getting the clicked button by id //
+    hideButton.classList.add('hide-at-pg-load'); // removing the hide-at-pg-load class //
+    var showButton = document.getElementById(c); // getting the next button to show by id //
+    showButton.classList.remove('hide-at-pg-load'); // removing the hide-at-pg-load class //
 }

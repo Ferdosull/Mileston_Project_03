@@ -3,7 +3,7 @@
 
 
 <div class="row card-panel-space ">
-    <div class="col s12 m8 l6 offset-m2 offset-l3">
+    <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('new_recipe') }}">
         <div class="card-panel">
             <div class="center display-recipe-top-header"><span>New Recipe Input Form</span></div>
             <div class="recipe-input-form">
@@ -12,11 +12,11 @@
                     <span class="display-recipe-header-font-2">Drink Name</span>
                 </div>
                 <div class="input-field col s12">
-                    <input id="username" name="username" type="text" minlength="1" maxlength="30"
-                        pattern="^[a-zA-Z0-9]{5,30}$" class="validate" required>
+                    <input id="drink_name" name="drink_name" type="text" minlength="1" maxlength="30"
+                     class="validate" required>
                     <!-- The above input will allow minimum 5 characters with Max 15 characters -->
                     <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
-                    <label for="username" class="description-text">Enter the name you have chosen for your drink</label>
+                    <label for="drink_name" class="description-text">Enter the name you have chosen for your drink</label>
                 </div>
             </div>
             <div class="recipe-input-form">
@@ -25,8 +25,8 @@
                     <span class="display-recipe-header-font-2">Image URL</span>
                 </div>
                 <div class="input-field col s12">
-                    <input id="image-url" name="image-url" type="text" minlength="5" maxlength="300"
-                        pattern="^[a-zA-Z0-9]{5,300}$" class="validate" required>
+                    <input id="image-url" name="image-url" type="url" minlength="5" maxlength="300"
+                        pattern="https?://.+" class="validate" required>
                     <!-- The above input will allow minimum 5 characters with Max 15 characters -->
                     <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
                     <label for="image-url" class="description-text">Copy and Paste the URL for your drinks image
@@ -39,7 +39,7 @@
                     <span class="display-recipe-header-font-2">Allergen Status!</span>
                 </div>
                 <div class="input-field col s12">
-                    <select id="select">
+                    <select id="select" name="select" class="validate" required>
                         <option value="none" disabled selected>Select Option</option>
                         <option value="on">Yes</option>
                         <option value="off">No</option>
@@ -53,7 +53,7 @@
                     <span class="display-recipe-header-font-2">Category</span>
                 </div>
                 <div class="input-field col s12">
-                    <select id="select1">
+                    <select id="select1" name="select1" class="validate" required>
                         <option value="none" disabled selected>Select Option</option>
                         <option value="Fruit">Fruit</option>
                         <option value="Vegetables">Vegetables</option>
@@ -72,7 +72,7 @@
                     <span class="display-recipe-header-font-2">Skill Level (1-10)</span>
                 </div>
                 <div class="input-field col s12">
-                    <select id="select2">
+                    <select id="select2" name="select2" class="validate" required>
                         <option value="none" disabled selected>Select Option</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -94,7 +94,7 @@
                     <span class="display-recipe-header-font-2">Preparation Time (mins)</span>
                 </div>
                 <div class="input-field col s12">
-                    <select id="select3">
+                    <select id="select3" name="select3" class="validate" required>
                         <option value="none" disabled selected>Select Option</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -121,8 +121,8 @@
                     <span class="display-recipe-header-font-2">Ingredients</span>
                 </div>
                 <div class="input-field col s12">
-                    <input id="ingredients-input" name="ingredients-input" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate" required>
+                    <input id="ingredients-input" name="ingredients-input" type="text" minlength="5" maxlength="175" 
+                    class="validate" required>
                     <!-- The above input will allow minimum 5 characters with Max 15 characters -->
                     <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
                     <label for="ingredients-input" class="description-text">Enter ingredients separated by a comma and
@@ -135,8 +135,7 @@
                     <span class="display-recipe-header-font-2">Preparation Steps</span>
                 </div>
                 <div id="step1div" class="input-field col s12">
-                    <input id="step1" name="step1" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate" required>
+                    <input id="step1" name="step1" type="text" minlength="5" maxlength="175" class="validate" required>
                     <!-- The above input will allow minimum 5 characters with Max 15 characters -->
                     <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
                     <!-- These settings will remain the same for all possible 10 steps -->
@@ -148,8 +147,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step2div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step2" name="step2" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step2" name="step2" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step2" class="description-text">Step 2: </label>
                 </div>
                 <div id="step3btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -158,8 +156,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step3div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step3" name="step3" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step3" name="step3" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step3" class="description-text">Step 3: </label>
                 </div>
                 <div id="step4btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -168,8 +165,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step4div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step4" name="step4" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step4" name="step4" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step4" class="description-text">Step 4: </label>
                 </div>
                 <div id="step5btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -178,8 +174,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step5div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step5" name="step5" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step5" name="step5" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step5" class="description-text">Step 5: </label>
                 </div>
                 <div id="step6btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -188,8 +183,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step6div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step6" name="step6" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step6" name="step6" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step6" class="description-text">Step 6: </label>
                 </div>
                 <div id="step7btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -198,8 +192,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step7div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step7" name="step7" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step7" name="step7" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step7" class="description-text">Step 7: </label>
                 </div>
                 <div id="step8btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -208,8 +201,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step8div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step8" name="step8" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step8" name="step8" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step8" class="description-text">Step 8: </label>
                 </div>
                 <div id="step9btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -218,8 +210,7 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step9div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step9" name="step9" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step9" name="step9" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step9" class="description-text">Step 9: </label>
                 </div>
                 <div id="step10btndiv" class="center plus-btn-padding hide-at-pg-load">
@@ -228,18 +219,16 @@
                         <i class="fas fa-plus-circle plus-icon-size-padding-2"></i><b>Add Step</b></a>
                 </div>
                 <div id="step10div" class="input-field col s12 hide-at-pg-load">
-                    <input id="step10" name="step10" type="text" minlength="5" maxlength="175"
-                        pattern="^[a-zA-Z0-9]{5,175}$" class="validate">
+                    <input id="step10" name="step10" type="text" minlength="5" maxlength="175" class="validate">
                     <label for="step10" class="description-text">Step 10: Last allowable step</label>
                 </div>
             </div>
             <div class="center btn-bottom-padding">
-                <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
-                    href="{{ url_for('get_recipes') }}"><i
-                        class="fas fa-plus-circle plus-icon-size-padding-1"></i><b>Insert Recipe</b></a>
+                <button class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large" type="submit" name="action">
+                    <i class="fas fa-plus-circle plus-icon-size-padding-1"></i>Insert Recipe</button>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 </div>
 

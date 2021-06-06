@@ -108,11 +108,35 @@ def display_recipe():
         "display_recipe.html", recipes=recipes)
         
 
-@app.route("/new_recipe")
+@app.route("/new_recipe", methods=["GET", "POST"])
 def new_recipe():
-    recipes = mongo.db.recipes.find()
-    return render_template(
-        "new_recipe.html", recipes=recipes)
+    if request.method == "POST":
+        task = {
+            "main_component_type": request.form.get("select1"),
+            "drink_name": request.form.get("drink_name"),
+            "ingredients": request.form.get("ingredients-input"),
+            "allergen_warning": request.form.get("select"),
+            "image_url": request.form.get("image-url"),
+            "recommends": "0",
+            "preparation_time": request.form.get("select3"),
+            "difficulty_level": request.form.get("select2"),
+            "step1": request.form.get("step1"),
+            "step2": request.form.get("step2"),
+            "step3": request.form.get("step3"),
+            "step4": request.form.get("step4"),
+            "step5": request.form.get("step5"),
+            "step6": request.form.get("step6"),
+            "step7": request.form.get("step7"),
+            "step8": request.form.get("step8"),
+            "step9": request.form.get("step9"),
+            "step10": request.form.get("step10"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(task)
+        flash("Your New Recipe Was Successfully Added")
+        return redirect(url_for("new_recipe"))
+
+    return render_template("new_recipe.html")
 
 
 if __name__ == "__main__":
