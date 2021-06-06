@@ -1,7 +1,10 @@
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.tooltipped').tooltip();
-    $('select').formSelect();
+    $("#select").formSelect();
+    $("#select1").formSelect();
+    $("#select2").formSelect();
+    $("#select3").formSelect();
 });
 
 $("#toTop").click(function () {

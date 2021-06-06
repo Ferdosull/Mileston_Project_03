@@ -13,7 +13,7 @@
                         </div>
                         <div class="input-field col s12">
                             <input id="username" name="username" type="text" minlength="1" maxlength="30"
-                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                                pattern="^[a-zA-Z0-9]{5,30}$" class="validate" required>
                             <!-- The above input will allow minimum 5 characters with Max 15 characters -->
                             <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
                             <label for="username" class="description-text">Enter the name you have chosen for your drink</label>
@@ -38,12 +38,12 @@
                             <span class="display-recipe-header-font-2">Allergen Status!</span>
                         </div>
                         <div class="input-field col s12">
-                            <select>
+                            <select id="select">
                                 <option value="none" disabled selected>Select Option</option>
-                                <option value="on">Yes! This recipe contains ingredients which are known to cause allergic reactions in large doses</option>
-                                <option value="off">No. This recipe does not contain ingredients known to cause allergic reactions</option>
+                                <option value="on">Yes</option>
+                                <option value="off">No</option>
                             </select>
-                            <label>Select skill level to re-create drink</label>
+                            <label>Select "Yes" or "No" if your drink contains allergens</label>
                         </div>
                     </div>
                     <div class="recipe-input-form">
@@ -52,7 +52,7 @@
                             <span class="display-recipe-header-font-2">Category</span>
                         </div>
                         <div class="input-field col s12">
-                            <select>
+                            <select id="select1">
                                 <option value="none" disabled selected>Select Option</option>
                                 <option value="Fruit">Fruit</option>
                                 <option value="Vegetables">Vegetables</option>
@@ -71,7 +71,7 @@
                             <span class="display-recipe-header-font-2">Skill Level (1-10)</span>
                         </div>
                         <div class="input-field col s12">
-                            <select>
+                            <select id="select2">
                                 <option value="none" disabled selected>Select Option</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -93,7 +93,7 @@
                             <span class="display-recipe-header-font-2">Preparation Time (mins)</span>
                         </div>
                         <div class="input-field col s12">
-                            <select>
+                            <select id="select3">
                                 <option value="none" disabled selected>Select Option</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
