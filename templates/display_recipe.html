@@ -11,7 +11,7 @@
                 <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
             </div>
             <div class="center"><span class="allergen-status-text">Allergen Status!</span><span>
-                {% if task.allergen_warning == "on" %}
+                {% if task.allergen_warning == "Yes" %}
                     <div><span class="allergen-text">This recipe contains ingredients which are known to cause allergic reactions in large doses</span>
                     <i class="fas fa-exclamation-circle red-text text-accent-2 tooltipped" data-position="right"
                         data-tooltip="Allergy Alert Warning"></i></div>
