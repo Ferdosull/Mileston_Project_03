@@ -107,8 +107,15 @@
                 <hr>
             </div>
             <div class="center btn-bottom-padding">
+            {% if session.user %}
+                <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-small"
+                    href="{{ url_for('get_recipes') }}"><i class="far fa-arrow-alt-circle-left icon-space-left"></i><b>To Recipes</b></a>           
+                <a class="waves-effect waves-light orange lighten-4 orange-text text-darken-4 btn-small"
+                    href="{{ url_for('profile', username=session['user']) }}"><b>To Profile</b><i class="far fa-arrow-alt-circle-right icon-space-right"></i></a>
+            {% else %}
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
-                    href="{{ url_for('get_recipes') }}"><b>Back To Recipes</b></a>
+                    href="{{ url_for('get_recipes') }}"><i class="far fa-arrow-alt-circle-left icon-space-left"></i><b>To Recipes</b></a>
+            {% endif %}       
             </div>
         </div>
     </form>
