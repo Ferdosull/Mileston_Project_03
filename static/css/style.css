@@ -345,3 +345,23 @@ h4 {
 .icon-space-right {
     padding-left: 0.5rem;
 }
+
+.open-recipe-icon {
+    padding-left: 10px;
+}
+
+.open-recipe-text {
+    padding-right: 10px;
+}
+
+.edit-recipe-icon {
+    padding-left: 12px;
+}
+
+.edit-recipe-text {
+    padding-right: 12px;
+}
+
+.username-color {
+    color: blue;
+}
