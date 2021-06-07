@@ -141,12 +141,14 @@ def new_recipe():
 @app.route("/edit_recipe/<task_id>", methods=["GET", "POST"])
 def edit_recipe(task_id):
     if request.method == "POST":
+        likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
         submit = {
             "main_component_type": request.form.get("select1"),
             "drink_name": request.form.get("drink_name"),
             "ingredients": request.form.get("ingredients-input"),
             "allergen_warning": request.form.get("select"),
             "image_url": request.form.get("image-url"),
+            "recommends": likes.get("recommends"),
             "preparation_time": request.form.get("select3"),
             "difficulty_level": request.form.get("select2"),
             "step1": request.form.get("step1"),
