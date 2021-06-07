@@ -189,15 +189,10 @@
                     </div>
                 </div>
                 <div class="center btn-bottom-padding">
-                {% if session.user %}
                     <button class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-small" type="submit" name="action">
-                        <i class="fas fa-plus-circle plus-icon-size-padding-1"></i>Update Recipe</button>        
-                    <a class="waves-effect waves-light orange lighten-4 orange-text text-darken-4 btn-small"
-                        href="{{ url_for('profile', username=session['user']) }}"><b>To Profile</b><i class="far fa-arrow-alt-circle-right icon-space-right"></i></a>
-                {% else %}
-                    <button class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large" type="submit" name="action">
-                        <i class="fas fa-plus-circle plus-icon-size-padding-1"></i>Update Recipe</button> 
-                {% endif %}              
+                        <i class="fas fa-plus-circle plus-icon-size-padding-1"></i><b>Update Recipe</b></button>        
+                    <a class="waves-effect waves-light blue lighten-4 indigo-text text-darken-4 btn-small"
+                        href="{{ url_for('profile', username=session['user']) }}"><b>Cancel</b><i class="far fa-window-close icon-space-right"></i></a>             
                 </div>
             </div>
         </form>
