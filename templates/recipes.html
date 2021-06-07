@@ -9,20 +9,23 @@
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
             <div class="center display-recipe-top-header"><span>User Submitted Recipes</span></div>
-            {% for task in recipes %}
-            <H4 class="center"><span>{{ task.drink_name }}</span></H4><br>
-            <img class="responsive-img recipe" src="{{ task.image_url }}" alt="smoothie shake or juice">
-            <div class="center btn-bottom-padding">
-                <a class="waves-effect waves-light btn-large"
-                    href="{{ url_for('display_recipe', task_id=task._id) }}">Open Recipe</a>
+            <div class="line-padding">
+                <hr>
             </div>
-            <a href="{{ url_for('edit_recipe', task_id=task._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-            <!-- H4 class="center">Category: <span>{{ task.main_component_type }}</span></H4><br>
-                        <H4 class="center">Raw Ingredients: <span>{{ task.ingredients }}</span></H4><br>
-                        <H4 class="center">Allergen Warning!: <span>{{ task.allergen_warning }}</span></H4><br>
-                        <H4 class="center">Times Reccomended: <span>{{ task.recommends }}</span></H4><br>
-                        <H4 class="center">Preparation Time: <span>{{ task.preparation_time }}<span> minutes</span></span></H4><br>
-                        <H4 class="center">Skill Level (1-10): <span>{{ task.difficulty_level }}</span></H4><br -->
+            {% for task in recipes %}
+            <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
+            <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
+            </div>
+            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
+                    recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+            </div>
+            <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
+            <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span></div>
+            <div class="center btn-bottom-padding">
+                <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
+                    href="{{ url_for('display_recipe', task_id=task._id) }}"><i class="fas fa-book-reader plus-icon-size-padding-1"></i><b>See Full Recipe</b></a>
+            </div>
             <div class="line-padding">
                 <hr>
             </div>
