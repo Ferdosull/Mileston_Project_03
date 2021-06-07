@@ -5,15 +5,7 @@ $(document).ready(function(){
     $("#select1").formSelect();
     $("#select2").formSelect();
     $("#select3").formSelect();
-    // $("#step2div").hide();
-    // $("#step3div").hide();
-    // $("#step4div").hide();
-    // $("#step5div").hide();
-    // $("#step6div").hide();
-    // $("#step7div").hide();
-    // $("#step8div").hide();
-    // $("#step9div").hide();
-    // $("#step10div").hide();
+    $('.modal').modal();
 });
 
 $("#toTop").click(function () {
