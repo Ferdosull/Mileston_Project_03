@@ -4,11 +4,28 @@
 <div>
     <img class="responsive-img hero" src="{{ url_for('static', filename='images/hero-image.jpg') }}" alt="smoothie">
 </div>
-
-<div class="row card-panel-space ">
+<div class="center display-recipe-top-header"><span>Search Our Recipes</span></div>
+<div class="row">
+    <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <div class="card-panel card-panel-2">
+            <form action="{{ url_for('search') }}" method="post" class="col s12">
+                <div class="input-field input-field-2">
+                    <i class="fas fa-search prefix grey-text text-darken-3 search-icon-size"></i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                </div>
+            </form>
+        </div>
+        <div class="center">
+            <button type="submit" class="grey lighten-3 btn black-text text-shadow">Search Recipes</button>
+            <a href="{{ url_for('get_recipes') }}" class="grey lighten-3 btn lighten-5 black-text text-shadow">Reset
+                Selection</a>
+        </div>
+    </div>
+</div>
+<div class="row card-panel-space">
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
-            <div class="center display-recipe-top-header"><span>User Submitted Recipes</span></div>
+            <div class="center display-recipe-top-header"><span>Submitted Recipes</span></div>
             <div class="line-padding">
                 <hr>
             </div>
@@ -21,10 +38,12 @@
             </div>
             <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
-            <div class="center ingredients-restrict display-recipe-header-font-2 main-page-ingredients-space"><span>{{ task.ingredients }}</span></div>
+            <div class="center ingredients-restrict display-recipe-header-font-2 main-page-ingredients-space">
+                <span>{{ task.ingredients }}</span></div>
             <div class="center btn-bottom-padding">
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
-                    href="{{ url_for('display_recipe', task_id=task._id) }}"><i class="fas fa-book-reader plus-icon-size-padding-1"></i><b>See Full Recipe</b></a>
+                    href="{{ url_for('display_recipe', task_id=task._id) }}"><i
+                        class="fas fa-book-reader plus-icon-size-padding-1"></i><b>See Full Recipe</b></a>
             </div>
             <div class="line-padding">
                 <hr>

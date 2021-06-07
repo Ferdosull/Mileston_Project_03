@@ -177,6 +177,13 @@ def delete_recipe(task_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    tasks = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", tasks=tasks)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

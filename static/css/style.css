@@ -91,6 +91,10 @@ h4 {
     border-radius: 20px;
 }
 
+.card-panel-2 {
+    border-radius: 30px;
+}
+
 .card-panel-space {
     padding-top: 40px;
 }
@@ -364,4 +368,13 @@ h4 {
 
 .username-color {
     color: blue;
+}
+
+.input-field-2 {
+    margin-top: -2rem;
+}
+    
+.search-icon-size {
+    font-size: 1.8rem !important;
+    top: 1.2rem !important
 }
