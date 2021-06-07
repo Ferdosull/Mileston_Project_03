@@ -21,7 +21,7 @@
             </div>
             <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
-            <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span></div>
+            <div class="center ingredients-restrict display-recipe-header-font-2 main-page-ingredients-space"><span>{{ task.ingredients }}</span></div>
             <div class="center btn-bottom-padding">
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
                     href="{{ url_for('display_recipe', task_id=task._id) }}"><i class="fas fa-book-reader plus-icon-size-padding-1"></i><b>See Full Recipe</b></a>

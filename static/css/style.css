@@ -323,5 +323,17 @@ h4 {
     padding-left: 25%;
     padding-right: 25%;
     padding-top: 10px;
+}
+
+.main-page-ingredients-space {
     padding-bottom: 22px;
+}
+
+.profile-buttons-restrict {
+    padding-top: 20px;
+}
+
+.profile-buttons-div-restrict {
+    padding-left: 25%;
+    padding-right: 25%;
 }

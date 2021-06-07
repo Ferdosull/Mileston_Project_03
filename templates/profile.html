@@ -1,14 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-    
-<div class="row">
-    <div class="col s12 m8 offset-m2">
+
+<div class="row card-panel-space ">
+    <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
-            <h3 class="center-align light-blue-text text-darken-4">
-                {{ username }}'s Profile
-            </h3>
+            <div class="center display-recipe-top-header">
+                Welcome {{ username }} to your SS&J Profile
+            </div>
+            <div class="center display-recipe-top-header"><span>My Submitted Recipes</span></div>
+            <div class="line-padding">
+                <hr>
+            </div>
+            {% for task in recipes %}
+            <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
+            <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
+            </div>
+            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
+                    recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+            </div>
+            <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
+            <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>
+            </div>
+            <div class="center btn-bottom-padding profile-buttons-div-restrict">
+                <div class="profile-buttons-restrict">
+                    <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
+                        href="{{ url_for('display_recipe', task_id=task._id) }}">
+                        <i class="fas fa-book-reader plus-icon-size-padding-1"></i><b>Open Recipe</b></a>
+                </div>
+                <div class="profile-buttons-restrict">
+                    <a class="waves-effect waves-light purple lighten-4 purple-text text-darken-3 btn-large"
+                        href="{{ url_for('edit_recipe', task_id=task._id) }}">
+                        <i class="fas fa-user-edit plus-icon-size-padding-1"></i><b>Edit Recipe</b></a>
+                </div>
+                <div class="profile-buttons-restrict">
+                    <a class="waves-effect waves-light red accent-1 red-text text-darken-4 btn-large"
+                        href="{{ url_for('edit_recipe', task_id=task._id) }}">
+                        <i class="fas fa-user-times plus-icon-size-padding-1"></i><b>Delete Recipe</b></a>
+                </div>
+            </div>
+            <div class="line-padding">
+                <hr>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
-
 {% endblock %}
