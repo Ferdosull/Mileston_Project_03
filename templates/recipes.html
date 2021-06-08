@@ -38,7 +38,7 @@
                         recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                 </div>
             {% elif task.recommends == 1 %}
-                {% if session.user in task.user_likes %}
+                {% if session.user not in task.user_likes %}
                     <div class="center display-recipe-task-font"><span> You have recommended this
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div>
@@ -48,7 +48,7 @@
                     </div>
                 {% endif %}
             {% else %}
-                {% if session.user in task.user_likes %}
+                {% if session.user not in task.user_likes %}
                     <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
                             recipe including you</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div>
