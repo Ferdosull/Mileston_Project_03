@@ -16,9 +16,31 @@
             <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div>
-            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
-                    recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
-            </div>
+            {% if task.recommends == 0 %}
+                <div class="center display-recipe-task-font"><span> Be the first to recommend this
+                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                </div>
+            {% elif task.recommends == 1 %}
+                {% if session.user in task.user_likes %}
+                    <div class="center display-recipe-task-font"><span> You have recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% else %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% endif %}
+            {% else %}
+                {% if session.user in task.user_likes %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                            recipe including you</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% else %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% endif %}
+            {% endif %}
             <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
             <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>
@@ -70,9 +92,31 @@
             <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div>
-            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
-                    recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
-            </div>
+            {% if task.recommends == 0 %}
+                <div class="center display-recipe-task-font"><span> Be the first to recommend this
+                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                </div>
+            {% elif task.recommends == 1 %}
+                {% if session.user in task.user_likes %}
+                    <div class="center display-recipe-task-font"><span> You have recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% else %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% endif %}
+            {% else %}
+                {% if session.user in task.user_likes %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                            recipe including you</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% else %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div>
+                {% endif %}
+            {% endif %}
             <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
             <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>

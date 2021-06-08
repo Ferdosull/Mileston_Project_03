@@ -149,7 +149,7 @@ def edit_recipe(task_id):
             "ingredients": request.form.get("ingredients-input"),
             "allergen_warning": request.form.get("select"),
             "image_url": request.form.get("image-url"),
-            "recommends": likes.get("recommends"),
+            "recommends": int(likes.get("recommends")),
             "preparation_time": request.form.get("select3"),
             "difficulty_level": request.form.get("select2"),
             "step1": request.form.get("step1"),
@@ -162,7 +162,8 @@ def edit_recipe(task_id):
             "step8": request.form.get("step8"),
             "step9": request.form.get("step9"),
             "step10": request.form.get("step10"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "user_likes": ("")
         }
         mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
         flash("Recipe Successfully Updated")

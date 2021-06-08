@@ -21,17 +21,29 @@
                 {% endif %}
             </span></div><br>
             {% if task.recommends == 0 %}
-                <div class="center display-recipe-task-font">{{ task.recommends }}<span> Be the first to recommend this
+                <div class="center display-recipe-task-font"><span> Be the first to recommend this
                         recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                 </div><br>
             {% elif task.recommends == 1 %}
-                <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
-                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
-                </div><br>
+                {% if session.user in task.user_likes %}
+                    <div class="center display-recipe-task-font"><span> You have recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div><br>
+                {% else %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div><br>
+                {% endif %}
             {% else %}
-                <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
-                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
-                </div><br>
+                {% if session.user in task.user_likes %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                            recipe including you</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div><br>
+                {% else %}
+                    <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                            recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                    </div><br>
+                {% endif %}
             {% endif %}
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div><br>
