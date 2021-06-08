@@ -104,7 +104,11 @@ def signup():
 @app.route("/display_recipe/<task_id>", methods=["GET", "POST"])
 def display_recipe(task_id):
     task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-    return render_template("display_recipe.html", task=task)
+    if session["user"] in task.get("user_likes"):
+        bingo = 1
+    else:
+        bingo = 0
+    return render_template("display_recipe.html", task=task, userpresent=bingo)
 
 
 @app.route("/new_recipe", methods=["GET", "POST"])

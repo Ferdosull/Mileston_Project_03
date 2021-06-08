@@ -5,7 +5,7 @@
 <div class="row card-panel-space ">
     <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('display_recipe', task_id=task._id) }}">
         <div class="card-panel">
-            <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
+            <div class="center display-recipe-top-header"><span>{{ task.drink_name }}{{ userpresent }}</span></div>
             <div class="center">
                 <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
             </div>
@@ -25,7 +25,7 @@
                         recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                 </div><br>
             {% elif task.recommends == 1 %}
-                {% if session.user in task.user_likes %}
+                {% if userpresent == 1 %}
                     <div class="center display-recipe-task-font"><span> You have recommended this
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div><br>
@@ -35,7 +35,7 @@
                     </div><br>
                 {% endif %}
             {% else %}
-                {% if session.user in task.user_likes %}
+                {% if userpresent == 1 %}
                     <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
                             recipe including you</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div><br>
@@ -119,7 +119,7 @@
                             class="display-recipe-task-font">{{ task.step10 }}</span></li>
                 {% endif %}
             </ul>
-            {% if session.user not in task.user_likes %}
+            {% if userpresent == 0 %}
                 <div class="center like-text-space">
                     <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
                         <a class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn" 
