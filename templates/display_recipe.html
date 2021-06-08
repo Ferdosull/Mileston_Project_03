@@ -20,9 +20,19 @@
                         data-tooltip="Safe Ingredients"></i></div>
                 {% endif %}
             </span></div><br>
-            <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have reccomended this
-                    recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
-            </div><br>
+            {% if task.recommends == 0 %}
+                <div class="center display-recipe-task-font">{{ task.recommends }}<span> Be the first to recommend this
+                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                </div><br>
+            {% elif task.recommends == 1 %}
+                <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
+                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                </div><br>
+            {% else %}
+                <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                        recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                </div><br>
+            {% endif %}
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div><br>
             <ul class="collection with-header table-radius-edges z-depth-1">
@@ -97,15 +107,16 @@
                             class="display-recipe-task-font">{{ task.step10 }}</span></li>
                 {% endif %}
             </ul>
-            
-            <div class="center like-text-space">
-                <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
-                    <a class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn" 
-                    href="{{ url_for('update_likes', task_id=task._id) }}" type="submit" name="action"><b>Like</b></a></span>
-            </div>
-            <div class="line-padding">
-                <hr>
-            </div>
+            {% if session.user not in task.user_likes %}
+                <div class="center like-text-space">
+                    <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
+                        <a class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn" 
+                        href="{{ url_for('update_likes', task_id=task._id) }}" type="submit" name="action"><b>Like</b></a></span>
+                </div>
+                <div class="line-padding">
+                    <hr>
+                </div>
+            {% endif %}
             <div class="center btn-bottom-padding">
             {% if session.user %}
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-small"

@@ -129,7 +129,8 @@ def new_recipe():
             "step8": request.form.get("step8"),
             "step9": request.form.get("step9"),
             "step10": request.form.get("step10"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "user_likes": ("")
         }
         mongo.db.recipes.insert_one(task)
         flash("Your New Recipe Was Successfully Added")
@@ -218,7 +219,7 @@ def update_likes(task_id):
             mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
             task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
             return render_template("display_recipe.html", task=task)
-            
+
         task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
         return render_template("display_recipe.html", task=task)
 
