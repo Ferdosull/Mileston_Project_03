@@ -116,7 +116,7 @@ def new_recipe():
             "ingredients": request.form.get("ingredients-input"),
             "allergen_warning": request.form.get("select"),
             "image_url": request.form.get("image-url"),
-            "recommends": "0",
+            "recommends": 0,
             "preparation_time": request.form.get("select3"),
             "difficulty_level": request.form.get("select2"),
             "step1": request.form.get("step1"),
@@ -182,6 +182,45 @@ def search():
     query = request.form.get("query")
     tasks = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", tasks=tasks)
+
+
+@app.route("/update_likes/<task_id>", methods=["GET", "POST"])
+def update_likes(task_id):
+        likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+        search_user = likes.get("user_likes")
+        if session["user"] not in search_user:
+            like = likes.get("recommends")
+            new_val = int(like) + 1
+            user_likes = likes.get("user_likes")
+            user_likes = (user_likes + session["user"] + ", ")
+            submit = {
+                "main_component_type": likes.get("main_component_type"),
+                "drink_name": likes.get("drink_name"),
+                "ingredients": likes.get("ingredients"),
+                "allergen_warning": likes.get("allergen_warning"),
+                "image_url": likes.get("image_url"),
+                "recommends": new_val,
+                "preparation_time": likes.get("preparation_time"),
+                "difficulty_level": likes.get("difficulty_level"),
+                "step1": likes.get("step1"),
+                "step2": likes.get("step2"),
+                "step3": likes.get("step3"),
+                "step4": likes.get("step4"),
+                "step5": likes.get("step5"),
+                "step6": likes.get("step6"),
+                "step7": likes.get("step7"),
+                "step8": likes.get("step8"),
+                "step9": likes.get("step9"),
+                "step10": likes.get("step10"),
+                "created_by": likes.get("created_by"),
+                "user_likes": user_likes
+            }
+            mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
+            task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+            return render_template("display_recipe.html", task=task)
+            
+        task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+        return render_template("display_recipe.html", task=task)
 
 
 if __name__ == "__main__":

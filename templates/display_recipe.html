@@ -100,8 +100,8 @@
             
             <div class="center like-text-space">
                 <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
-                    <a
-                        class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn"><b>Like</b></a></span>
+                    <a class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn" 
+                    href="{{ url_for('update_likes', task_id=task._id) }}" type="submit" name="action"><b>Like</b></a></span>
             </div>
             <div class="line-padding">
                 <hr>
