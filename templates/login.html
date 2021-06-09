@@ -8,7 +8,7 @@
             <!-- username -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user prefix login-text"></i>
+                    <i class="fas fa-user prefix"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="15"
                         pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <!-- The above input will allow minimum 5 characters with Max 15 characters -->
@@ -19,7 +19,7 @@
             <!-- password -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-lock prefix login-text"></i>
+                    <i class="fas fa-lock prefix"></i>
                     <input id="password" name="password" type="password" minlength="5" maxlength="15"
                         pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <!-- The above input will allow minimum 5 characters with Max 15 characters -->
@@ -29,7 +29,7 @@
             </div>
             <!-- login -->
             <div class="row">
-                <button type="submit" class="col s12 btn-large login-btn text-shadow login-button">
+                <button type="submit" class="col s12 btn-large login-btn green darken-3 text-shadow login-button">
                     Log In
                 </button>
             </div>
@@ -37,7 +37,7 @@
                 <div class="col s12">
                     <p class="center-align">
                         Dont Have An Account?
-                        <a href="{{ url_for('signup') }}" class="login-text">Sign-Up
+                        <a href="{{ url_for('signup') }}" class="green-text text-darken-3">Sign-Up
                             Here</a>
                     </p>
                 </div>
