@@ -30,7 +30,11 @@
                         <div class="center display-recipe-task-font"><span> You have recommended this
                                 recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                         </div><br>
-                        {% endif %}
+                    {% else %}
+                        <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
+                                recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                        </div><br>
+                    {% endif %}
                 {% else %}
                     <div class="center display-recipe-task-font">{{ task.recommends }}<span> Person has recommended this
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
@@ -42,7 +46,11 @@
                         <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
                                 recipe including you</span><i class="far fa-thumbs-up icon-padding-left"></i>
                         </div><br>
-                        {% endif %}
+                    {% else %}
+                        <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
+                                recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
+                        </div><br>
+                    {% endif %}
                 {% else %}
                     <div class="center display-recipe-task-font">{{ task.recommends }}<span> People have recommended this
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
@@ -123,15 +131,17 @@
                             class="display-recipe-task-font">{{ task.step10 }}</span></li>
                 {% endif %}
             </ul>
-            {% if userpresent == 0 %}
-                <div class="center like-text-space">
-                    <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
-                        <a class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn" 
-                        href="{{ url_for('update_likes', task_id=task._id) }}" type="submit" name="action"><b>Like</b></a></span>
-                </div>
-                <div class="line-padding">
-                    <hr>
-                </div>
+            {% if session.user %}
+                    {% if session.user not in task.user_likes %}
+                        <div class="center like-text-space">
+                            <span class="like-text-font">If you enjoyed this delicious recipe please let us know by clicking the like button</span><span class="like-btn-div">
+                                <a class="waves-effect waves-light btn green accent-1 green-text text-darken-3 like-btn" 
+                                href="{{ url_for('update_likes', task_id=task._id) }}" type="submit" name="action"><b>Like</b></a></span>
+                        </div>
+                        <div class="line-padding">
+                            <hr>
+                        </div>
+                    {% endif %}    
             {% endif %}
             <div class="center btn-bottom-padding">
             {% if session.user %}
