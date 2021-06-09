@@ -5,7 +5,7 @@
 <div class="row card-panel-space ">
     <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('display_recipe', task_id=task._id) }}">
         <div class="card-panel">
-            <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
+            <div class="center display-recipe-top-header"><span>{{ task.drink_name }}{{ userpresent }}{{ session.user }}</span></div>
             <div class="center">
                 <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
             </div>
