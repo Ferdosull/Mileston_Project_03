@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div>
+
+<div class="image-text">
     <img class="responsive-img hero" src="{{ url_for('static', filename='images/hero-image.jpg') }}" alt="smoothie">
+    <div class="centered image-text-font center text-shadow-2">Welcome to the Smoothies, Shakes & Juices Community</div>
+    <div class="centered-3 image-text-font-3 center text-shadow-3">SS & J Community is a one stop shop where, as a user, you can find delicious recipes and contribute to an ever growing Smoothies, Shakes and Juice recipe collection</div>
 </div>
+<div class="image-text-font-4 center text-shadow main-heading-padding">Welcome to the Smoothies, Shakes & Juices Community</div>
+<div class="image-text-font-5 center text-shadow sub-heading-padding">SS & J Community is a one stop shop where, as a user, you can find delicious recipes and contribute to an ever growing Smoothies, Shakes and Juice recipe collection</div>
 <div class="center display-recipe-top-header"><span>Search Our Recipes</span></div>
 <div class="row">
     <div class="col s12 m8 l6 offset-m2 offset-l3">

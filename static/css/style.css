@@ -6,6 +6,67 @@ body {
     text-shadow: 0.1px 0.1px 0.1px rgba(0, 0, 0, 0.4);
 }
 
+.text-shadow-2 {
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
+}
+
+.text-shadow-3 {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
+}
+
+.image-text {
+    position: relative;
+    color: white;
+}
+
+.image-text-font {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 5.4rem;
+    color: #f5f5f5;
+    background-color: rgba(140, 140, 140, 0.3);
+    border-radius: 10px;
+}
+
+.image-text-font-3 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #f5f5f5;
+    background-color: rgba(140, 140, 140, 0.2);
+    border-radius: 10px;
+}
+
+.image-text-font-4 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: black;
+    display: none;
+}
+
+.image-text-font-5 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: black;
+    display: none;
+}
+
+.centered {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-3 {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .navbar-font {
     font-family: 'Handlee', cursive;
 }
@@ -377,4 +438,76 @@ h4 {
 .search-icon-size {
     font-size: 1.8rem !important;
     top: 1.2rem !important
+}
+
+.main-heading-padding {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+}
+
+.sub-heading-padding {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1960px) {
+    .image-text-font {
+        font-size: 5.1rem;
+    }
+    .image-text-font-3 {
+        font-size: 2.1rem;
+    }
+}
+
+@media only screen and (max-width: 1770px) {
+    .image-text-font {
+        font-size: 4.5rem;
+    }
+    .image-text-font-3 {
+        font-size: 1.9rem;
+    }
+}
+
+@media only screen and (max-width: 1575px) {
+    .image-text-font {
+        font-size: 4rem;
+    }
+    .image-text-font-3 {
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (max-width: 1380px) {
+    .image-text-font {
+        font-size: 3.5rem;
+    }
+    .image-text-font-3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .image-text-font {
+        font-size: 2.8rem;
+    }
+    .image-text-font-3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 935px) {
+    .image-text-font {
+        display: none;
+    }
+    .image-text-font-3 {
+        display: none;
+    }
+    .image-text-font-4 {
+        display: block;
+    }
+    .image-text-font-5 {
+        display: block;
+    }
 }
