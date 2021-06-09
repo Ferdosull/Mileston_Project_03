@@ -6,6 +6,7 @@ $(document).ready(function(){
     $("#select2").formSelect();
     $("#select3").formSelect();
     $('.modal').modal();
+    flashShow();
 });
 
 $("#toTop").click(function () {
@@ -20,8 +21,8 @@ $("#copyright").text(new Date().getFullYear());
 
 // https://codepen.io/diegoleme/pen/surIK //
 
-var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
+var password = document.getElementById("password");
+var confirm_password = document.getElementById("confirm_password");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
@@ -40,7 +41,17 @@ function initStep(a, b, c) { // using button clicks and id variables passed from
     var inputField = document.getElementById(a); // getting the Input Field by id //
     inputField.classList.remove('hide-at-pg-load'); // removing the hide-at-pg-load class //
     var hideButton = document.getElementById(b); // getting the clicked button by id //
-    hideButton.classList.add('hide-at-pg-load'); // removing the hide-at-pg-load class //
+    hideButton.classList.add('hide-at-pg-load'); // adding the hide-at-pg-load class //
     var showButton = document.getElementById(c); // getting the next button to show by id //
     showButton.classList.remove('hide-at-pg-load'); // removing the hide-at-pg-load class //
+}
+
+function flashHide(){
+    var flashDiv = document.getElementById("flash"); // getting the Flash DIV by id //
+    flashDiv.classList.add('hide-at-pg-load'); // removing the hide-at-pg-load class //
+}
+
+function flashShow(){
+    var flashDiv = document.getElementById("flash"); // getting the Flash DIV by id //
+    flashDiv.classList.remove('hide-at-pg-load'); // removing the hide-at-pg-load class //
 }

@@ -328,15 +328,16 @@ h4 {
 
 .flash-font-style {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.8rem;
-    padding-top: 0.8rem !important;
-    padding-bottom: 0.8rem !important;
-    letter-spacing: 0.1rem;
-    border-radius: 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 2rem !important;
 }
 
 .flashes {
-    opacity: 0.8;
+    background-color: rgba(40, 184, 50, 0.6);
+    width: 22rem;
+    border-radius: 8px;
+    margin-top: 1rem;
 }
 
 .left-align {
@@ -378,6 +379,14 @@ h4 {
 .plus-icon-size-padding-2 {
     font-size: 0.9rem !important;
     padding-right: 0.2rem !important;
+}
+
+.icon-size-padding-3 {
+    color: white;
+    font-size: 1.2rem !important;
+    padding-top: 0.4rem;
+    padding-left: 20.4rem;
+    cursor: pointer;
 }
 
 .hide-at-pg-load {

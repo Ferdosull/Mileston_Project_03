@@ -78,8 +78,11 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
-        <div class="row flashes container">
-            <h4 class="deep-purple accent-1 white-text center-align flash-font-style col s12 m8 l6 offset-m2 offset-l3">{{ message }}</h4>
+        <div id="flash" class="flashes container text-shadow">
+            <a onclick="flashHide()">
+            <i class="far fa-times-circle icon-size-padding-3"></i></a>
+            <div class="white-text center-align flash-font-style col s12 m8 l6 offset-m2 offset-l3">
+                <i class="fas fa-check icon-size-padding"></i>{{ message }}</div>
         </div>
         {% endfor %}
         {% endif %}
