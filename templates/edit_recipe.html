@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if session.user %}
+{% if session.user == task.created_by %}
     <div class="row card-panel-space ">
         <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('edit_recipe', task_id=task._id) }}">
             <div class="card-panel">
