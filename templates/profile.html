@@ -7,12 +7,20 @@
             <div class="center display-recipe-top-header">
                 Welcome <span class="username-color">{{ username }}</span> to your SS&J Profile
             </div>
-            <div class="center display-recipe-top-header"><span>Your Submitted Recipes</span></div>
+            <div class="center display-recipe-top-header"><span>If you have not already, please click on the "New Recipe" tab to get started</span></div>
+            <div class="line-padding">
+                <hr>
+            </div>
+            <div class="center display-recipe-top-header"><span>Your submitted recipes will display below</span></div>
             <div class="line-padding">
                 <hr>
             </div>
             {% if username|lower == "admin" %}
             {% for task in recipes %}
+            <div class="center display-recipe-top-header"><span>Your Submitted Recipes</span></div>
+            <div class="line-padding">
+                <hr>
+            </div>
             <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div>
