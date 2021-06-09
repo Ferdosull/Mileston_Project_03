@@ -182,8 +182,8 @@ def delete_recipe(task_id):
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", tasks=tasks)
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/update_likes/<task_id>", methods=["GET", "POST"])
