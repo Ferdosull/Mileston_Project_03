@@ -469,6 +469,20 @@ h4 {
     color: blue;
 }
 
+.sidenavbut {
+    display: inline-flex !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    height: 35px !important;
+    line-height: 35px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.blender-img {
+    height: 20rem;
+}
+
 @media only screen and (max-width: 1960px) {
     .image-text-font {
         font-size: 5.1rem;

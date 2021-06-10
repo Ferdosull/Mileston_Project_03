@@ -37,6 +37,8 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
                             class="fas fa-bars green-text text-darken-3 outline"></i></a>
                     <ul class="right hide-on-med-and-down">
+                        <!-- Modal trigger -->
+                        <li><a data-target="ssandj-modal" class="waves-effect waves-light amber darken-4 btn-small modal-trigger">Special Offer!</a></li>
                         <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}" class="green-text text-darken-3">Profile</a></li>
@@ -70,6 +72,8 @@
                 <li><i class="fas fa-user-plus icon-size-color"><a href="{{ url_for('signup') }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">Sign-Up</a></i></li>
             {% endif %}
+            <!-- Modal trigger -->
+            <li><a data-target="ssandj-modal" class="waves-effect waves-light amber darken-4 btn-small sidenavbut modal-trigger">Special Offer!</a></li>
         </ul>
     </header>
 
@@ -93,7 +97,31 @@
         {% block content %}
         {% endblock %}
     </main>
-
+    <!-- Modal Structure Start -->
+    <div id="ssandj-modal" class="modal">
+        <div class="modal-content">
+            <h4>SPECIAL OFFER!</h4>
+            <div class="line-padding">
+                <hr>
+            </div>
+            <img class="center blender-img" src="{{ url_for('static', filename='images/blender-sale.jpg') }}" alt="blender">
+            <p>SS & J have partnered with the well established brand "KitchenAid" to bring you this special offer.
+                This offer entitles you to 20% off at their online store.</p>
+            {% if session.user %}
+                <p>To redeem this incredible offer, simply input your username when checking out. Happy shopping!</p>
+            {% else %}
+                <p>To redeem this offer, simply input your username when checking out.
+                    Not already an SS & J member? please <a href="{{ url_for('signup') }}" style="cursor: pointer;">Sign-up</a> now to avail of this incredible offer!</p>
+            {% endif %}
+        </div>
+        <div class="modal-footer">
+            <a target="_blank" 
+                href="https://www.kitchenaid.ie/blenders?gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYqUH821sprzkKeWq2VNwehdRheLII6OPga7Y_q7RroaanfTYWgMLbgaAsz1EALw_wcB"
+                class="modal-close waves-effect waves-light grey lighten-3 black-text btn">VISIT KITCHENAID</a>
+            <a class="modal-close waves-effect waves-light grey lighten-3 black-text btn">CANCEL</a>
+        </div>
+    </div>
+    <!-- Modal Structure End -->
     <footer class="page-footer footer-text">
         <div class="container">
             <div class="row">
@@ -132,7 +160,7 @@
         <div class="footer-copyright">
             <div class="container">
                 © SS & J <span id="copyright"></span>
-                <a class="grey-text text-lighten-4 right" id="toTop" href="#"><span class="back-to-top-text">Back To
+                <a class="grey-text text-lighten-4 right" id="toTop" style="cursor: pointer;"><span class="back-to-top-text">Back To
                         Top<i class="fas fa-arrow-circle-up back-to-top"></i></span></a>
             </div>
         </div>
