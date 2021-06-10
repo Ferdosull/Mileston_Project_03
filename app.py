@@ -58,11 +58,13 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     recipes = mongo.db.recipes.find()
 
     if session["user"]:
-        return render_template("profile.html", username=username, recipes=recipes)
+        return render_template(
+            "profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -115,9 +117,11 @@ def display_recipe(task_id):
     step8 = steps[7]
     step9 = steps[8]
     step10 = steps[9]
-    return render_template("display_recipe.html", task=task, step1=step1,
-        step2=step2, step3=step3, step4=step4, step5=step5, step6=step6,
-        step7=step7, step8=step8, step9=step9, step10=step10)
+    return render_template(
+        "display_recipe.html",
+        task=task, step1=step1, step2=step2, step3=step3,
+        step4=step4, step5=step5, step6=step6, step7=step7,
+        step8=step8, step9=step9, step10=step10)
 
 
 @app.route("/new_recipe", methods=["GET", "POST"])
@@ -287,9 +291,11 @@ def edit_recipe(task_id):
         step10 = ""
     else:
         step10 = steps[9]
-    return render_template("edit_recipe.html", task=task, step1=step1,
-        step2=step2, step3=step3, step4=step4, step5=step5, step6=step6,
-        step7=step7, step8=step8, step9=step9, step10=step10)
+    return render_template(
+        "edit_recipe.html",
+        task=task, step1=step1, step2=step2, step3=step3,
+        step4=step4, step5=step5, step6=step6, step7=step7,
+        step8=step8, step9=step9, step10=step10)
 
 
 @app.route("/delete_recipe/<task_id>")
@@ -308,43 +314,27 @@ def search():
 
 @app.route("/update_likes/<task_id>", methods=["GET", "POST"])
 def update_likes(task_id):
-        likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-        search_user = likes.get("user_likes")
-        if session["user"] not in search_user:
-            like = likes.get("recommends")
-            new_val = int(like) + 1
-            user_likes = likes.get("user_likes")
-            user_likes = (user_likes + session["user"] + ", ")
-            submit = {
-                "main_component_type": likes.get("main_component_type"),
-                "drink_name": likes.get("drink_name"),
-                "ingredients": likes.get("ingredients"),
-                "allergen_warning": likes.get("allergen_warning"),
-                "image_url": likes.get("image_url"),
-                "recommends": new_val,
-                "preparation_time": likes.get("preparation_time"),
-                "difficulty_level": likes.get("difficulty_level"),
-                "created_by": likes.get("created_by"),
-                "user_likes": user_likes,
-                "steps": likes.get("steps")
-            }
-            mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
-            task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-            steps = task.get("steps")
-            step1 = steps[0]
-            step2 = steps[1]
-            step3 = steps[2]
-            step4 = steps[3]
-            step5 = steps[4]
-            step6 = steps[5]
-            step7 = steps[6]
-            step8 = steps[7]
-            step9 = steps[8]
-            step10 = steps[9]
-            return render_template("display_recipe.html", task=task, step1=step1,
-                step2=step2, step3=step3, step4=step4, step5=step5, step6=step6,
-                step7=step7, step8=step8, step9=step9, step10=step10)
-
+    likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+    search_user = likes.get("user_likes")
+    if session["user"] not in search_user:
+        like = likes.get("recommends")
+        new_val = int(like) + 1
+        user_likes = likes.get("user_likes")
+        user_likes = (user_likes + session["user"] + ", ")
+        submit = {
+            "main_component_type": likes.get("main_component_type"),
+            "drink_name": likes.get("drink_name"),
+            "ingredients": likes.get("ingredients"),
+            "allergen_warning": likes.get("allergen_warning"),
+            "image_url": likes.get("image_url"),
+            "recommends": new_val,
+            "preparation_time": likes.get("preparation_time"),
+            "difficulty_level": likes.get("difficulty_level"),
+            "created_by": likes.get("created_by"),
+            "user_likes": user_likes,
+            "steps": likes.get("steps")
+        }
+        mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
         task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
         steps = task.get("steps")
         step1 = steps[0]
@@ -357,9 +347,29 @@ def update_likes(task_id):
         step8 = steps[7]
         step9 = steps[8]
         step10 = steps[9]
-        return render_template("display_recipe.html", task=task, step1=step1,
-            step2=step2, step3=step3, step4=step4, step5=step5, step6=step6,
-            step7=step7, step8=step8, step9=step9, step10=step10)
+        return render_template(
+            "display_recipe.html",
+            task=task, step1=step1, step2=step2, step3=step3,
+            step4=step4, step5=step5, step6=step6, step7=step7,
+            step8=step8, step9=step9, step10=step10)
+
+    task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
+    steps = task.get("steps")
+    step1 = steps[0]
+    step2 = steps[1]
+    step3 = steps[2]
+    step4 = steps[3]
+    step5 = steps[4]
+    step6 = steps[5]
+    step7 = steps[6]
+    step8 = steps[7]
+    step9 = steps[8]
+    step10 = steps[9]
+    return render_template(
+        "display_recipe.html",
+        task=task, step1=step1, step2=step2, step3=step3,
+        step4=step4, step5=step5, step6=step6, step7=step7,
+        step8=step8, step9=step9, step10=step10)
 
 
 if __name__ == "__main__":
