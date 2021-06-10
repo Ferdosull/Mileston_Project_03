@@ -90,45 +90,65 @@
                 <li class="collection-header display-recipe-header-color">
                     <i class="fas fa-book icon-size-padding"></i><span class="display-recipe-header-font">Preparation Steps</span>
                 </li>
-                {% if task.step1 != "" %}
+                {% if step1 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 1: </span><span
-                            class="display-recipe-task-font">{{ task.step1 }}</span></li>
+                            class="display-recipe-task-font">{{ step1 }}</span></li>
                 {% endif %}
-                {% if task.step2 != "" %}
+                {% if step2 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 2: </span><span
-                            class="display-recipe-task-font">{{ task.step2 }}</span></li>
+                            class="display-recipe-task-font">{{ step2 }}</span></li>
                 {% endif %}
-                {% if task.step3 != "" %}
+                {% if step3 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 3: </span><span
-                            class="display-recipe-task-font">{{ task.step3 }}</span></li>
+                            class="display-recipe-task-font">{{ step3 }}</span></li>
                 {% endif %}
-                {% if task.step4 != "" %}
+                {% if step4 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 4: </span><span
-                            class="display-recipe-task-font">{{ task.step4 }}</span></li>
+                            class="display-recipe-task-font">{{ step4 }}</span></li>
                 {% endif %}
-                {% if task.step5 != "" %}
+                {% if step5 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 5: </span><span
-                            class="display-recipe-task-font">{{ task.step5 }}</span></li>
+                            class="display-recipe-task-font">{{ step5 }}</span></li>
                 {% endif %}
-                {% if task.step6 != "" %}
+                {% if step6 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 6: </span><span
-                            class="display-recipe-task-font">{{ task.step6 }}</span></li>
+                            class="display-recipe-task-font">{{ step6 }}</span></li>
                 {% endif %}
-                {% if task.step7 != "" %}
+                {% if step7 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 7: </span><span
-                            class="display-recipe-task-font">{{ task.step7 }}</span></li>
+                            class="display-recipe-task-font">{{ step7 }}</span></li>
                 {% endif %}
-                {% if task.step8 != "" %}
+                {% if step8 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 8: </span><span
-                            class="display-recipe-task-font">{{ task.step8 }}</span></li>
+                            class="display-recipe-task-font">{{ step8 }}</span></li>
                 {% endif %}
-                {% if task.step9 != "" %}
+                {% if step9 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 9: </span><span
-                            class="display-recipe-task-font">{{ task.step9 }}</span></li>
+                            class="display-recipe-task-font">{{ step9 }}</span></li>
                 {% endif %}
-                {% if task.step10 != "" %}
+                {% if step10 == "#blank" %}
+                    {{ pass }}
+                {% else %}
                     <li class="collection-item"><span class="bold-step">Step 10: </span><span
-                            class="display-recipe-task-font">{{ task.step10 }}</span></li>
+                            class="display-recipe-task-font">{{ step10 }}</span></li>
                 {% endif %}
             </ul>
             {% if session.user %}
