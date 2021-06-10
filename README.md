@@ -11,7 +11,7 @@
     3. [Nav Bar](#nav_bar)
     4. [Hero Image](#hero_image)
     5. [Header & Description Text](#header_description)
-    6. [Page Links](#page_links)
+    6. [Page Links and Button Navigation](#page_links)
     7. [Placeholder 7](#t5_buttons)
     8. [placeholder 8](#g_map)
     9. [placeholder 9](#campsite)
@@ -101,34 +101,46 @@ and a way of giving the user a second chance if they had decided to delete the r
 
 ![](static/images/readme_images/README004.png)
 
-On this occassion I have decided not to have the nav-bar fixed to the top. Once the page is scrolled it stays at its absolute location. I felt that the minimal appearance I was going for would appear 
-crowded in this circumstance if the nav-bar followed. The nav-bar can be separated up into desktop and mobile views as seen below. The "HOME" and VWCC logo both reload the page while the "About" selector 
-scrolls the visitor to the info section, which is roughly halfway down the page.
+For this project I have decided to go with a Fixed nav-bar. Once the page is scrolled the navbar follows. 
+I felt that having the navbar accessible from all locations on a scrolled page would be of benefit to the user.
+It would mean easy access to the "Home", "Profile", "New Recipe" and "Log-Out" pages once logged in.
+The nav-bar can be separated up into desktop and mobile views as seen below. 
+The "HOME" button re-loads the main recipe page and re-directs you here if clicked from another location.
+The "Profile" button navigates the user to their profile page to carry out CRUD actions.
+The "New Recipe" button navigates the user to the New Recipe page where recipe details can be entered and saved.
+The "Log In" button navigates the user to the log-in page so that username and password details can be entered.
+The "Log Out" button uses the "session.pop" method to remove a signed-in user from the application and re-directs to the login page.
+The "Sign-up" button navigates the user to the Sign-up page where a new SS&J account can be created.
+The "Special Offer!" button pops up a modal which details information about how existing and new users can avail of cost reduction when purchasing items from Kitchen Aid.
+
 <br/><br/>
 
 ### Hero Image <a name="hero_image"></a>
 
 ![](static/images/readme_images/README005.png)
 
-The Hero Image that loads upon first display of the page is of an iconic VW campervan, which is keeping in line with the clubs theme. This image is then updated through five other images using button clicks 
-to initialte JavaScript targeting of Id's in the html and changing the image source. This is completed with delay transition timers in conjunction with the addion and removal of CSS classes to provide opacity effects.
+The Hero Image that loads upon display of the main page is of an outdoor wooden style picnic bench with lots of fruit and glass bottles of juice on display. 
+I have made this image semi-transparent to allow the green background colour to seep through a little, keeping everything flowing and in tune with the colour scheme. 
+The image is responsive accross all sizes of device by utilising dedicated Materialize classes.
+
 <br/><br/>
 
 ### Header & Description Text <a name="header_description"></a>
 
 ![](static/images/readme_images/README006.png)
 
-The Header text, when first landed on the page, is the name of the club, "Volkswagon Choice Camping" and the description text below it is a small summary of what the club provides the site user.
-Both the Header and the description text get updated when any of the Top five buttons are pressed. For example, if "Lakeside C&C Park" is clicked/selected the header text and description text will change to 
-be in line with the button chosen. Like the hero image, this is also completed with delay transition timers in conjunction with the addion and removal of CSS classes to provide opacity effects.
+The Header text, when first landed on the page, is the name of the user community, "Smoothies, Shakes & Juices" and the description text below it is a small summary of 
+what the community are about and where they are headed. The goal here is to encourage more users to join and spread the word.
 <br/><br/>
 
 
-### Page Links <a name="page_links"></a>
+### Page Links and Button Navigation <a name="page_links"></a>
 
 ![](static/images/readme_images/README007.png)
 
-Underneath the description text are two selectors. "More Info!" and "Visit This Site!". The "More Info!" button is only visible on tablet and mobile devices. Its function is to scroll the visitor to the 
-campsite information section associated with the location that is currently being displayed. The "Visit This Site!" button has a href that is updated by JavaScript based also on the location being displayed.
-If pressed, it will navigate the user to an external page associated with the campsite selected.
+In the image above I have detailed all the href, onClick and submit button navigations used in this project. 
+All links have been incorporated with huge consideration to the users overall experience and ease of use.
+It is my intention here to have the user feel a sense of familiarity by keeping everything quite similar to UI's, websites and layouts that I am familiar with using.
+I have tried to make sure that every feature here conforms to modern best practise standards.
+All links have been tested and are fully functional. The social media links in the footer open in separate tabs where required.
 <br/><br/>
