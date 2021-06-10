@@ -7,7 +7,9 @@
             <div class="center display-recipe-top-header">
                 Welcome <span class="username-color">{{ username }}</span> to your SS&J Profile
             </div>
-            <div class="center display-recipe-top-header"><span>If you have not already, please click on the "New Recipe" tab to get started</span></div>
+            <div class="center display-recipe-top-header"><span>If you have not already, please click on the 
+                <a class="new-recipe-link" href="{{ url_for('new_recipe') }}" style="cursor: pointer;">
+                <span>"New Recipe"</span></a> tab to get started</span></div>
             <div class="line-padding">
                 <hr>
             </div>

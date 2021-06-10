@@ -6,7 +6,6 @@ $(document).ready(function(){
     $("#select2").formSelect();
     $("#select3").formSelect();
     $('.modal').modal();
-    flashShow();
 });
 
 $("#toTop").click(function () {
@@ -51,7 +50,8 @@ function flashHide(){
     flashDiv.classList.add('hide-at-pg-load'); // removing the hide-at-pg-load class //
 }
 
-function flashShow(){
-    var flashDiv = document.getElementById("flash"); // getting the Flash DIV by id //
-    flashDiv.classList.remove('hide-at-pg-load'); // removing the hide-at-pg-load class //
+function noUrl(a, b){
+    document.getElementById(a).value = "https://none";
+    var hideUrl = document.getElementById(b)
+    hideUrl.classList.add('hide-at-pg-load');
 }

@@ -461,6 +461,14 @@ h4 {
     padding-bottom: 1rem;
 }
 
+.new-recipe-link {
+    color: black;
+}
+
+.new-recipe-link:hover {
+    color: blue;
+}
+
 @media only screen and (max-width: 1960px) {
     .image-text-font {
         font-size: 5.1rem;

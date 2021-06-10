@@ -22,9 +22,11 @@
                 <div class="recipe-input-form">
                     <div class="left-align">
                         <i class="fas fa-copy icon-size-padding-2 prefix"></i>
-                        <span class="display-recipe-header-font-2">Image URL</span>
+                        <span class="display-recipe-header-font-2"><a class="new-recipe-link" 
+                            onclick="noUrl('image-url', 'url-input')" style="cursor: pointer;">Image URL</span></a>
+                        <div class="label description-text"><p>Click on the "Image URL" link above to use a default avatar</p></div>
                     </div>
-                    <div class="input-field col s12">
+                    <div id="url-input" class="input-field col s12">
                         <input id="image-url" name="image-url" type="url" minlength="5" maxlength="300"
                             pattern="https?://.+" class="validate" required>
                         <!-- The above input will allow minimum 5 characters with Max 15 characters -->
@@ -224,8 +226,10 @@
                     </div>
                 </div>
                 <div class="center btn-bottom-padding">
-                    <button class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large submit-btn" type="submit" name="action">
-                        <i class="fas fa-plus-circle plus-icon-size-padding-1"></i><b>Insert Recipe</b></button>
+                    <button class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-small submit-btn" type="submit" name="action">
+                        <i class="fas fa-plus-circle plus-icon-size-padding-1"></i><b>Insert Recipe</b></button>     
+                    <a class="waves-effect waves-light red lighten-4 red-text text-darken-4 btn-small"
+                        href="{{ url_for('new_recipe') }}"><b>Reset</b><i class="far fa-window-close icon-space-right"></i></a>             
                 </div>
             </div>
         </form>
