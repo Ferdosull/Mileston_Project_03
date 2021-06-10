@@ -76,3 +76,59 @@ Please see initial envisioned wireframes for desktop and mobile devices (before 
 ### Wire Frames <a name="wire_frame"></a>
 
 ![](static/images/readme_images/README002.png)
+
+The wire-frames I found very useful for planning the structure and navigation required to make the CRUD functionality efficient and easy to follow. 
+I wanted my main page to be the centre hub until logged in. Once logged-in, the users new centre hub becomes the profile page, which is essentially the main page without the search bar or hero image.
+A number of redirects are used and placed in known locations that users that would be familiar with in keeping with good practise.
+<br/><br/>
+
+### Pop up Modals <a name="pop_modal"></a>
+
+![](static/images/readme_images/README003.png)
+
+There are 2 pop up modals used on this application, The first encountered modal (base.html template) is triggered by a brightly coloured button in the task bar (desktop) or inside the hamburger menu on mobile.
+The brightly coloured button is a way to catch the eye of the user and to try and attract them to click on it. Once they click on the button a modal appears which describes the offer
+available to them as an SS&J community contributer. If they are an existing user there is information on how to proceed with the offer. 
+If they are not an existing user they are presented with a link for joining the community and availing of the offer.
+
+The second modal is linked to the profile page and it is triggered by pressing the "Delete" button for a specific recipe. 
+It is a way of protecting against accidental deletion of a recipe. It provides the user with a way of opting out if delete was pressed accidentally 
+and a way of giving the user a second chance if they had decided to delete the recipe but now have changed their mind.
+
+<br/><br/>
+
+### Nav Bar <a name="nav_bar"></a>
+
+![](static/images/readme_images/README004.png)
+
+On this occassion I have decided not to have the nav-bar fixed to the top. Once the page is scrolled it stays at its absolute location. I felt that the minimal appearance I was going for would appear 
+crowded in this circumstance if the nav-bar followed. The nav-bar can be separated up into desktop and mobile views as seen below. The "HOME" and VWCC logo both reload the page while the "About" selector 
+scrolls the visitor to the info section, which is roughly halfway down the page.
+<br/><br/>
+
+### Hero Image <a name="hero_image"></a>
+
+![](static/images/readme_images/README005.png)
+
+The Hero Image that loads upon first display of the page is of an iconic VW campervan, which is keeping in line with the clubs theme. This image is then updated through five other images using button clicks 
+to initialte JavaScript targeting of Id's in the html and changing the image source. This is completed with delay transition timers in conjunction with the addion and removal of CSS classes to provide opacity effects.
+<br/><br/>
+
+### Header & Description Text <a name="header_description"></a>
+
+![](static/images/readme_images/README006.png)
+
+The Header text, when first landed on the page, is the name of the club, "Volkswagon Choice Camping" and the description text below it is a small summary of what the club provides the site user.
+Both the Header and the description text get updated when any of the Top five buttons are pressed. For example, if "Lakeside C&C Park" is clicked/selected the header text and description text will change to 
+be in line with the button chosen. Like the hero image, this is also completed with delay transition timers in conjunction with the addion and removal of CSS classes to provide opacity effects.
+<br/><br/>
+
+
+### Page Links <a name="page_links"></a>
+
+![](static/images/readme_images/README007.png)
+
+Underneath the description text are two selectors. "More Info!" and "Visit This Site!". The "More Info!" button is only visible on tablet and mobile devices. Its function is to scroll the visitor to the 
+campsite information section associated with the location that is currently being displayed. The "Visit This Site!" button has a href that is updated by JavaScript based also on the location being displayed.
+If pressed, it will navigate the user to an external page associated with the campsite selected.
+<br/><br/>
