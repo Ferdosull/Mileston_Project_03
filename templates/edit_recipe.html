@@ -22,9 +22,11 @@
                 <div class="recipe-input-form">
                     <div class="left-align">
                         <i class="fas fa-copy icon-size-padding-2 prefix"></i>
-                        <span class="display-recipe-header-font-2">Image URL</span>
+                        <span class="display-recipe-header-font-2"><a class="new-recipe-link" 
+                            onclick="noUrl('image-url', 'url-input')" style="cursor: pointer;">Image URL</span></a>
+                        <div class="label description-text"><p>Click on the "Image URL" link above to use a default avatar</p></div>
                     </div>
-                    <div class="input-field col s12">
+                    <div id="url-input" class="input-field col s12">
                         <input id="image-url" name="image-url" type="url" minlength="5" maxlength="300"
                             pattern="https?://.+" value="{{ task.image_url }}" class="validate" required>
                         <!-- The above input will allow minimum 5 characters with Max 15 characters -->
@@ -33,6 +35,7 @@
                             required</label>
                     </div>
                 </div>
+
                 <div class="recipe-input-form">
                     <div class="left-align heading-space">
                         <i class="fas fa-exclamation-circle icon-size-padding-2 prefix"></i>

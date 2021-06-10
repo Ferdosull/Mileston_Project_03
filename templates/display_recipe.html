@@ -7,7 +7,11 @@
         <div class="card-panel">
             <div class="center display-recipe-top-header"><span>{{ task.drink_name }}</span></div>
             <div class="center">
-                <img class="responsive-img recipe-2 z-depth-2" src="{{ task.image_url }}" alt="smoothie shake or juice">
+                {% if task.image_url == "https://none" %}
+                    <img class="responsive-img recipe center" src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="smoothie shake or juice">
+                {% else %}
+                    <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+                {% endif %}
             </div>
             <div class="center"><span class="allergen-status-text">Allergen Status!</span><span>
                 {% if task.allergen_warning == "Yes" %}

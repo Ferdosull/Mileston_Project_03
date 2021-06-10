@@ -35,7 +35,11 @@
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div>
                 {% endif %}
-            <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            {% if task.image_url == "https://none" %}
+                <img class="responsive-img recipe center" src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="smoothie shake or juice">
+            {% else %}
+                <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            {% endif %}
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
             <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>
             </div>
@@ -99,7 +103,11 @@
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div>
                 {% endif %}
-            <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            {% if task.image_url == "https://none" %}
+                <img class="responsive-img recipe center" src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="smoothie shake or juice">
+            {% else %}
+                <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
+            {% endif %}
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
             <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>
             </div>
