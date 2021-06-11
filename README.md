@@ -12,10 +12,10 @@
     4. [Hero Image](#hero_image)
     5. [Header & Description Text](#header_description)
     6. [Page Links and Button Navigation](#page_links)
-    7. [Placeholder 7](#t5_buttons)
-    8. [placeholder 8](#g_map)
-    9. [placeholder 9](#campsite)
-    10. [placeholder 10](#footer)
+    7. [flash_messages](#flash_messages)
+    8. [Search Recipes](#search_recipes)
+    9. [Default Recipe Image](#default_recipe)
+    10. [Footer](#footer)
 4. [Utilising the 5 Planes of UX Design](#ux_design)
     1. [The Strategy Plane](#strategy_plane)
     2. [The Scope Plane](#scope_plane)
@@ -143,4 +143,88 @@ All links have been incorporated with huge consideration to the users overall ex
 It is my intention here to have the user feel a sense of familiarity by keeping everything quite similar to UI's, websites and layouts that I am familiar with using.
 I have tried to make sure that every feature here conforms to modern best practise standards.
 All links have been tested and are fully functional. The social media links in the footer open in separate tabs where required.
+<br/><br/>
+
+### Flash Messages <a name="flash_messages"></a>
+
+![](static/images/readme_images/README008.png)
+
+Flash Messages
+<br/><br/>
+
+### Search Recipes <a name="search_recipes"></a>
+
+![](static/images/readme_images/README009.png)
+
+Search Recipes
+<br/><br/>
+
+### Default Recipe Image <a name="default_recipe"></a>
+
+![](static/images/readme_images/README010.png)
+
+Default Recipe Image
+<br/><br/>
+
+### Footer <a name="footer"></a>
+
+![](static/images/readme_images/README011.png)
+
+The footer contains 3 sections, 1. A weather widget which also updates upon utilising the Top 5 buttons, 2.  A small paragraph 
+enticing visitors of the site to join the club. At the end of this paragraph is a font awesome icon (newsletter) which, if clicked/selected, will re-load the 
+modal form again to allow the visitor a second time option to subscribe. 3. Social media icons which link to their respective pages, an email link which opens the 
+visitors default email service and populates the “To” section with bookings@vwcc.com, and an external phone link shortcut for use when viewed on mobile phone devices.
+
+To ensure that I utilised the correct icon colours for each of the social media outlets in the footer I navigated to their official brand media pages 
+and used a HTML colour picker to select the correct colour. 
+Please see the image below of the colours picked for each icon using the following HTML colour picker: https://imagecolorpicker.com/en/
+<br/><br/>
+
+![](static/images/readme_images/EMAIL.png)
+<br/><br/>
+
+## Utilising the 5 Planes of UX Design <a name="ux_design"></a>
+
+**The Strategy Plane** <a name="strategy_plane"></a>
+
+Placeholder
+
+**The Scope Plane** <a name="scope_plane"></a>
+
+Placeholder
+
+**The Structure Plane** <a name="structure_plane"></a>
+
+Placeholder
+
+**The Skeleton Plane** <a name="skeleton_plane"></a>
+
+Placeholder
+
+**The Surface Plane** <a name="surface_plane"></a>
+
+The colours and imagery used on this website, I feel, are really in line with the recipe ingredients. I have kept greens as my main colour with a contrasting beige (old lace) as the background, as I felt white was too bland.
+The rest of the colours chosen are based on the hero image which had been envisioned and chosen before the colour scheme was finalised.
+The palette I chose was created at [www.coolers.co](https://coolors.co/) <a name="colours"></a>
+
+![](static/images/readme_images/COOLERS.png)
+
+I have used background shading and opacity shadows to highlight the hero Image header and the hovering and clicking of items in the pop-up modal. I feel the contrasting colours and backgrounds 
+separate the page elements enough so that they remain individual, yet part of a combined theme. What I was trying to achieve with the webpage layout was a minimalistic appearance, yet 
+powerful JavaScript methods & functions make alot more possible when buttons are clicked, which is hidden behind this simplistic landing page layout. 
+Hovering over links, buttons and text selectors causes the elements to change colour, alerting the user to the presence of their mouse pointer. 
+For the social media icons, once the mouse pointer hovers over the icon the background colour and the foreground colours interchange. 
+<br/><br/>
+
+## Typography <a name="typography"></a>
+
+The fonts used for the milestone project are: “Handlee” and “Roboto”.
+
+Both fonts were located and used from Google Fonts:[ Handlee ](https://fonts.google.com/specimen/Handlee?query=hand ) [ Roboto ](https://fonts.google.com/specimen/Roboto?query=roboto)
+
+![](static/images/readme_images/FONT.png)
+
+I felt the contrast between Handlee and Roboto works really well. I initiall picked Handlee based on how the site name looked (alomost like a logo).
+I like the inviting and playful nature of Handlee for the not so serious stuff and then the use of easily readable Roboto when more thought and input is required by the user.
+I have made subtle changes to the font colors, shadows, sizes and spacings for responsiveness as can be seen on the app and in the style.css sheet. 
 <br/><br/>
