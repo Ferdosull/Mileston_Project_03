@@ -107,67 +107,24 @@ def signup():
 def display_recipe(task_id):
     task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
     steps = task.get("steps")
-    step1 = steps[0]
-    step2 = steps[1]
-    step3 = steps[2]
-    step4 = steps[3]
-    step5 = steps[4]
-    step6 = steps[5]
-    step7 = steps[6]
-    step8 = steps[7]
-    step9 = steps[8]
-    step10 = steps[9]
+
     return render_template(
         "display_recipe.html",
-        task=task, step1=step1, step2=step2, step3=step3,
-        step4=step4, step5=step5, step6=step6, step7=step7,
-        step8=step8, step9=step9, step10=step10)
+        task=task, steps_dict=steps)
 
 
 @app.route("/new_recipe", methods=["GET", "POST"])
 def new_recipe():
     if request.method == "POST":
-        steps = []
-        if request.form.get("step1") != "":
-            steps.append(request.form.get("step1"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step2") != "":
-            steps.append(request.form.get("step2"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step3") != "":
-            steps.append(request.form.get("step3"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step4") != "":
-            steps.append(request.form.get("step4"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step5") != "":
-            steps.append(request.form.get("step5"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step6") != "":
-            steps.append(request.form.get("step6"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step7") != "":
-            steps.append(request.form.get("step7"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step8") != "":
-            steps.append(request.form.get("step8"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step9") != "":
-            steps.append(request.form.get("step9"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step10") != "":
-            steps.append(request.form.get("step10"))
-        else:
-            steps.append("#blank")
+        steps_dict_new_recipe = {}
+        for x in range(0, 10):
+            if request.form.get("step" + str(x + 1)) != "":
+                steps_dict_new_recipe.update(
+                    {"step" + str(x + 1): request.form.get(
+                        "step" + str(x + 1))})
+            else:
+                steps_dict_new_recipe.update(
+                    {"step" + str(x + 1): ""})
         task = {
             "main_component_type": request.form.get("select1"),
             "drink_name": request.form.get("drink_name"),
@@ -179,7 +136,7 @@ def new_recipe():
             "difficulty_level": request.form.get("select2"),
             "created_by": session["user"],
             "user_likes": (""),
-            "steps": steps
+            "steps": steps_dict_new_recipe
         }
         mongo.db.recipes.insert_one(task)
         flash("Your New Recipe Was Added")
@@ -192,47 +149,15 @@ def new_recipe():
 def edit_recipe(task_id):
     if request.method == "POST":
         likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-        steps = []
-        if request.form.get("step1") != "":
-            steps.append(request.form.get("step1"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step2") != "":
-            steps.append(request.form.get("step2"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step3") != "":
-            steps.append(request.form.get("step3"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step4") != "":
-            steps.append(request.form.get("step4"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step5") != "":
-            steps.append(request.form.get("step5"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step6") != "":
-            steps.append(request.form.get("step6"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step7") != "":
-            steps.append(request.form.get("step7"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step8") != "":
-            steps.append(request.form.get("step8"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step9") != "":
-            steps.append(request.form.get("step9"))
-        else:
-            steps.append("#blank")
-        if request.form.get("step10") != "":
-            steps.append(request.form.get("step10"))
-        else:
-            steps.append("#blank")
+        steps_dict_edit = {}
+        for x in range(0, 10):
+            if request.form.get("step" + str(x + 1)) != "":
+                steps_dict_edit.update(
+                    {"step" + str(x + 1): request.form.get(
+                        "step" + str(x + 1))})
+            else:
+                steps_dict_edit.update(
+                    {"step" + str(x + 1): ""})
         submit = {
             "main_component_type": request.form.get("select1"),
             "drink_name": request.form.get("drink_name"),
@@ -244,58 +169,15 @@ def edit_recipe(task_id):
             "difficulty_level": request.form.get("select2"),
             "created_by": likes.get("created_by"),
             "user_likes": likes.get("user_likes"),
-            "steps": steps
+            "steps": steps_dict_edit
         }
         mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
         flash("Recipe Successfully Updated")
 
     task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-    steps = task.get("steps")
-    if steps[0] == "#blank":
-        step1 = ""
-    else:
-        step1 = steps[0]
-    if steps[1] == "#blank":
-        step2 = ""
-    else:
-        step2 = steps[1]
-    if steps[2] == "#blank":
-        step3 = ""
-    else:
-        step3 = steps[2]
-    if steps[3] == "#blank":
-        step4 = ""
-    else:
-        step4 = steps[3]
-    if steps[4] == "#blank":
-        step5 = ""
-    else:
-        step5 = steps[4]
-    if steps[5] == "#blank":
-        step6 = ""
-    else:
-        step6 = steps[5]
-    if steps[6] == "#blank":
-        step7 = ""
-    else:
-        step7 = steps[6]
-    if steps[7] == "#blank":
-        step8 = ""
-    else:
-        step8 = steps[7]
-    if steps[8] == "#blank":
-        step9 = ""
-    else:
-        step9 = steps[8]
-    if steps[9] == "#blank":
-        step10 = ""
-    else:
-        step10 = steps[9]
+    edit_steps = task.get("steps")
     return render_template(
-        "edit_recipe.html",
-        task=task, step1=step1, step2=step2, step3=step3,
-        step4=step4, step5=step5, step6=step6, step7=step7,
-        step8=step8, step9=step9, step10=step10)
+        "edit_recipe.html", task=task, edit_steps=edit_steps)
 
 
 @app.route("/delete_recipe/<task_id>")
@@ -336,40 +218,16 @@ def update_likes(task_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(task_id)}, submit)
         task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-        steps = task.get("steps")
-        step1 = steps[0]
-        step2 = steps[1]
-        step3 = steps[2]
-        step4 = steps[3]
-        step5 = steps[4]
-        step6 = steps[5]
-        step7 = steps[6]
-        step8 = steps[7]
-        step9 = steps[8]
-        step10 = steps[9]
+        steps_dict_replace = task.get("steps")
         return render_template(
-            "display_recipe.html",
-            task=task, step1=step1, step2=step2, step3=step3,
-            step4=step4, step5=step5, step6=step6, step7=step7,
-            step8=step8, step9=step9, step10=step10)
+            "display_recipe.html", task=task,
+            steps_dict=steps_dict_replace)
 
     task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
-    steps = task.get("steps")
-    step1 = steps[0]
-    step2 = steps[1]
-    step3 = steps[2]
-    step4 = steps[3]
-    step5 = steps[4]
-    step6 = steps[5]
-    step7 = steps[6]
-    step8 = steps[7]
-    step9 = steps[8]
-    step10 = steps[9]
+    steps_dict_replace = task.get("steps")
     return render_template(
-        "display_recipe.html",
-        task=task, step1=step1, step2=step2, step3=step3,
-        step4=step4, step5=step5, step6=step6, step7=step7,
-        step8=step8, step9=step9, step10=step10)
+        "display_recipe.html", task=task,
+        steps_dict=steps_dict_replace)
 
 
 if __name__ == "__main__":

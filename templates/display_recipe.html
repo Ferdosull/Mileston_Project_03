@@ -94,65 +94,45 @@
                 <li class="collection-header display-recipe-header-color">
                     <i class="fas fa-book icon-size-padding"></i><span class="display-recipe-header-font">Preparation Steps</span>
                 </li>
-                {% if step1 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step1 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 1: </span><span
-                            class="display-recipe-task-font">{{ step1 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step1 }}</span></li>
                 {% endif %}
-                {% if step2 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step2 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 2: </span><span
-                            class="display-recipe-task-font">{{ step2 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step2 }}</span></li>
                 {% endif %}
-                {% if step3 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step3 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 3: </span><span
-                            class="display-recipe-task-font">{{ step3 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step3 }}</span></li>
                 {% endif %}
-                {% if step4 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step4 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 4: </span><span
-                            class="display-recipe-task-font">{{ step4 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step4 }}</span></li>
                 {% endif %}
-                {% if step5 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step5 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 5: </span><span
-                            class="display-recipe-task-font">{{ step5 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step5 }}</span></li>
                 {% endif %}
-                {% if step6 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step6 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 6: </span><span
-                            class="display-recipe-task-font">{{ step6 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step6 }}</span></li>
                 {% endif %}
-                {% if step7 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step7 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 7: </span><span
-                            class="display-recipe-task-font">{{ step7 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step7 }}</span></li>
                 {% endif %}
-                {% if step8 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step8 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 8: </span><span
-                            class="display-recipe-task-font">{{ step8 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step8 }}</span></li>
                 {% endif %}
-                {% if step9 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step9 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 9: </span><span
-                            class="display-recipe-task-font">{{ step9 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step9 }}</span></li>
                 {% endif %}
-                {% if step10 == "#blank" %}
-                    {{ pass }}
-                {% else %}
+                {% if steps_dict.step10 != "" %}
                     <li class="collection-item"><span class="bold-step">Step 10: </span><span
-                            class="display-recipe-task-font">{{ step10 }}</span></li>
+                            class="display-recipe-task-font">{{ steps_dict.step10 }}</span></li>
                 {% endif %}
             </ul>
             {% if session.user %}
