@@ -242,7 +242,7 @@ def edit_recipe(task_id):
             "recommends": int(likes.get("recommends")),
             "preparation_time": request.form.get("select3"),
             "difficulty_level": request.form.get("select2"),
-            "created_by": session["user"],
+            "created_by": likes.get("created_by"),
             "user_likes": likes.get("user_likes"),
             "steps": steps
         }
