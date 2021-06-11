@@ -38,7 +38,7 @@
     2. [Call to Action Functionality Testing](#testing_user_stories)
     3. [HTML CSS and JavaScript Validation](#validation)
 10. [Future "Nice to Have" Additions to The Website](#additions)
-11. [Creation of Template and Deployment of Project](#project_deployment)
+11. [Deployment of Project](#project_deployment)
     1. [Creating a New Project](#new_project)
     2. [Commands Utilised Throughout The Project After Changes](#commands)
     3. [How to Deploy My Milestone\_Project\_03 on Heroku](#how_to_deploy)
@@ -204,7 +204,13 @@ in order to increase revenues generated, by offering discounts to users on behal
 
 **The Scope Plane** <a name="scope_plane"></a>
 
-Placeholder
+The app, I feel, utilises modern techniques to be in line with what is current, and trys to enhance the users experience by keeping everything familiar. 
+The navbar will be a very familiar feature to most users and incorporates the necessary links for logging in and signing up.
+The search bar I have kept familiar looking also and the buttons describe exactly what to expect when the user presses them.
+The displayed recipes on both the main page and profile pages have intuitive buttons associated with them. The buttons are tooltipped in the profile page for additional info.
+Upon all user interactions where a submission occurs (Log In, Log Out, CRUD) the user is presented with flash messages to confirm that their input was successful.
+Both the "New Recipe" and "Edit Recipe" pages are designed in a way that reflects an actual physical recipe book. 
+I feel this provides a more familiar feel and its nice to keep some of that old school influence in digital format.
 
 **The Structure Plane** <a name="structure_plane"></a>
 
@@ -419,3 +425,94 @@ I was initially inspired by [ Jamie Oliver's ](https://www.jamieoliver.com/) web
 The finished product has changed alot from what was envisioned based on his site but it has, I feel remained true to the wireframes.
 <br/><br/>
 
+## User Testing <a name="testing"></a>
+
+**Website Responsiveness through Browser and Device Compatibility** <a name="testing_procedure"></a>
+
+The interactive front-end web application was tested throughout its development, implementation and deployment stages of the project.
+
+For the continued functionality and responsiveness testing of this website I have utilised the following web browsers: Microsoft Edge, Mozilla Firefox and Google Chrome.
+
+To carry out testing on mobile devices I have used Google Chrome as well as Safari on IPad and IPhone.
+
+During all stages of development, HTML, CSS, JavaScript, Jinja, Python method & function verification, console.log() (JS), print() (Python) and Jinja result displayed to a html div, 
+was utilised to simulate the required outcomes before implementing the end result on the page. The same methods were used to apply fault diagnosis upon the manifestation of bugs. 
+
+Please see the testing procedure table I have created for the SS&J website below:
+<br/><br/>
+
+**Call to Action Functionality Testing Procedure** <a name="testing_user_stories"></a>
+
+The table below was created to ensure no user testing steps were omitted when carrying out finished website checks. As part of my finished manual testing checks I have had a work colleague
+navigate through the site using the table created to search for errors. Errors that were found have been re-solved. Some of them are mentioned in the bugs section.
+<br/><br/>
+
+![](assets/readme_images/usertesting.png)
+
+**Testing of Stated User Stories** <a name="testing_user_stories"></a>
+
+placeholder
+
+At all stages during testing, text was evaluated for spelling, grammer and punctuation.
+<br/><br/>
+
+**Objective and Performance Testing** <a name="testing_user_stories"></a>
+
+placeholder
+
+**HTML CSS and JavaScript Validation** <a name="validation"></a>
+
+Testing Code Validators for all sections of the website were carried out at: 
+
+HTML =[ https://validator.w3.org/ ](https://validator.w3.org/) CSS =[ https://jigsaw.w3.org/css-validator/ ](https://jigsaw.w3.org/css-validator/) and JavaScript = [ https://jshint.com/ ](https://jshint.com/)
+
+Below are screenshots of the results of my HTML, CSS stylesheet, JavaScript and python app.py files after being passed through validators. All Sections have Passed with no errors:
+
+### index.html
+
+![](assets/readme_images/html.png)
+
+### style.css
+
+![](assets/readme_images/css.png)
+
+### scripts.js
+
+![](assets/readme_images/script.png)
+<br/><br/>
+
+## Future "Nice to Have" Additions to The Website <a name="additions"></a>
+
+placeholder
+
+<br/><br/>
+
+## Deployment of this Project <a name="project_deployment"></a>
+
+**How to Deploy My Milestone\_Project\_03 on Heroku** <a name="how_to_deploy"></a>
+
+1. Navigate to the GitHub [Repository:[\]https://github.com/Ferdosull/Milestone_Project_03 ](https://github.com/Ferdosull/Milestone_Project_03)**
+
+2. Click on the green Gitpod button in the following screenshot.**
+
+![](static/images/readme_images/GITHUB001.png)
+
+3. The repository will then open in Gitpods IDE** 
+
+4. Inside the IDE, Navigate to the requirements.txt file and make sure all packages are installed in the IDE.
+
+5. Create a .gitignore file and make sure its contents are the same as what is depicted below:
+
+![](static/images/readme_images/GITIGNORE.png)
+
+6. Create an env.py file and make sure to add it to the .gitignore file if you have not already done so.
+
+7. The .env.py file should contain information like the screenshot below, I have removed my specific information from the screenshot:
+
+![](static/images/readme_images/ENV.png)
+
+The SECRET_KEY is a value of your choosing and the MONGO_URI is obained from your specific MongoDB account in the following location:
+
+Clusters > Connect > Connect your application and make the correct selections in the input modal. See below:
+
+![](static/images/readme_images/MONGO001.png)
