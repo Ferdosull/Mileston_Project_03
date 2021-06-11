@@ -45,22 +45,24 @@
             </div>
             <div class="center btn-bottom-padding profile-buttons-div-restrict">
                 <div class="profile-buttons-restrict">
-                    <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large tooltipped" data-position="right" 
-                        data-tooltip="Click here to open this recipe in its own page" href="{{ url_for('display_recipe', task_id=task._id) }}">
+                    <a id="tooltip1" onclick="hideTooltip('tooltip1')" class="waves-effect waves-light green accent-1 green-text text-darken-3 
+                    btn-large tooltipped" data-position="right" data-tooltip="Click here to open this recipe in its own page" 
+                    href="{{ url_for('display_recipe', task_id=task._id) }}">
                         <i class="fas fa-book-reader plus-icon-size-padding-1 open-recipe-icon"></i><b
                             class="open-recipe-text">Open Recipe</b></a>
                 </div>
                 <div class="profile-buttons-restrict">
-                    <a class="waves-effect waves-light purple lighten-4 purple-text text-darken-3 btn-large tooltipped" data-position="right" 
-                        data-tooltip="Click here to edit this recipe in its own page"
+                    <a id="tooltip2"  onclick="hideTooltip('tooltip2')" class="waves-effect waves-light purple lighten-4 purple-text text-darken-3 
+                    btn-large tooltipped" data-position="right" data-tooltip="Click here to edit this recipe in its own page"
                         href="{{ url_for('edit_recipe', task_id=task._id) }}">
                         <i class="fas fa-user-edit plus-icon-size-padding-1 edit-recipe-icon"></i><b
                             class="edit-recipe-text">Edit Recipe</b></a>
                 </div>
                 <div class="profile-buttons-restrict">
                     <!-- Modal Trigger Start -->
-                    <button data-target="{{ task._id }}" class="waves-effect waves-light red lighten-4 red-text text-darken-4
-                            btn-large modal-trigger tooltipped" data-position="right" data-tooltip="Click here to delete this recipe">
+                    <button id="tooltip3" data-target="{{ task._id }}" onclick="hideTooltip('tooltip3')" class="waves-effect waves-light 
+                    red lighten-4 red-text text-darken-4 btn-large modal-trigger tooltipped" data-position="right" 
+                    data-tooltip="Click here to delete this recipe">
                             <i class="fas fa-user-times plus-icon-size-padding-1"></i>
                         <b>Delete Recipe</b></button>
                     <!-- Modal Trigger End -->
@@ -115,23 +117,24 @@
             </div>
             <div class="center btn-bottom-padding profile-buttons-div-restrict">
                 <div class="profile-buttons-restrict">
-                    <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large tooltipped" data-position="right" 
-                        data-tooltip="Click here to open this recipe in its own page"
+                    <a id="tooltip4" onclick="hideTooltip('tooltip4')" class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large tooltipped" 
+                    data-position="right" data-tooltip="Click here to open this recipe in its own page"
                         href="{{ url_for('display_recipe', task_id=task._id) }}">
                         <i class="fas fa-book-reader plus-icon-size-padding-1 open-recipe-icon"></i><b
                             class="open-recipe-text">Open Recipe</b></a>
                 </div>
                 <div class="profile-buttons-restrict">
-                    <a class="waves-effect waves-light purple lighten-4 purple-text text-darken-3 btn-large tooltipped" data-position="right" 
-                        data-tooltip="Click here to edit this recipe in its own page"
+                    <a id="tooltip5" onclick="hideTooltip('tooltip5')" class="waves-effect waves-light purple lighten-4 purple-text 
+                    text-darken-3 btn-large tooltipped" data-position="right" data-tooltip="Click here to edit this recipe in its own page"
                         href="{{ url_for('edit_recipe', task_id=task._id) }}">
                         <i class="fas fa-user-edit plus-icon-size-padding-1 edit-recipe-icon"></i><b
                             class="edit-recipe-text">Edit Recipe</b></a>
                 </div>
                 <div class="profile-buttons-restrict">
                     <!-- Modal Trigger Start -->
-                    <button data-target="{{ task._id }}" class="waves-effect waves-light red lighten-4 red-text text-darken-4
-                            btn-large modal-trigger tooltipped" data-position="right" data-tooltip="Click here to delete this recipe">
+                    <button id="tooltip6" data-target="{{ task._id }}" onclick="hideTooltip('tooltip6')" 
+                    class="waves-effect waves-light red lighten-4 red-text text-darken-4 btn-large modal-trigger tooltipped" 
+                    data-position="right" data-tooltip="Click here to delete this recipe">
                             <i class="fas fa-user-times plus-icon-size-padding-1"></i>
                         <b>Delete Recipe</b></button>
                     <!-- Modal Trigger End -->

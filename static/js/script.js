@@ -50,14 +50,20 @@ function initStep(a, b, c) { // using button clicks and id variables passed from
 // function to hide the flash messages generated from user actions.
 function flashHide(){
     var flashDiv = document.getElementById("flash"); // getting the Flash DIV by id.
-    flashDiv.classList.add('hide-at-pg-load'); // removing the hide-at-pg-load class.
+    flashDiv.classList.add('hide-at-pg-load'); // adding the hide-at-pg-load class.
 }
 
 
 // function to add a default value to the URL input based upon the users input.
 // the function also hides the inputted URL so that the user cannot make changes to it anymore.
 function noUrl(a, b){
-    document.getElementById(a).value = "https://none";
-    var hideUrl = document.getElementById(b)
-    hideUrl.classList.add('hide-at-pg-load');
+    document.getElementById(a).value = "https://none"; // getting an element by id and assigning it a value.
+    var hideUrl = document.getElementById(b) // getting the URL DIV by id.
+    hideUrl.classList.add('hide-at-pg-load'); // adding the hide-at-pg-load class.
+}
+
+// fixing the issue on mobile where the tooltip is still present after clicking the button.
+function hideTooltip(a){
+    var toolTip = document.getElementById(a); // getting the tool tipped button by id.
+    toolTip.classList.remove('tooltipped'); // adding the hide-at-pg-load class.
 }
