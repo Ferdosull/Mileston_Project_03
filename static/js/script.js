@@ -65,5 +65,6 @@ function noUrl(a, b){
 // fixing the issue on mobile where the tooltip is still present after clicking the button.
 function hideTooltip(a){
     var toolTip = document.getElementById(a); // getting the tool tipped button by id.
-    toolTip.classList.remove('tooltipped'); // adding the hide-at-pg-load class.
+    toolTip.classList.remove('tooltipped'); // removing the tool tipped class.
+    console.log("Eureka")
 }

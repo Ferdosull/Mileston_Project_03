@@ -483,6 +483,14 @@ h4 {
     height: 20rem;
 }
 
+.modal-button-white-text {
+    color: white;
+}
+
+.modal-button-black-text {
+    color: black;
+}
+
 @media only screen and (max-width: 1960px) {
     .image-text-font {
         font-size: 5.1rem;
