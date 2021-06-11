@@ -333,8 +333,15 @@ h4 {
     padding-bottom: 2rem !important;
 }
 
-.flashes {
+.flashes-green {
     background-color: rgba(40, 184, 50, 0.6);
+    width: 22rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.flashes-red {
+    background-color: rgba(184, 45, 40, 0.6);
     width: 22rem;
     border-radius: 8px;
     margin-top: 1rem;
