@@ -43,7 +43,9 @@
     2. [Commands Utilised Throughout The Project After Changes](#commands)
     3. [How to Deploy My Milestone\_Project\_03 on Heroku](#how_to_deploy)
     4. [How to Download, View and Edit and Run this project locally](#how_to_download)
-12. [Acknowledgements](#acknowledgements)<br/><br/>
+12. [My Data Base Layout and Structure](#db_structure)<br/><br/>
+13. [Previous Assessment Comments and How I Have Addressed Them](#previous_comments)<br/><br/>
+14. [Acknowledgements](#acknowledgements)<br/><br/>
 
 ## Introduction <a name="intro"></a>
 
@@ -56,8 +58,8 @@ My goal was to create an application that visually appears accessible, responsiv
 As well as the course materials, there have been some additional code examples which I have searched for online and utilised.
 These additions have been highlighted and referenced later on in this document (references and credits section).
 As well as these additions I have received excellent feedback from my mentor Maranatha Ilesanmi.
-Maranatha has re-capped and explained the reasons for comments I received from my last Milestone Project and has advised how to improve so that a distinction may be achieved this time around.
-I have also added a section in this README file, where I explain what has been implemented in this project to counter act the reasons for falling down in the last project.
+Maranatha has re-capped and explained the reasons for the comments I received from my last Milestone Project and has advised how to improve so that a distinction may be achieved this time around.
+I have also added a [section](#previous_comments) in this README file, where I explain what has been implemented in this project to counter act the reasons for falling down in the last project.
 
 ## Responsive Design <a name="responsive_design"></a>
 
@@ -180,14 +182,16 @@ By simply clicking on the "Image URL" text link on the "New Recipe" page, the UR
 
 ![](static/images/readme_images/README011.png)
 
-The footer contains 3 sections, 1. A weather widget which also updates upon utilising the Top 5 buttons, 2.  A small paragraph 
-enticing visitors of the site to join the club. At the end of this paragraph is a font awesome icon (newsletter) which, if clicked/selected, will re-load the 
-modal form again to allow the visitor a second time option to subscribe. 3. Social media icons which link to their respective pages, an email link which opens the 
-visitors default email service and populates the “To” section with bookings@vwcc.com, and an external phone link shortcut for use when viewed on mobile phone devices.
+I have kept the footer quite simplistic on purpose here so as not to distract from what is taking place on the main page.
+While remaining simplistic all its functions work really well. 
+Its contains the following:
+1. Heading text
+2. A description of the community
+3. A link for signing up
+4. An auto populated email form
+5. social media links.
+6. scroll to top JS function link.
 
-To ensure that I utilised the correct icon colours for each of the social media outlets in the footer I navigated to their official brand media pages 
-and used a HTML colour picker to select the correct colour. 
-Please see the image below of the colours picked for each icon using the following HTML colour picker: https://imagecolorpicker.com/en/
 <br/><br/>
 
 ![](static/images/readme_images/EMAIL.png)
@@ -282,7 +286,7 @@ The potential app users will be a group of smoothie, shake or juice makers keen 
 
 **App owner's goal:** <a name="app_owner_goal"></a>
 
-The goal of the app to establish a community and unite like minded individuals with a passion for home made smoothies, shakes and juices.
+The goal of the app is to establish a community and unite like minded individuals with a passion for home made smoothies, shakes and juices.
 As part of the ever growing community you have the option to visit a partnering site (this is a ficticious association which provides SS&J with commission on sales) which offer a discount when checking out online if you input your username.
 This is achieved currently by pressing the "Special Offer!" button in the Navbar which triggers the modal pop-up. 
 This pop-up advertisement is scalable and can be easily altered to reflect new weekly products, and its trigger mechanism could also be altered to a timer after page load through JavasScript.
@@ -297,29 +301,29 @@ It is envisioned that as the community grows that commission will also grow, and
 - As a First Time User, I want to click on any one of the recipes and open it in its own page. [Click for Screenshot](#page_links)
 - As a First Time User, I want to be able to navigate efficiently and cleanly through the apps pages. [Click for Screenshot](#page_links)
 - As a First Time User, I want to sign-up to the SS&J community. [Click for Screenshot 1](#nav_bar) [Click for Screenshot 2](#page_links)
-- As a First Time User, I want to view my unique profile page. [Click for Screenshot](#footer) To be added*********
-- As a First Time User, I want to create one of my own recipes. [Click for Screenshot](#footer) To be added*********
-- As a First Time User, I want to be able to "Like" other users recipes. [Click for Screenshot](#page_links) and recipe display page *********
+- As a First Time User, I want to view my unique profile page. [Click to see tab used](#page_links)
+- As a First Time User, I want to create one of my own recipes. [Click to see tab used](#page_links)
+- As a First Time User, I want to be able to "Like" other users recipes. [Click to see button used](#page_links)
 
 **Returning User Goals** <a name="returning_user_goals"></a>
 
 - As a Returning User, I want to be able to Log In and view my profile with submitted recipes. [Click for Screenshot](#page_links)
 - As a Returning User, I want to check the special offers and visit the partnering site to avail of these offers. [Click for Screenshot](#pop_modal)
-- As a Returning User, I want to create another one of my own recipes. [Click for Screenshot](#footer) To be added********
-- As a Returning User, I want to read all recipes and new user created recipes, then click to open the recipes that I wish read or undertake. [Click for Screenshot](#hero_image) and recipe display page ********
-- As a Returning User, I want to be able to "Like" other users recipes. [Click for Screenshot](#page_links) and recipe display page ********
+- As a Returning User, I want to create another one of my own recipes. [Click for Screenshot](#footer) [Click for Screenshot 1](#nav_bar)
+- As a Returning User, I want to read all recipes and new user created recipes, then click to open the recipes that I wish read or undertake. [Click for Screenshot](#hero_image)
+- As a Returning User, I want to be able to "Like" other users recipes. [Click to see tab used](#page_links)
 - As a Returning User, I want to contact the SS&J community directly with any queries. [Click for Screenshot](#footer)
 
 **Frequent User Goals** <a name="frequent_user_goals"></a>
 
-- As a Frequent User, I want to be able to Log In and view my profile with submitted recipes. [Click for Screenshot](#page_links)
+- As a Frequent User, I want to be able to Log In and view my profile with submitted recipes. [Click to see button used](#page_links)
 - As a Frequent User, I want to check the new weekly special offers and visit the partnering site to avail of these offers. [Click for Screenshot](#pop_modal)
-- As a Frequent User, I want to view all recipes and new user submitted recipes, then click to open the recipes that I wish read or undertake. [Click for Screenshot](#hero_image) and recipe display page ********
-- As a Frequent User, I want to be able to "Like" other users recipes. [Click for Screenshot](#page_links) and recipe display page *******
-- As a Frequent User, I want to see when a particular recipe is displayed, if I have "Liked" it or not. [Click for Screenshot](#footer) To be added*******
-- As a Frequent User, I want to create another one of my own recipes. [Click for Screenshot](#footer) To be added******
-- As a Frequent User, I want to be able to edit and update one of my existing recipes. [Click for Screenshot](#placeholder) To be added*******
-- As a Frequent User, I want to be able to delete one of my existing recipes. [Click for Screenshot](#placeholder) To be added******
+- As a Frequent User, I want to view all recipes and new user submitted recipes, then click to open the recipes that I wish read or undertake.
+- As a Frequent User, I want to be able to "Like" other users recipes. [Click to see button used](#page_links)
+- As a Frequent User, I want to see when a particular recipe is displayed, if I have "Liked" it or not. [Click to see button used](#page_links)
+- As a Frequent User, I want to create another one of my own recipes. [Click to see tab used](#page_links) [Click for Screenshot 1](#nav_bar)
+- As a Frequent User, I want to be able to edit and update one of my existing recipes. [Click to see tab used](#page_links) [Click for Screenshot 1](#nav_bar)
+- As a Frequent User, I want to be able to delete one of my existing recipes. [Click to see tab used](#page_links)
 - As a Frequent User, I want to contact the SS&J community directly with any queries. [Click for Screenshot](#footer)
 <br/><br/>
 
@@ -415,7 +419,7 @@ Please see list of credits below for the owner of each photo:
 I’d like to say a huge thank you to the photographers who provided the content above via Unsplash for the creation of this ficticious app.
 <br/><br/>
 
-**Content:** <a name="contact"></a>
+**Content:**
 
 The content for this site is based on numerous searches carried out in preparation for its creation. 
 The initial recipes were in part, created based on recipes found on the BBC Good Food recipes. 
@@ -436,78 +440,134 @@ For the continued functionality and responsiveness testing of this website I hav
 To carry out testing on mobile devices I have used Google Chrome as well as Safari on IPad and IPhone.
 
 During all stages of development, HTML, CSS, JavaScript, Jinja, Python method & function verification, console.log() (JS), print() (Python) and Jinja result displayed to a html div, 
-was utilised to simulate the required outcomes before implementing the end result on the page. The same methods were used to apply fault diagnosis upon the manifestation of bugs. 
+was utilised to simulate the required outcomes before implementing the end result on the page. The same methods were used to apply fault diagnosis upon the manifestation of bugs.
+At all stages during testing, text was evaluated for spelling, grammer and punctuation. 
 
 Please see the testing procedure table I have created for the SS&J website below:
 <br/><br/>
 
+![](static/images/readme_images/FUNCTIONTEST.png)
+
 **Call to Action Functionality Testing Procedure** <a name="testing_user_stories"></a>
 
-The table below was created to ensure no user testing steps were omitted when carrying out finished website checks. As part of my finished manual testing checks I have had a work colleague
+The table above was created to ensure no user testing steps were omitted when carrying out finished website checks. As part of my finished manual testing checks I have had a work colleague
 navigate through the site using the table created to search for errors. Errors that were found have been re-solved. Some of them are mentioned in the bugs section.
 <br/><br/>
 
-![](assets/readme_images/usertesting.png)
 
-**Testing of Stated User Stories** <a name="testing_user_stories"></a>
+**Testing User Story** <a name="testing_user_stories"></a>
 
-placeholder
+The following is user feedback based upon a work colleague of mine visiting the site for the first time.
 
-At all stages during testing, text was evaluated for spelling, grammer and punctuation.
+1. I was greeted by a landing page where it was apparent that I could look at recipes or search for recipes.
+
+2. It was clear from the main page what this company was trying to do and both the descriptions in the picture and the bottom of the page explained it quite well.
+
+3. I could see at the top of the page there was navigation links which brought me to various different locations on the site.
+
+4. It was clear that I could not go further until an account was made so I chose the "Sign-up" option from the navigation bar at the top of the page.
+
+5. I was brought to a page that made it very clear what my task was, enter a username followed by a password and a confirm password entry box.
+
+6. After successfully creating my account I was brought to a profile page and was greeted with a message telling me I was logged in.
+
+7. My profile was empty at first so I then had to submit a recipe. I navigated to the new recipe page and proceeded to fill out the form.
+I found this page intuitive and easy to follow. Once the entry form was completed I inserted my recipe, was given a success message and then I navigated back to the profile page where I could view the details I had entered.
+
+8. I decided to try out the "edit recipe" page and changed one of the items in my recipe steps. I clicked update recipe and then navigated back to the profile page to view the change. It had updated my recipe perfectly.
+
+9. I then tried navigating to a displayed recipe and liking another users submission and this worked very well.
+
+10. At the end I decided to delete my recipe to see how to proceedure went. Once I clicked delete I was asked a second time if I wanted to delete. I pressed cancel to see what would happed and I was just brought bac to the profile page.
+I went ahead and clicked delet again and this time I went ahead and clicked delete the second time and sure enough my recipe was gone.
+
+11. I then proceeded to log out which brought me back to the log in page.
+
+My final thoughts are that this app does exactly what it needs to do. It displays well and navigates well. All functions work. I would be quite happy to be a returning user to this site. 
+
+Site User: *“Michael J White“
 <br/><br/>
 
-**Objective and Performance Testing** <a name="testing_user_stories"></a>
-
-placeholder
-
-**HTML CSS and JavaScript Validation** <a name="validation"></a>
+**HTML CSS JavaScript and Python Validation** <a name="validation"></a>
 
 Testing Code Validators for all sections of the website were carried out at: 
 
-HTML =[ https://validator.w3.org/ ](https://validator.w3.org/) CSS =[ https://jigsaw.w3.org/css-validator/ ](https://jigsaw.w3.org/css-validator/) and JavaScript = [ https://jshint.com/ ](https://jshint.com/)
+HTML =[ https://validator.w3.org/ ](https://validator.w3.org/) CSS =[ https://jigsaw.w3.org/css-validator/ ](https://jigsaw.w3.org/css-validator/) JavaScript = [ https://jshint.com/ ](https://jshint.com/) and Python = [ http://pep8online.com/ ](http://pep8online.com/)
 
-Below are screenshots of the results of my HTML, CSS stylesheet, JavaScript and python app.py files after being passed through validators. All Sections have Passed with no errors:
+Below are screenshots of the results of my Heroku app HTML, CSS stylesheet, JavaScript and python app.py files after being passed through validators. All Sections have Passed with no errors:
 
-### index.html
+### Heroku App HTML
 
-![](assets/readme_images/html.png)
+![](static/images/readme_images/HTMLVALIDATE.png)
 
 ### style.css
 
-![](assets/readme_images/css.png)
+![](static/images/readme_images/CSSVALIDATE.png)
 
-### scripts.js
+### script.js
 
-![](assets/readme_images/script.png)
+![](static/images/readme_images/JSHINT.png)
+
+### app.py
+
+![](static/images/readme_images/PEP8VALIDATE.png)
 <br/><br/>
 
 ## Future "Nice to Have" Additions to The Website <a name="additions"></a>
 
-placeholder
+At project review meetings with my mentor some ideas for the future were discussed but were beyond my means in terms of time to implement.
 
+I feel that these further implementations would bring more professionalism to the project as well as UX familiarity for the user.
+
+1. Use actual Toastr messages using JS in the future. Maranatha provided me with a link to the following [Toastr](https://codeseven.github.io/toastr/demo.html). I have based my messages with similar styling but they lack the animation sequences.
+
+2. Change the "Skil Level Required" input field to a slider. This would have functioned and looked great but unfortunately time did not allow it. It is something that I plan to incorporate in the future.
+
+3. The addition of pagination for when the recipe list grows. At present there are only 10 recipes so the requirement is not there. It is however something that I would implement in the future editions.
+
+4. A further filtering mechanism on the search box. It would be great to filter items by category or by allergen free with additional check boxes. Again, if time allowed this would have been a great addition and one for the future.
+
+5. As well as having a "Like" button on the recipe display page I would like to implement an "Unlike" button where the likes are decremented and the user name is removed from the "user_likes" list. 
 <br/><br/>
 
-## Deployment of this Project <a name="project_deployment"></a>
+## CLI Commands Utilised Throughout The Project <a name="commands"></a>
+
+“python3 app.py“: This command is used to start the app.py file from the GitPod IDE on the port 8080.
+
+“CTRL + c“: This command is used to exit the app.py file from the GitPod port 8080.
+
+“pip3 freeze --local > requirements.txt“: This command is used create a requirements.txt file containing all dependencies for the project.
+
+“echo web: python app.py > Procfile“: This command is used to create your Proc file virtual file system.
+
+“git add /specified file folder/specified file/file extension“: This command is used to add edited files to the staging area before carrying out a commit. 
+
+“git commit -m \*commit message summarising the updates\*”: This command is used to commit the changes made to any files which had been previously added with “git add”. 
+
+“git push”: This command is used to push git commit changes to the GitHub hosting pages and so that they can be viewed on a browser.
+<br/><br/>  
+
+## Deployment of this Project <a name="project_deployment"></a></a>
 
 **How to Deploy My Milestone\_Project\_03 on Heroku** <a name="how_to_deploy"></a>
 
-1. Navigate to the GitHub [Repository:[\]https://github.com/Ferdosull/Milestone_Project_03 ](https://github.com/Ferdosull/Milestone_Project_03)**
+1. Navigate to the GitHub [Repository:[\]https://github.com/Ferdosull/Milestone_Project_03 ](https://github.com/Ferdosull/Milestone_Project_03)
 
-2. Click on the green Gitpod button in the following screenshot.**
+2. Click on the green Gitpod button in the following screenshot.
 
 ![](static/images/readme_images/GITHUB001.png)
 
-3. The repository will then open in Gitpods IDE** 
+3. The repository will then open in Gitpods IDE
 
-4. Inside the IDE, Navigate to the requirements.txt file and make sure all packages are installed in the IDE.
+4. Inside the GitPod, Navigate to the requirements.txt file and make sure all required packages are installed in the IDE.
 
 5. Create a .gitignore file and make sure its contents are the same as what is depicted below:
 
 ![](static/images/readme_images/GITIGNORE.png)
 
-6. Create an env.py file and make sure to add it to the .gitignore file if you have not already done so.
+6. Create an env.py file and make sure to add it to the .gitignore file if you have not already done so. This prevents sensitive date from being pushed to GitHub.
 
-7. The .env.py file should contain information like the screenshot below, I have removed my specific information from the screenshot:
+7. The .env.py file should contain information like the screenshot below, I have removed my specific information from the screenshot for security reasons:
 
 ![](static/images/readme_images/ENV.png)
 
@@ -516,3 +576,61 @@ The SECRET_KEY is a value of your choosing and the MONGO_URI is obained from you
 Clusters > Connect > Connect your application and make the correct selections in the input modal. See below:
 
 ![](static/images/readme_images/MONGO001.png)
+
+8. Save everything and carry out an initial commit to GitHub.
+
+9. Create a Heroku account if you dont already have one and then create a new app inside heroku.
+
+10. Click on the created app and navigate to the Deploy button.
+
+11. Ensure that you select GitHub for the deployment method before moving down to the "Connect to GitHub section.
+
+12. Navigate to the Repository you are choosing to setup for automatic deployment and click "Connect"
+
+13. Once connected, be sure to enable "Automatic Deployment". Please see image below for visual representation of the steps:
+
+![](static/images/readme_images/HEROKU1.png)
+
+14. To add your environment variables to Heroku navigate to the "Settings" tab of your app and click the "Reveal Config Vars" button.
+
+15. Inside the config vars enter the values stored in your env.py file, click "Add" followed by "Hide Config Vars" Please see image below for visual representation of the steps:
+
+![](static/images/readme_images/HEROKU2.png)
+
+16. Go back to the GitPod IDE and carry out a "git push".
+
+17. Back inside Heroku, after a successful git push, click on the "Open app" button to see your newly deployed app.
+
+![](static/images/readme_images/HEROKU3.png)
+
+18. Save the link from your browser and bookmark.
+
+## My Data Base Layout and Structure <a name="db_structure"></a>
+
+I am using two DB objects within my project collection.
+
+1. Object1 is being used for the recipes and it is depicted below:
+
+![](static/images/readme_images/MONGODBRECIPE.png)
+
+2. Object2 is being used for the Users and passwords also depicted below:
+
+![](static/images/readme_images/MONGODBUSER.png)
+
+## Previous Assessment Comments and How I Have Addressed Them <a name="previous_comments"></a>
+
+As part of my first project review, Maranatha took the time to address the comments received from the last assessment and advised me what to do in order to make sure I dont fall down for the same reasons this time around.
+
+1. “The testing write-up is not high-level and should include other aspects like objective and performance testing.“ Performance testing is not something I have covered and I dont have familiarity with it. 
+It is however, something I will be looking into and possibly asking advice for from Student Support going forward to the next module. I have given more detail to the testing section this time so I hope that this is seen as an improvement.
+
+2. “The testing of the stated user stories is also not covered.“ The testing of the stated user stories is now covered in this Readme. Please see link [User Stories](#testing_user_stories)
+
+3. “Understanding of git version control is not established and lacks in conducting commits promptly with a fine descriptive message.“ Maranatha has taken time to make me fully aware of how a commit should be structured and how to keep them in the imperitive mood. I feel I have certainly improved this aspect of the project.
+
+4. “Color contrast needs improvements that restrict the project distinction.“ I have made very concious decisions this time that influenced the colour scheme. This comment was always at the front of my mind while implementing this project. It is my hope that the end result is better this time than the last submission.
+
+## Acknowledgements <a name="acknowledgements"></a>
+
+Again, I'd like to say a special thank you to my mentor Maranatha Ilesanmi. Maranatha has provided excellent constructive feedback at the project review meetings.
+I have made many great changes to my project based on Maranatha's input and recommendations. Once again I have learned alot from him and I look forward to his feedback on the next project!
