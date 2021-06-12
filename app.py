@@ -19,23 +19,35 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# My Routes
+
 
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
+    """
+    function to get and display all recipes from db
+    grabs the recipes from mongoDB
+    displays all recipes on landing page
+    """
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    function to log the user in
+    check if user exists in db
+    check password linked to user
+    if not correct show error
+    if user does not exist, redirect
+    """
     if request.method == "POST":
-        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -43,12 +55,10 @@ def login():
                     request.form.get("username")))
                 return redirect(url_for("profile", username=session["user"]))
             else:
-                # invalid password match
                 flash("Incorrect Username or Password")
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
             flash("Incorrect Username or Password")
             return redirect(url_for("login"))
 
@@ -57,7 +67,12 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from db
+    """
+    function to display the users profile
+    grab the session users name from db
+    find all recipes associated with user
+    display these recipes in the profile page
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipes = mongo.db.recipes.find()
@@ -71,7 +86,12 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
+    """
+    function to log the user out
+    remove user from session cookie
+    display a flash message to user
+    redirect the user to the log in page
+    """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
@@ -79,8 +99,15 @@ def logout():
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+    """
+    function to sign up with the SS&J community
+    check if username already exists in db
+    if the username exists send a flash message
+    if the user doesnt exist creat object "signup"
+    insert this new user and password to the users collection
+    put the new user into 'session' cookie
+    """
     if request.method == "POST":
-        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -95,7 +122,6 @@ def signup():
         }
         mongo.db.users.insert_one(signup)
 
-        # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -105,6 +131,13 @@ def signup():
 
 @app.route("/display_recipe/<task_id>", methods=["GET", "POST"])
 def display_recipe(task_id):
+    """
+    function to display a single recipe
+    grab the recipe selected task_id
+    use the task_id to pull the recipe data from db
+    pull the "steps" object out individually
+    display the selected recipe and steps
+    """
     task = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
     steps = task.get("steps")
 
@@ -115,6 +148,14 @@ def display_recipe(task_id):
 
 @app.route("/new_recipe", methods=["GET", "POST"])
 def new_recipe():
+    """
+    function to create a new recipe
+    creating two objects and updating with form contents
+    steps_dict_new_recipe is an object containing steps
+    task is an object containing the rest of the submission
+    steps_dict_new_recipe then becomes an item in the task object
+    the task object is then submitted to the db as a new recipe
+    """
     if request.method == "POST":
         steps_dict_new_recipe = {}
         for x in range(0, 10):
@@ -147,6 +188,14 @@ def new_recipe():
 
 @app.route("/edit_recipe/<task_id>", methods=["GET", "POST"])
 def edit_recipe(task_id):
+    """
+    function to edit existing recipes
+    creating two objects and updating with form contents
+    steps_dict_edit is an object containing steps
+    submit is an object containing the rest of the submission
+    steps_dict_edit then becomes an item in the submit object
+    the submit object is then submitted to the db as a new recipe
+    """
     if request.method == "POST":
         likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
         steps_dict_edit = {}
@@ -182,6 +231,12 @@ def edit_recipe(task_id):
 
 @app.route("/delete_recipe/<task_id>")
 def delete_recipe(task_id):
+    """
+    function to delete a submitted recipe
+    the recipe for deletion is selected based the task_id
+    a flash message is returned to the user
+    the user is redirected back to the profile page
+    """
     mongo.db.recipes.remove({"_id": ObjectId(task_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("profile", username=session["user"]))
@@ -189,6 +244,13 @@ def delete_recipe(task_id):
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    function to search the preset indexes
+    indexes chosen were, main_component_type
+    drink_name and ingredients
+    query is sent to db and all recipes
+    matching the request are displayed
+    """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
@@ -196,6 +258,15 @@ def search():
 
 @app.route("/update_likes/<task_id>", methods=["GET", "POST"])
 def update_likes(task_id):
+    """
+    function to update the likes on a recipe
+    the specific recipe is grabbed from the db using task_id
+    the recommends value is extracted and incremented by 1
+    the user likes value is extracted and the session user
+    name is added to this var "user_likes" if not already present
+    the new object "submit" is created with these new vars
+    the db is then updated with new recommends and user_likes values
+    """
     likes = mongo.db.recipes.find_one({"_id": ObjectId(task_id)})
     search_user = likes.get("user_likes")
     if session["user"] not in search_user:
@@ -231,9 +302,12 @@ def update_likes(task_id):
 
 
 if __name__ == "__main__":
+    """
+    Throughout the project creation
+    debug has remained "True"
+    before final push debug has
+    been changed to "False"
+    """
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
-
-
-# Update the debug=True to debug=False prior to submission
+            debug=False)
