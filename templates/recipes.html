@@ -3,28 +3,37 @@
 
 
 <div class="image-text">
+    <!-- Hero Image -->
     <img class="responsive-img hero" src="{{ url_for('static', filename='images/hero-image.jpg') }}" alt="smoothie">
+    <!-- Hero Image Text for Desktop -->
     <div class="centered image-text-font center text-shadow-2">Welcome to the Smoothies, Shakes & Juices Community</div>
+    <!-- About Text for Desktop -->
     <div class="centered-3 image-text-font-3 center text-shadow-3">SS & J Community is a one stop shop where, as a user,
         you can find delicious recipes and contribute to an ever growing Smoothies, Shakes and Juice recipe collection
     </div>
 </div>
+<!-- Hero Image Text for Mobile -->
 <div class="image-text-font-4 center text-shadow main-heading-padding">Welcome to the Smoothies, Shakes & Juices
     Community</div>
+<!-- About Text for Mobile -->
 <div class="image-text-font-5 center text-shadow sub-heading-padding">SS & J Community is a one stop shop where, as a
     user, you can find delicious recipes and contribute to an ever growing Smoothies, Shakes and Juice recipe collection
 </div>
+<!-- Search Recipes Heading -->
 <div class="center display-recipe-top-header"><span>Search Our Recipes</span></div>
 <div class="row">
     <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <!-- Search input text box -->
         <div class="card-panel card-panel-2">
             <form action="{{ url_for('search') }}" method="post" class="col s12">
+                <!-- Search recipes button -->
                 <div class="input-field input-field-2">
                     <i class="fas fa-search prefix grey-text text-darken-3 search-icon-size tooltipped" data-position="right" 
                         data-tooltip="Search Ingredients, Drink Name and Food Class"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
                     <label for="query">Search Recipes</label>
                 </div>
+                <!-- Reset selection button -->
                 <div class="center">
                     <button type="submit" class="grey lighten-3 btn black-text text-shadow"><b>Search</b></button>
                     <a href="{{ url_for('get_recipes') }}" class="grey lighten-3 btn lighten-5 black-text text-shadow tooltipped"
@@ -37,15 +46,18 @@
 <div class="row card-panel-space">
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
+            <!-- Submitted recipes header text -->
             <div class="center display-recipe-top-header"><span>Submitted Recipes</span></div>
             <div class="line-padding">
                 <hr>
             </div>
             {% for task in recipes %}
+            <!-- Display Drink Name -->
             <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div>
             {% if task.recommends == 0 %}
+            <!-- Display User Likes message based on conditional logic (quantity) -->
             <div class="center display-recipe-task-font"><span> Be the first to recommend this
                     recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
             </div>
@@ -58,11 +70,13 @@
                     recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
             </div>
             {% endif %}
+            <!-- Display Image Url -->
             {% if task.image_url == "https://none" %}
                 <img class="responsive-img recipe center" src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="smoothie shake or juice">
             {% else %}
                 <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             {% endif %}
+            <!-- Button navigation link to display full recipe -->
             <div class="center btn-bottom-padding">
                 <a class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large"
                     href="{{ url_for('display_recipe', task_id=task._id) }}"><i

@@ -5,23 +5,30 @@
     <div class="col s12 m8 l6 offset-m2 offset-l3">
         <div class="card-panel">
             <div class="center display-recipe-top-header">
+                <!-- Display username after grabbing it from the db -->
                 Welcome <span class="username-color">{{ username }}</span> to your SS&J Profile
             </div>
+            <!-- Greeting message, start a new recipe -->
             <div class="center display-recipe-top-header"><span>If you have not already, please click on the 
                 <a class="new-recipe-link" href="{{ url_for('new_recipe') }}" style="cursor: pointer;">
                 <span>"New Recipe"</span></a> tab to get started</span></div>
             <div class="line-padding">
                 <hr>
             </div>
+            <!-- Recipes displayed below -->
             <div class="center display-recipe-top-header"><span>Your submitted recipes will display below</span></div>
             <div class="line-padding">
                 <hr>
             </div>
+            <!-- If Admin then all recipes are displayed -->
             {% if username|lower == "admin" %}
             {% for task in recipes %}
+            <!-- Display drink name -->
             <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
+            <!-- Display submitted by -->
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div>
+                <!-- conditional logic for displaying likes message -->
                 {% if task.recommends == 0 %}
                     <div class="center display-recipe-task-font"><span> Be the first to recommend this
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
@@ -35,14 +42,17 @@
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div>
                 {% endif %}
+            <!-- Conditional logic for displaying image url or default avatar -->
             {% if task.image_url == "https://none" %}
                 <img class="responsive-img recipe center" src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="smoothie shake or juice">
             {% else %}
                 <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             {% endif %}
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
+            <!-- Display Ingredients -->
             <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>
             </div>
+            <!-- conditional logic for hiding tool tips after being pressed (mobile) -->
             <div class="center btn-bottom-padding profile-buttons-div-restrict">
                 <div class="profile-buttons-restrict">
                     <a id="tooltip1" onclick="hideTooltip('tooltip1')" class="waves-effect waves-light green accent-1 green-text text-darken-3 
@@ -51,6 +61,7 @@
                         <i class="fas fa-book-reader plus-icon-size-padding-1 open-recipe-icon"></i><b
                             class="open-recipe-text">Open Recipe</b></a>
                 </div>
+                <!-- conditional logic for hiding tool tips after being pressed (mobile) -->
                 <div class="profile-buttons-restrict">
                     <a id="tooltip2"  onclick="hideTooltip('tooltip2')" class="waves-effect waves-light purple lighten-4 purple-text text-darken-3 
                     btn-large tooltipped" data-position="right" data-tooltip="Click here to edit this recipe in its own page"
@@ -58,6 +69,7 @@
                         <i class="fas fa-user-edit plus-icon-size-padding-1 edit-recipe-icon"></i><b
                             class="edit-recipe-text">Edit Recipe</b></a>
                 </div>
+                <!-- conditional logic for hiding tool tips after being pressed (mobile) -->
                 <div class="profile-buttons-restrict">
                     <!-- Modal Trigger Start -->
                     <button id="tooltip3" data-target="{{ task._id }}" onclick="hideTooltip('tooltip3')" class="waves-effect waves-light 
@@ -90,10 +102,14 @@
             {% endfor %}
             {% else %}
             {% for task in recipes %}
+            <!-- If username then all recipes for that user are displayed -->
             {% if username|lower == task.created_by %}
+            <!-- Display drink name -->
             <div class="center display-recipe-header-font-3"><span>{{ task.drink_name }}</span></div>
+            <!-- Display submitted by -->
             <div class="center display-recipe-task-font"><span>Submitted By: </span><span>{{ task.created_by }}</span>
             </div>
+                <!-- conditional logic for displaying likes message -->
                 {% if task.recommends == 0 %}
                     <div class="center display-recipe-task-font"><span> Be the first to recommend this
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
@@ -107,14 +123,17 @@
                             recipe</span><i class="far fa-thumbs-up icon-padding-left"></i>
                     </div>
                 {% endif %}
+            <!-- Conditional logic for displaying image url or default avatar -->
             {% if task.image_url == "https://none" %}
                 <img class="responsive-img recipe center" src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="smoothie shake or juice">
             {% else %}
                 <img class="responsive-img recipe center" src="{{ task.image_url }}" alt="smoothie shake or juice">
             {% endif %}
+            <!-- Display Ingredients -->
             <div class="center display-recipe-header-font"><span>Ingredients:</span></div>
             <div class="center ingredients-restrict display-recipe-header-font-2"><span>{{ task.ingredients }}</span>
             </div>
+            <!-- conditional logic for hiding tool tips after being pressed (mobile) -->
             <div class="center btn-bottom-padding profile-buttons-div-restrict">
                 <div class="profile-buttons-restrict">
                     <a id="tooltip4" onclick="hideTooltip('tooltip4')" class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-large tooltipped" 
@@ -123,6 +142,7 @@
                         <i class="fas fa-book-reader plus-icon-size-padding-1 open-recipe-icon"></i><b
                             class="open-recipe-text">Open Recipe</b></a>
                 </div>
+                <!-- conditional logic for hiding tool tips after being pressed (mobile) -->
                 <div class="profile-buttons-restrict">
                     <a id="tooltip5" onclick="hideTooltip('tooltip5')" class="waves-effect waves-light purple lighten-4 purple-text 
                     text-darken-3 btn-large tooltipped" data-position="right" data-tooltip="Click here to edit this recipe in its own page"
@@ -130,6 +150,7 @@
                         <i class="fas fa-user-edit plus-icon-size-padding-1 edit-recipe-icon"></i><b
                             class="edit-recipe-text">Edit Recipe</b></a>
                 </div>
+                <!-- conditional logic for hiding tool tips after being pressed (mobile) -->
                 <div class="profile-buttons-restrict">
                     <!-- Modal Trigger Start -->
                     <button id="tooltip6" data-target="{{ task._id }}" onclick="hideTooltip('tooltip6')" 

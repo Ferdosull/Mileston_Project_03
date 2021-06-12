@@ -5,7 +5,7 @@
     <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('login') }}">
         <div class="card-panel">
             <h3 class="center login-header"><i class="fas fa-sign-in-alt"></i>LOG IN</h3>
-            <!-- username -->
+            <!-- username input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user prefix"></i>
@@ -16,7 +16,7 @@
                     <label for="username">Username</label>
                 </div>
             </div>
-            <!-- password -->
+            <!-- password input -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-lock prefix"></i>
@@ -27,12 +27,13 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!-- login -->
+            <!-- login button -->
             <div class="row">
                 <button type="submit" class="col s12 btn-large login-btn green darken-3 text-shadow login-button">
                     Log In
                 </button>
             </div>
+            <!-- link to sign up page if not a user -->
             <div class="row">
                 <div class="col s12">
                     <p class="center-align">

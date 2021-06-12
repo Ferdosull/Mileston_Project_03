@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- only can the recipe be edited if the session user = the task.created by field in the db or the admin account -->
 {% if session.user == task.created_by or session.user == "admin" %}
     <div class="row card-panel-space ">
         <form class="col s12 m8 l6 offset-m2 offset-l3" method="POST" action="{{ url_for('edit_recipe', task_id=task._id) }}">
             <div class="card-panel">
+                <!-- Edit Recipe form header -->
                 <div class="center display-recipe-top-header"><span>Edit Recipe Form</span></div>
                 <div class="recipe-input-form">
                     <div class="left-align">
                         <i class="fas fa-glass-whiskey icon-size-padding-2 prefix"></i>
                         <span class="display-recipe-header-font-2">Drink Name</span>
                     </div>
+                    <!-- Drink name input field -->
                     <div class="input-field col s12">
                         <input id="drink_name" name="drink_name" type="text" minlength="1" maxlength="30"
                         value="{{ task.drink_name }}" class="validate" required>
-                        <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                        <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                        <!-- The above input will allow minimum 5 characters with Max 30 characters -->
+                        <!-- There is no specific pattern here -->
                         <label for="drink_name" class="description-text-2">Delete and edit the name field if required</label>
                     </div>
                 </div>
+                <!-- Image URL input field -->
                 <div class="recipe-input-form">
                     <div class="left-align">
                         <i class="fas fa-copy icon-size-padding-2 prefix"></i>
@@ -29,18 +33,19 @@
                     <div id="url-input" class="input-field col s12">
                         <input id="image-url" name="image-url" type="url" minlength="5" maxlength="300"
                             pattern="https?://.+" value="{{ task.image_url }}" class="validate" required>
-                        <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                        <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                        <!-- The above input will allow minimum 5 characters with Max 300 characters -->
+                        <!-- The characters string must start with "https?://.+" -->
                         <label for="image-url" class="description-text-2">Delete, then Copy and Paste a new URL if 
                             required</label>
                     </div>
                 </div>
-
+                <!-- Allergen Status input field -->
                 <div class="recipe-input-form">
                     <div class="left-align heading-space">
                         <i class="fas fa-exclamation-circle icon-size-padding-2 prefix"></i>
                         <span class="display-recipe-header-font-2">Allergen Status!</span>
                     </div>
+                    <!-- A Select dropdown gives the options of yes or no -->
                     <div class="input-field col s12">
                         <select id="select" name="select" class="validate" required>
                             <option value="{{ task.allergen_warning }}" selected>{{ task.allergen_warning }}</option>
@@ -50,11 +55,13 @@
                         <label>Select "Yes" or "No" if your drink contains allergens</label>
                     </div>
                 </div>
+                <!-- Category input field -->
                 <div class="recipe-input-form">
                     <div class="left-align heading-space">
                         <i class="fas fa-layer-group icon-size-padding-2 prefix"></i>
                         <span class="display-recipe-header-font-2">Category</span>
                     </div>
+                    <!-- A Select dropdown gives the category options -->
                     <div class="input-field col s12">
                         <select id="select1" name="select1" class="validate" required>
                             <option value="{{ task.main_component_type }}" selected>{{ task.main_component_type }}</option>
@@ -69,11 +76,13 @@
                         <label>Select food group category from the dropdown</label>
                     </div>
                 </div>
+                <!-- Skill required input field -->
                 <div class="recipe-input-form">
                     <div class="left-align heading-space">
                         <i class="fas fa-tools icon-size-padding-2 prefix"></i>
                         <span class="display-recipe-header-font-2">Skill Level (1-10)</span>
                     </div>
+                    <!-- A Select dropdown gives the options of 1 to 10 -->
                     <div class="input-field col s12">
                         <select id="select2" name="select2" class="validate" required>
                             <option value="{{ task.difficulty_level }}" selected>{{ task.difficulty_level }}</option>
@@ -91,11 +100,13 @@
                         <label>Select skill level to re-create drink</label>
                     </div>
                 </div>
+                <!-- Task preparation time input field -->
                 <div class="recipe-input-form">
                     <div class="left-align heading-space">
                         <i class="fas fa-clock icon-size-padding-2 prefix"></i>
                         <span class="display-recipe-header-font-2">Preparation Time (mins)</span>
                     </div>
+                    <!-- A Select dropdown gives the options of 1 or 15 -->
                     <div class="input-field col s12">
                         <select id="select3" name="select3" class="validate" required>
                             <option value="{{ task.preparation_time }}" selected>{{ task.preparation_time }}</option>
@@ -118,6 +129,7 @@
                         <label>Select a preparation time for your drink</label>
                     </div>
                 </div>
+                <!-- Ingredients input field -->
                 <div class="recipe-input-form">
                     <div class="left-align">
                         <i class="fas fa-sitemap fa-flip-vertical icon-size-padding-2 prefix"></i>
@@ -126,12 +138,13 @@
                     <div class="input-field col s12">
                         <input id="ingredients-input" name="ingredients-input" type="text" minlength="5" maxlength="300" 
                         value="{{ task.ingredients }}" class="validate" required>
-                        <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                        <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
+                        <!-- The above input will allow minimum 5 characters with Max 300 characters -->
+                        <!-- There is no specific pattern here -->
                         <label for="ingredients-input" class="description-text-2">
                             Enter the ingredients separated by a comma & space</label>
                     </div>
                 </div>
+                <!-- Input Steps field -->
                 <div class="recipe-input-form">
                     <div class="left-align">
                         <i class="fas fa-book icon-size-padding-2 prefix"></i>
@@ -140,9 +153,10 @@
                     <div id="step1div" class="input-field col s12">
                         <input id="step1" name="step1" type="text" minlength="5" maxlength="300"
                         value="{{ edit_steps.step1 }}" class="validate" required>
-                        <!-- The above input will allow minimum 5 characters with Max 15 characters -->
-                        <!-- The characters can be a-z lower and upper and contain numbers 0-9 -->
-                        <!-- These settings will remain the same for all possible 10 steps -->
+                        <!-- The above input will allow minimum 5 characters with Max 300 characters -->
+                        <!-- There is no specific pattern here -->
+                        <!-- These settings will remain the same for all next possible 10 steps -->
+                        <!-- Start Position -->
                         <label for="step1" class="description-text-2">Step 1: </label>
                     </div>
                     <div id="step2div" class="input-field col s12">
@@ -190,7 +204,9 @@
                         value="{{ edit_steps.step10 }}" class="validate">
                         <label for="step10" class="description-text-2">Step 10: Last allowable step</label>
                     </div>
+                    <!-- End Position -->
                 </div>
+                <!-- Buttons to let the user update the recipe or cancel the updating process -->
                 <div class="center btn-bottom-padding">
                     <button class="waves-effect waves-light green accent-1 green-text text-darken-3 btn-small" type="submit" name="action">
                         <i class="fas fa-plus-circle plus-icon-size-padding-1"></i><b>Update Recipe</b></button>        
@@ -200,6 +216,7 @@
             </div>
         </form>
     </div>
+<!-- Message to non session user who has navigated here inadvertently -->
 {% else %}
 <div class="center display-recipe-top-header">As you are not a recognised user you do not have rights to access this page!</div>
 <div class="center display-recipe-top-header">Please Log-In if you wish to alter or delete your submitted recipes.</div>

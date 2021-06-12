@@ -39,10 +39,12 @@
                         <!-- Modal trigger -->
                         <li><a data-target="ssandj-modal" class="waves-effect waves-light amber darken-4 btn-small modal-trigger">Special Offer!</a></li>
                         <li><a href="{{ url_for('get_recipes') }}" class="green-text text-darken-3">Home</a></li>
+                        <!-- If session user present show the following -->
                         {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}" class="green-text text-darken-3">Profile</a></li>
                             <li><a href="{{ url_for('new_recipe') }}" class="green-text text-darken-3">New Recipe</a></li>
                             <li><a href="{{ url_for('logout') }}" class="green-text text-darken-3">Log Out</a></li>
+                        <!-- If session user not present show the following -->
                         {% else %}
                             <li><a href="{{ url_for('login') }}" class="green-text text-darken-3">Log In</a></li>
                             <li><a href="{{ url_for('signup') }}" class="green-text text-darken-3">Sign-Up</a></li>
@@ -58,6 +60,7 @@
             </li>
             <li><i class="fas fa-home icon-size-color"><a href="{{ url_for('get_recipes') }}"
                         class="green-text dropdowntextpad navbar-font text-darken-3">Home</a></i></li>
+            <!-- If session user present show the following -->
             {% if session.user %}
                 <li><i class="fas fa-user icon-size-color"><a href="{{ url_for('profile', username=session['user']) }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">Profile</a></i></li>
@@ -65,6 +68,7 @@
                             class="green-text dropdowntextpad navbar-font text-darken-3">New Recipe</a></i></li>
                 <li><i class="fas fa-sign-out-alt icon-size-color"><a href="{{ url_for('logout') }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">Log Out</a></i></li>
+            <!-- If session user not present show the following -->
             {% else %}
                 <li><i class="fas fa-sign-in-alt icon-size-color"><a href="{{ url_for('login') }}"
                             class="green-text dropdowntextpad navbar-font text-darken-3">Log In</a></i></li>
@@ -76,20 +80,24 @@
         </ul>
     </header>
 
-    <section>
-        <!-- flash messages -->
+    <div>
+        <!-- Flash messages -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
+        <!-- If flash message is of the unsuccessful type display the following -->
         {% if message == "Incorrect Username or Password" or  message == "Username already exists" %}
             <div id="flash" class="flashes-red container text-shadow">
+                <!-- JS function to hide messages -->
                 <a onclick="flashHide()">
                 <i class="far fa-times-circle icon-size-padding-3"></i></a>
                 <div class="white-text center-align flash-font-style col s12 m8 l6 offset-m2 offset-l3">
                     <i class="fas fa-times icon-size-padding"></i>{{ message }}</div>
             </div>
         {% else %}
+        <!-- If flash message is successful display the following -->
             <div id="flash" class="flashes-green container text-shadow">
+                <!-- JS function to hide messages -->
                 <a onclick="flashHide()">
                 <i class="far fa-times-circle icon-size-padding-3"></i></a>
                 <div class="white-text center-align flash-font-style col s12 m8 l6 offset-m2 offset-l3">
@@ -99,7 +107,7 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-    </section>
+        </div>
 
     <main>
         {% block content %}
@@ -112,6 +120,7 @@
             <div class="line-padding">
                 <hr>
             </div>
+            <!-- Image of a blender -->
             <img class="center blender-img" src="{{ url_for('static', filename='images/blender-sale.jpg') }}" alt="blender">
             <p>SS & J have partnered with the well established brand "KitchenAid" to bring you this special offer.
                 This offer entitles you to 20% off at their online store.</p>
@@ -123,6 +132,7 @@
             {% endif %}
         </div>
         <div class="modal-footer">
+            <!-- Web link to partnering site -->
             <a target="_blank" 
                 href="https://www.kitchenaid.ie/blenders?gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYqUH821sprzkKeWq2VNwehdRheLII6OPga7Y_q7RroaanfTYWgMLbgaAsz1EALw_wcB"
                 class="modal-close waves-effect waves-light green modal-button-white-text btn"><b>VISIT KitchenAid</b></a>
@@ -130,6 +140,8 @@
         </div>
     </div>
     <!-- Modal Structure End -->
+
+    <!-- Footer Structure Start -->
     <footer class="page-footer footer-text">
         <div class="container">
             <div class="row">
@@ -146,19 +158,19 @@
                     <p class="grey-text text-lighten-4">
                         For further details about the community or any of SS & J's advertised products, please click on
                         the email link provided to get in touch:
-                        <a href="mailto:info@ss&j.com?subject=General Information About SS and J's Products & Services"
+                        <a href="mailto:info@ss&j.com?subject=General-Information-About-SS-and-J's-Products-&-Services"
                             class="login-text"><span class="sign-up-hover">info@ss&j.com</span></a>
                     </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Visit Our Social Media Pages</h5>
                     <ul>
-                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
+                        <li><a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
                                 href="https://www.facebook.com/"><i class="fab fa-facebook-square icon-hover"></i></a>
                         </li>
-                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
+                        <li><a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
                                 href="https://twitter.com/"><i class="fab fa-twitter-square icon-hover"></i></a></li>
-                        <li><a a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
+                        <li><a target="_blank" class="grey-text text-lighten-3 footer-icon-size"
                                 href="https://www.instagram.com/"><i class="fab fa-instagram-square icon-hover"></i></a>
                         </li>
                     </ul>
@@ -173,6 +185,8 @@
             </div>
         </div>
     </footer>
+    <!-- Footer Structure End -->
+
     <!-- Compiled and minified Jquery script from code.jquery.com -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
