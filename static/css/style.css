@@ -1,5 +1,10 @@
+/* ---------------------------------------------Text Fonts and Associated Styling */
 body {
     background-color: #fff7eb;
+}
+
+.background-color {
+    background-color: #b9f6ca;
 }
 
 .text-shadow {
@@ -12,59 +17,6 @@ body {
 
 .text-shadow-3 {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
-}
-
-.image-text {
-    position: relative;
-    color: white;
-}
-
-.image-text-font {
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    font-size: 5.4rem;
-    color: #f5f5f5;
-    background-color: rgba(140, 140, 140, 0.3);
-    border-radius: 10px;
-}
-
-.image-text-font-3 {
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    font-size: 2.4rem;
-    color: #f5f5f5;
-    background-color: rgba(140, 140, 140, 0.2);
-    border-radius: 10px;
-}
-
-.image-text-font-4 {
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    font-size: 2.2rem;
-    color: black;
-    display: none;
-}
-
-.image-text-font-5 {
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: black;
-    display: none;
-}
-
-.centered {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.centered-3 {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .navbar-font {
@@ -81,10 +33,6 @@ nav ul a {
     font-weight: bold;
 }
 
-.background-color {
-    background-color: #b9f6ca;
-}
-
 h4 {
     font-size: 2.28rem;
     font-weight: bold;
@@ -95,82 +43,8 @@ h4 {
     font-weight: bold;
 }
 
-.hero {
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-bottom: 20px;
-    background-color: #b9f6ca;
-    opacity: 0.9;
-}
-
-.recipe {
-    padding-left: 25%;
-    padding-right: 25%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-height: 90% !important;
-}
-
-.recipe-2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-height: 33rem;
-}
-
-.icon-size-color {
-    font-size: 1.4rem;
-    color: #2E7D32;
-    padding-left: 1rem;
-}
-
-.dropdowntextpad {
-    padding-left: 1rem;
-}
-
-.fa-blender {
-    font-size: 1.8rem;
-    padding-left: 10px;
-}
-
-.fa-apple-alt {
-    font-size: 1.8rem;
-    position: absolute;
-    padding-left: 10px;
-}
-
-.fa-carrot {
-    font-size: 1.8rem;
-    position: absolute;
-    padding-left: 10px;
-}
-
-.center {
-    flex: justify;
-}
-
-.card-panel {
-    border-radius: 20px;
-}
-
-.card-panel-2 {
-    border-radius: 30px;
-}
-
-.card-panel-space {
-    padding-top: 40px;
-}
-
 .login-text {
     color: #ff974d;
-}
-
-.login-btn {
-    background-color: #e13767;
-    border-radius: 8px;
-}
-
-.login-btn:hover {
-   background-color: #f24a7a;
 }
 
 .login-header {
@@ -179,58 +53,8 @@ h4 {
     font-weight: bold;
 }
 
-.login-button {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.back-to-top {
-    padding-left: 5px;
-}
-
-.page-footer {
-    background-color: #616161;
-}
-
-.footer-text {
-    font-family: 'Roboto', sans-serif;
-}
-
-.footer-icon-size {
-    font-size: 2.2rem; 
-}
-
-.icon-hover:hover {
-    color: #ff974d; 
-}
-
-.back-to-top-text:hover {
-    color: #ff974d; 
-}
-
-.sign-up-hover:hover {
-    color: #f24a7a; 
-}
-
-.btn-bottom-padding {
-    padding-bottom: 1.2rem;
-}
-
 .bold-step {
     font-weight: bold;
-}
-
-.icon-padding-left {
-    padding-left: 8px;
-}
-
-.table-radius-edges {
-    border-radius: 5px;
-}
-
-.display-recipe-header-color {
-    background-color: rgba(150, 156, 154, 0.2) !important;
 }
 
 .display-recipe-header-font {
@@ -275,21 +99,6 @@ h4 {
     padding-bottom: 2rem;
 }
 
-.like-btn-div {
-    padding-left: 0.5rem;
-}
-
-.like-btn {
-    font-size: 0.8rem;
-    height: 26px;
-    line-height: 26px;
-    padding: 0 10px;
-}
-
-.fa-thumbs-up {
-    font-size: 1.2rem;
-}
-
 .allergen-status-text {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -301,6 +110,159 @@ h4 {
 .allergen-text {
     font-family: 'Roboto', sans-serif;
     font-size: 1.0rem;
+}
+
+.main-heading-padding {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+}
+
+.sub-heading-padding {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1rem;
+}
+
+/* -------------------------------------------------Images and Associated Styling */
+.image-text {
+    position: relative;
+    color: white;
+}
+
+.image-text-font {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 5.4rem;
+    color: #f5f5f5;
+    background-color: rgba(140, 140, 140, 0.3);
+    border-radius: 10px;
+}
+
+.image-text-font-3 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #f5f5f5;
+    background-color: rgba(140, 140, 140, 0.2);
+    border-radius: 10px;
+}
+
+.image-text-font-4 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: black;
+    display: none;
+}
+
+.image-text-font-5 {
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: black;
+    display: none;
+}
+
+.hero {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 20px;
+    background-color: #b9f6ca;
+    opacity: 0.9;
+}
+
+.recipe {
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 90% !important;
+}
+
+.recipe-2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 33rem;
+}
+
+/* --------------------------------------------------Presentation on Page Styling */
+.centered {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-3 {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-panel {
+    border-radius: 20px;
+}
+
+.card-panel-2 {
+    border-radius: 30px;
+}
+
+.card-panel-space {
+    padding-top: 40px;
+}
+
+.display-recipe-header-color {
+    background-color: rgba(150, 156, 154, 0.2) !important;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.hide-at-pg-load {
+    display: none;
+}
+
+.main-page-ingredients-space {
+    padding-bottom: 22px;
+}
+
+/* -----------------------------------------------------------Fontawesome Styling */
+.icon-size-color {
+    font-size: 1.4rem;
+    color: #2E7D32;
+    padding-left: 1rem;
+}
+
+.fa-blender {
+    font-size: 1.8rem;
+    padding-left: 10px;
+}
+
+.fa-apple-alt {
+    font-size: 1.8rem;
+    position: absolute;
+    padding-left: 10px;
+}
+
+.fa-carrot {
+    font-size: 1.8rem;
+    position: absolute;
+    padding-left: 10px;
+}
+
+.footer-icon-size {
+    font-size: 2.2rem; 
+}
+
+.icon-hover:hover {
+    color: #ff974d; 
+}
+
+.icon-padding-left {
+    padding-left: 8px;
 }
 
 .icon-size-padding {
@@ -322,10 +284,141 @@ h4 {
     padding-right: 10px;
 }
 
+.plus-btn {
+    font-size: 0.8rem;
+    height: 35px;
+    line-height: 35px;
+}
+
+.plus-btn-padding {
+    padding-top: 7rem;
+}
+
+.plus-icon-size-padding-1 {
+    font-size: 1.2rem !important;
+    padding-right: 0.3rem !important;
+}
+
+.plus-icon-size-padding-2 {
+    font-size: 0.9rem !important;
+    padding-right: 0.2rem !important;
+}
+
+.icon-size-padding-3 {
+    color: white;
+    font-size: 1.2rem !important;
+    padding-top: 0.4rem;
+    padding-left: 20.4rem;
+    cursor: pointer;
+}
+
+.search-icon-size {
+    font-size: 1.8rem !important;
+    top: 1.2rem !important
+}
+
+.edit-recipe-icon {
+    padding-left: 12px;
+}
+
+.open-recipe-icon {
+    padding-left: 10px;
+}
+
+.icon-space-left {
+    padding-right: 0.5rem;
+}
+
+.icon-space-right {
+    padding-left: 0.5rem;
+}
+
+/* -----------------------------------------------------------------Forms Styling */
+.dropdowntextpad {
+    padding-left: 1rem;
+}
+
+.login-btn {
+    background-color: #e13767;
+    border-radius: 8px;
+}
+
+.login-btn:hover {
+   background-color: #f24a7a;
+}
+
+.login-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.table-radius-edges {
+    border-radius: 5px;
+}
+
+.btn-bottom-padding {
+    padding-bottom: 1.2rem;
+}
+
+.like-btn-div {
+    padding-left: 0.5rem;
+}
+
+.like-btn {
+    font-size: 0.8rem;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+}
+
+.fa-thumbs-up {
+    font-size: 1.2rem;
+}
+
 .line-padding {
     padding-bottom: 30px;
 }
 
+.recipe-input-form {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.description-text {
+    font-size: 0.8rem !important;
+}
+
+.description-text-2 {
+    font-size: 1rem !important;
+}
+
+.input-field-2 {
+    margin-top: -2rem;
+}
+
+/* ----------------------------------------------------------------Footer Styling */
+.page-footer {
+    background-color: #616161;
+}
+
+.back-to-top {
+    padding-left: 5px;
+}
+
+.footer-text {
+    font-family: 'Roboto', sans-serif;
+}
+
+.back-to-top-text:hover {
+    color: #ff974d; 
+}
+
+.sign-up-hover:hover {
+    color: #f24a7a; 
+}
+
+/* ---------------------------------------------------------Flash Message Styling */
 .flash-font-style {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
@@ -347,67 +440,19 @@ h4 {
     margin-top: 1rem;
 }
 
-.left-align {
-    flex: left;
-}
-
 .heading-space {
     padding-bottom: 1.5rem;
 }
 
-.recipe-input-form {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-.plus-btn {
-    font-size: 0.8rem;
-    height: 35px;
-    line-height: 35px;
-}
-
-.plus-btn-padding {
-    padding-top: 7rem;
-}
-
-.description-text {
-    font-size: 0.8rem !important;
-}
-
-.description-text-2 {
-    font-size: 1rem !important;
-}
-
-.plus-icon-size-padding-1 {
-    font-size: 1.2rem !important;
-    padding-right: 0.3rem !important;
-}
-
-.plus-icon-size-padding-2 {
-    font-size: 0.9rem !important;
-    padding-right: 0.2rem !important;
-}
-
-.icon-size-padding-3 {
-    color: white;
-    font-size: 1.2rem !important;
-    padding-top: 0.4rem;
-    padding-left: 20.4rem;
-    cursor: pointer;
-}
-
-.hide-at-pg-load {
-    display: none;
+/* ----------------------------------------------------------Profile Page Styling */
+.username-color {
+    color: blue;
 }
 
 .ingredients-restrict {
     padding-left: 25%;
     padding-right: 25%;
     padding-top: 10px;
-}
-
-.main-page-ingredients-space {
-    padding-bottom: 22px;
 }
 
 .profile-buttons-restrict {
@@ -419,61 +464,29 @@ h4 {
     padding-right: 25%;
 }
 
-.icon-space-left {
-    padding-right: 0.5rem;
-}
-
-.icon-space-right {
-    padding-left: 0.5rem;
-}
-
-.open-recipe-icon {
-    padding-left: 10px;
-}
-
 .open-recipe-text {
     padding-right: 10px;
-}
-
-.edit-recipe-icon {
-    padding-left: 12px;
 }
 
 .edit-recipe-text {
     padding-right: 12px;
 }
-
-.username-color {
-    color: blue;
-}
-
-.input-field-2 {
-    margin-top: -2rem;
-}
     
-.search-icon-size {
-    font-size: 1.8rem !important;
-    top: 1.2rem !important
-}
-
-.main-heading-padding {
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 2rem;
-}
-
-.sub-heading-padding {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 1rem;
-}
-
 .new-recipe-link {
     color: black;
 }
 
 .new-recipe-link:hover {
     color: blue;
+}
+
+/* --------------------------------------------------Special Offer! Modal styling */
+.modal-button-white-text {
+    color: white;
+}
+
+.modal-button-black-text {
+    color: black;
 }
 
 .sidenavbut {
@@ -490,14 +503,7 @@ h4 {
     height: 20rem;
 }
 
-.modal-button-white-text {
-    color: white;
-}
-
-.modal-button-black-text {
-    color: black;
-}
-
+/* ---------------------------------------------------------Media Queries styling */
 @media only screen and (max-width: 1960px) {
     .image-text-font {
         font-size: 5.1rem;
